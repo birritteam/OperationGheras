@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GherasEO.GUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,8 +38,9 @@ namespace GherasEO
 
         private void jobSeekerButton_Click(object sender, EventArgs e)
         {
-            JobSeekerForm f = new JobSeekerForm(currentUser);
-            f.ShowDialog();
+
+            JobSeekerForm f2 = new JobSeekerForm(currentUser);
+            f2.ShowDialog();
         }
     }
 }

@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GherasEO
+namespace GherasEO.GUI.UserControls
 {
-    public partial class educationAndExpertise : UserControl
+    public partial class Page2 : UserControl
     {
-        public educationAndExpertise()
+        public Page2()
         {
             InitializeComponent();
-        }
-
-        private void trainerCoursesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

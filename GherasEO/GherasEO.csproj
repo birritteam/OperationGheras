@@ -71,41 +71,53 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GUI\UserControls\allInformation.cs">
+    <Compile Include="GUI\JobSeekerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\JobSeekerForm.Designer.cs">
+      <DependentUpon>JobSeekerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\JobSeekerV2\DesiredJob.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControls\allInformation.Designer.cs">
-      <DependentUpon>allInformation.cs</DependentUpon>
+    <Compile Include="GUI\UserControls\JobSeekerV2\DesiredJob.Designer.cs">
+      <DependentUpon>DesiredJob.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\desiredJob.cs">
+    <Compile Include="GUI\UserControls\JobSeekerV2\EducationAndExpertise.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControls\desiredJob.Designer.cs">
-      <DependentUpon>desiredJob.cs</DependentUpon>
+    <Compile Include="GUI\UserControls\JobSeekerV2\EducationAndExpertise.Designer.cs">
+      <DependentUpon>EducationAndExpertise.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\educationAndExpertise.cs">
+    <Compile Include="GUI\UserControls\JobSeekerV2\EmergencyAndReferences.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControls\educationAndExpertise.Designer.cs">
-      <DependentUpon>educationAndExpertise.cs</DependentUpon>
+    <Compile Include="GUI\UserControls\JobSeekerV2\EmergencyAndReferences.Designer.cs">
+      <DependentUpon>EmergencyAndReferences.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\emergencyAndReferences.cs">
+    <Compile Include="GUI\UserControls\JobSeekerV2\Page1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControls\emergencyAndReferences.Designer.cs">
-      <DependentUpon>emergencyAndReferences.cs</DependentUpon>
+    <Compile Include="GUI\UserControls\JobSeekerV2\Page1.Designer.cs">
+      <DependentUpon>Page1.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\jobSeekerInformationPanel1.cs">
+    <Compile Include="GUI\UserControls\JobSeekerV2\Page2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControls\jobSeekerInformationPanel1.Designer.cs">
-      <DependentUpon>jobSeekerInformationPanel1.cs</DependentUpon>
+    <Compile Include="GUI\UserControls\JobSeekerV2\Page2.Designer.cs">
+      <DependentUpon>Page2.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\jobSeekerInformationPanel2.cs">
+    <Compile Include="GUI\UserControls\JobSeekerV2\Page3.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControls\jobSeekerInformationPanel2.Designer.cs">
-      <DependentUpon>jobSeekerInformationPanel2.cs</DependentUpon>
+    <Compile Include="GUI\UserControls\JobSeekerV2\Page3.Designer.cs">
+      <DependentUpon>Page3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\JobSeekerV2\PersonalData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\JobSeekerV2\PersonalData.Designer.cs">
+      <DependentUpon>PersonalData.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\MainUI.cs">
       <SubType>Form</SubType>
@@ -113,70 +125,61 @@
     <Compile Include="GUI\MainUI.Designer.cs">
       <DependentUpon>MainUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\JobSeekerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\JobSeekerForm.Designer.cs">
-      <DependentUpon>JobSeekerForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\personalData.cs">
+    <Compile Include="GUI\UserControls\JobSeekerV2\PersonalID.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControls\personalData.Designer.cs">
-      <DependentUpon>personalData.cs</DependentUpon>
+    <Compile Include="GUI\UserControls\JobSeekerV2\PersonalID.Designer.cs">
+      <DependentUpon>PersonalID.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\personalID.cs">
+    <Compile Include="GUI\UserControls\JobSeekerV2\Skills.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControls\personalID.Designer.cs">
-      <DependentUpon>personalID.cs</DependentUpon>
+    <Compile Include="GUI\UserControls\JobSeekerV2\Skills.Designer.cs">
+      <DependentUpon>Skills.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="GUI\UserControls\skills.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\UserControls\skills.Designer.cs">
-      <DependentUpon>skills.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="GUI\UserControls\allInformation.resx">
-      <DependentUpon>allInformation.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\JobSeekerForm.resx">
+      <DependentUpon>JobSeekerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\desiredJob.resx">
-      <DependentUpon>desiredJob.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UserControls\JobSeekerV2\DesiredJob.resx">
+      <DependentUpon>DesiredJob.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\educationAndExpertise.resx">
-      <DependentUpon>educationAndExpertise.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UserControls\JobSeekerV2\EducationAndExpertise.resx">
+      <DependentUpon>EducationAndExpertise.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\emergencyAndReferences.resx">
-      <DependentUpon>emergencyAndReferences.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UserControls\JobSeekerV2\EmergencyAndReferences.resx">
+      <DependentUpon>EmergencyAndReferences.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\jobSeekerInformationPanel1.resx">
-      <DependentUpon>jobSeekerInformationPanel1.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UserControls\JobSeekerV2\Page1.resx">
+      <DependentUpon>Page1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\jobSeekerInformationPanel2.resx">
-      <DependentUpon>jobSeekerInformationPanel2.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UserControls\JobSeekerV2\Page2.resx">
+      <DependentUpon>Page2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\JobSeekerV2\Page3.resx">
+      <DependentUpon>Page3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\JobSeekerV2\PersonalData.resx">
+      <DependentUpon>PersonalData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainUI.resx">
       <DependentUpon>MainUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\JobSeekerForm.resx">
-      <DependentUpon>JobSeekerForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\personalData.resx">
-      <DependentUpon>personalData.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UserControls\JobSeekerV2\PersonalID.resx">
+      <DependentUpon>PersonalID.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\personalID.resx">
-      <DependentUpon>personalID.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UserControls\JobSeekerV2\Skills.resx">
+      <DependentUpon>Skills.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -187,9 +190,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="GUI\UserControls\skills.resx">
-      <DependentUpon>skills.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

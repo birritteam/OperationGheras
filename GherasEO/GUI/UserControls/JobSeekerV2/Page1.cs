@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GherasEO
+namespace GherasEO.GUI.UserControls
 {
-    public partial class personalID : UserControl
+    public partial class Page1 : UserControl
     {
-        public personalID()
+        public Page1()
         {
             InitializeComponent();
-        }
-
-        private void personalID_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace GherasEO
+﻿namespace GherasEO.GUI.UserControls
 {
-    partial class jobSeekerInformationPanel1
+    partial class Page1
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,39 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.personalID1 = new GherasEO.personalID();
-            this.personalData1 = new GherasEO.personalData();
+            this.personalData = new GherasEO.GUI.PersonalData();
+            this.personalID = new GherasEO.GUI.UserControls.PersonalID();
             this.SuspendLayout();
             // 
-            // personalID1
+            // personalData
             // 
-            this.personalID1.Location = new System.Drawing.Point(0, 0);
-            this.personalID1.Name = "personalID1";
-            this.personalID1.Size = new System.Drawing.Size(407, 263);
-            this.personalID1.TabIndex = 1;
+            this.personalData.Location = new System.Drawing.Point(0, 192);
+            this.personalData.Name = "personalData";
+            this.personalData.Size = new System.Drawing.Size(645, 324);
+            this.personalData.TabIndex = 9;
             // 
-            // personalData1
+            // personalID
             // 
-            this.personalData1.Location = new System.Drawing.Point(0, 260);
-            this.personalData1.Name = "personalData1";
-            this.personalData1.Size = new System.Drawing.Size(405, 354);
-            this.personalData1.TabIndex = 0;
+            this.personalID.Location = new System.Drawing.Point(0, 0);
+            this.personalID.Name = "personalID";
+            this.personalID.Size = new System.Drawing.Size(645, 198);
+            this.personalID.TabIndex = 8;
             // 
-            // jobSeekerInformationPanel1
+            // Page1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.personalID1);
-            this.Controls.Add(this.personalData1);
-            this.Name = "jobSeekerInformationPanel1";
-            this.Size = new System.Drawing.Size(407, 617);
+            this.Controls.Add(this.personalData);
+            this.Controls.Add(this.personalID);
+            this.Name = "Page1";
+            this.Size = new System.Drawing.Size(645, 528);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        internal personalData personalData1;
-        internal personalID personalID1;
+        internal PersonalData personalData;
+        internal PersonalID personalID;
     }
 }

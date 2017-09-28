@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GherasEO
+namespace GherasEO.GUI.UserControls
 {
-    public partial class skills : UserControl
+    public partial class Skills : UserControl
     {
-        public skills()
+        public Skills()
         {
             InitializeComponent();
         }

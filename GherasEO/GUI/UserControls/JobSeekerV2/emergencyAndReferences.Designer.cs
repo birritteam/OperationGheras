@@ -1,6 +1,6 @@
-﻿namespace GherasEO
+﻿namespace GherasEO.GUI.UserControls
 {
-    partial class emergencyAndReferences
+    partial class EmergencyAndReferences
     {
         /// <summary> 
         /// Required designer variable.
@@ -34,6 +34,7 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.referenceOpinion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emergencyGroupBox = new System.Windows.Forms.GroupBox();
             this.emergencyDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,10 +50,10 @@
             // referenceGroupBox
             // 
             this.referenceGroupBox.Controls.Add(this.referenceDataGridView);
-            this.referenceGroupBox.Location = new System.Drawing.Point(0, 108);
+            this.referenceGroupBox.Location = new System.Drawing.Point(2, 103);
             this.referenceGroupBox.Name = "referenceGroupBox";
-            this.referenceGroupBox.Size = new System.Drawing.Size(640, 105);
-            this.referenceGroupBox.TabIndex = 43;
+            this.referenceGroupBox.Size = new System.Drawing.Size(645, 100);
+            this.referenceGroupBox.TabIndex = 45;
             this.referenceGroupBox.TabStop = false;
             this.referenceGroupBox.Text = "أشخاص عملت معهم:";
             // 
@@ -65,11 +66,12 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
+            this.dataGridViewTextBoxColumn8,
+            this.referenceOpinion});
             this.referenceDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.referenceDataGridView.Location = new System.Drawing.Point(3, 16);
             this.referenceDataGridView.Name = "referenceDataGridView";
-            this.referenceDataGridView.Size = new System.Drawing.Size(634, 86);
+            this.referenceDataGridView.Size = new System.Drawing.Size(639, 81);
             this.referenceDataGridView.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn5
@@ -92,13 +94,18 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "هاتف";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
+            // referenceOpinion
+            // 
+            this.referenceOpinion.HeaderText = "رأي المرجع";
+            this.referenceOpinion.Name = "referenceOpinion";
+            // 
             // emergencyGroupBox
             // 
             this.emergencyGroupBox.Controls.Add(this.emergencyDataGridView);
-            this.emergencyGroupBox.Location = new System.Drawing.Point(0, 0);
+            this.emergencyGroupBox.Location = new System.Drawing.Point(2, 0);
             this.emergencyGroupBox.Name = "emergencyGroupBox";
-            this.emergencyGroupBox.Size = new System.Drawing.Size(640, 105);
-            this.emergencyGroupBox.TabIndex = 42;
+            this.emergencyGroupBox.Size = new System.Drawing.Size(645, 100);
+            this.emergencyGroupBox.TabIndex = 44;
             this.emergencyGroupBox.TabStop = false;
             this.emergencyGroupBox.Text = "رقم طوارئ:";
             // 
@@ -115,7 +122,7 @@
             this.emergencyDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.emergencyDataGridView.Location = new System.Drawing.Point(3, 16);
             this.emergencyDataGridView.Name = "emergencyDataGridView";
-            this.emergencyDataGridView.Size = new System.Drawing.Size(634, 86);
+            this.emergencyDataGridView.Size = new System.Drawing.Size(639, 81);
             this.emergencyDataGridView.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn1
@@ -137,16 +144,18 @@
             // 
             this.dataGridViewTextBoxColumn4.HeaderText = "هاتف";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // emergencyAndReferences
+            // EmergencyAndReferences
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.referenceGroupBox);
             this.Controls.Add(this.emergencyGroupBox);
-            this.Name = "emergencyAndReferences";
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Name = "EmergencyAndReferences";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Size = new System.Drawing.Size(642, 214);
+            this.Size = new System.Drawing.Size(651, 207);
             this.referenceGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.referenceDataGridView)).EndInit();
             this.emergencyGroupBox.ResumeLayout(false);
@@ -156,17 +165,19 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+
         internal System.Windows.Forms.GroupBox referenceGroupBox;
         internal System.Windows.Forms.DataGridView referenceDataGridView;
         internal System.Windows.Forms.GroupBox emergencyGroupBox;
         internal System.Windows.Forms.DataGridView emergencyDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn referenceOpinion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }

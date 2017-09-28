@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GherasEO.GUI
+namespace GherasEO.GUI.UserControls
 {
-    public partial class allInformation : UserControl
+    public partial class EducationAndExpertise : UserControl
     {
-        public allInformation()
+        public EducationAndExpertise()
         {
             InitializeComponent();
+        }
+
+        private void educationGroupBox_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GherasEO
+namespace GherasEO.GUI.UserControls
 {
-    public partial class jobSeekerInformationPanel1 : UserControl
+    public partial class DesiredJob : UserControl
     {
-        public jobSeekerInformationPanel1()
+        public DesiredJob()
         {
             InitializeComponent();
+        }
+
+        private void workTimeTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

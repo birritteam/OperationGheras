@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GherasEO
+namespace GherasEO.GUI
 {
     public partial class JobSeekerForm : Form
     {
@@ -26,49 +26,58 @@ namespace GherasEO
             this.currentUserLabel.Text = this.currentUser;
         }
 
-        private void idGroupBox_Enter(object sender, EventArgs e)
+        private void nextButton_Click(object sender, EventArgs e)
         {
+            Cursor = Cursors.Default;
+            if (page1.Visible)
+            {
+                currentPageGroupBox.Text = "الصفحة الثانية (2 من 3)";
+                page1.Hide();
+                page2.Show();
+                
+                //page1.Visible = false;
+                //page2.Visible = true;
+               // page2.Dock = DockStyle.Fill;
+                previousButton.Enabled = true;
+            }
+            else if (page2.Visible)
+            {
+                currentPageGroupBox.Text = "الصفحة الثالثة (3 من 3)";
+                page2.Hide();
+                page3.Show();
 
+                //page2.Visible = false;
+                //page3.Visible = true;
+                //page3.Dock = DockStyle.Fill;
+                nextButton.Enabled = false;
+            }
         }
 
-        private void personalDataGroupBox_Enter(object sender, EventArgs e)
+        private void previousButton_Click(object sender, EventArgs e)
         {
-
+            if (page3.Visible)
+            {
+                currentPageGroupBox.Text = "الصفحة الثانية (2 من 3)";
+                page3.Visible = false;
+                page2.Visible = true;
+                //page2.Dock = DockStyle.Fill;
+                nextButton.Enabled = true;
+            }
+            else if (page2.Visible)
+            {
+                currentPageGroupBox.Text = "الصفحة الأولى (1 من 3)";
+                page2.Visible = false;
+                page1.Visible = true;
+                //page1.Dock = DockStyle.Fill;
+                previousButton.Enabled = false;
+            }
         }
 
-        private void label18_Click(object sender, EventArgs e)
+       
+
+        private void addButton_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void textBox17_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void addTabPage_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void JobSeekerForm_Load(object sender, EventArgs e)
-        {
-            
         }
     }
 }

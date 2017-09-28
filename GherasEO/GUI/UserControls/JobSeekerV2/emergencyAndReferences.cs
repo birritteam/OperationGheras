@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GherasEO
+namespace GherasEO.GUI.UserControls
 {
-    public partial class personalData : UserControl
+    public partial class EmergencyAndReferences : UserControl
     {
-        public personalData()
+        public EmergencyAndReferences()
         {
             InitializeComponent();
         }

@@ -8,20 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GherasEO
+namespace GherasEO.GUI.UserControls
 {
-    public partial class desiredJob : UserControl
+    public partial class PersonalID : UserControl
     {
-        public desiredJob()
+        public PersonalID()
         {
             InitializeComponent();
-        }
-
-
-
-        private void desiredJobGroupBox_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }
