@@ -35,6 +35,8 @@
             this.disabilityTypeTextBox = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.contactInfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.telephoneMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -57,8 +59,6 @@
             this.exemptRadioButton = new System.Windows.Forms.RadioButton();
             this.delayedRadioButton = new System.Windows.Forms.RadioButton();
             this.finishedRadioButton = new System.Windows.Forms.RadioButton();
-            this.telephoneMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.personalDataGroupBox.SuspendLayout();
             this.additionalInformationGroupBox.SuspendLayout();
             this.disabilityGroupBox.SuspendLayout();
@@ -149,6 +149,26 @@
             this.contactInfoGroupBox.TabStop = false;
             this.contactInfoGroupBox.Text = "معلومات تواصل:";
             // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(20, 27);
+            this.maskedTextBox1.Mask = "0900-000-0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.PromptChar = '0';
+            this.maskedTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.maskedTextBox1.Size = new System.Drawing.Size(85, 20);
+            this.maskedTextBox1.TabIndex = 36;
+            // 
+            // telephoneMaskedTextBox
+            // 
+            this.telephoneMaskedTextBox.Location = new System.Drawing.Point(150, 27);
+            this.telephoneMaskedTextBox.Mask = "000-0000";
+            this.telephoneMaskedTextBox.Name = "telephoneMaskedTextBox";
+            this.telephoneMaskedTextBox.PromptChar = '0';
+            this.telephoneMaskedTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.telephoneMaskedTextBox.Size = new System.Drawing.Size(58, 20);
+            this.telephoneMaskedTextBox.TabIndex = 35;
+            // 
             // emailTextBox
             // 
             this.emailTextBox.Location = new System.Drawing.Point(20, 69);
@@ -198,6 +218,7 @@
             // nonSmokerRadioButton
             // 
             this.nonSmokerRadioButton.AutoSize = true;
+            this.nonSmokerRadioButton.Checked = true;
             this.nonSmokerRadioButton.Location = new System.Drawing.Point(39, 19);
             this.nonSmokerRadioButton.Name = "nonSmokerRadioButton";
             this.nonSmokerRadioButton.Size = new System.Drawing.Size(32, 17);
@@ -213,7 +234,6 @@
             this.smokerRadioButton.Name = "smokerRadioButton";
             this.smokerRadioButton.Size = new System.Drawing.Size(42, 17);
             this.smokerRadioButton.TabIndex = 0;
-            this.smokerRadioButton.TabStop = true;
             this.smokerRadioButton.Text = "نعم";
             this.smokerRadioButton.UseVisualStyleBackColor = true;
             // 
@@ -275,7 +295,6 @@
             this.widowedRadioButton.Name = "widowedRadioButton";
             this.widowedRadioButton.Size = new System.Drawing.Size(46, 17);
             this.widowedRadioButton.TabIndex = 3;
-            this.widowedRadioButton.TabStop = true;
             this.widowedRadioButton.Text = "أرمل";
             this.widowedRadioButton.UseVisualStyleBackColor = true;
             // 
@@ -286,7 +305,6 @@
             this.divorcedRadioButton.Name = "divorcedRadioButton";
             this.divorcedRadioButton.Size = new System.Drawing.Size(53, 17);
             this.divorcedRadioButton.TabIndex = 2;
-            this.divorcedRadioButton.TabStop = true;
             this.divorcedRadioButton.Text = "مطلق";
             this.divorcedRadioButton.UseVisualStyleBackColor = true;
             // 
@@ -297,13 +315,13 @@
             this.marriedRadioButton.Name = "marriedRadioButton";
             this.marriedRadioButton.Size = new System.Drawing.Size(52, 17);
             this.marriedRadioButton.TabIndex = 1;
-            this.marriedRadioButton.TabStop = true;
             this.marriedRadioButton.Text = "متزوج";
             this.marriedRadioButton.UseVisualStyleBackColor = true;
             // 
             // unmarriedRadioButton
             // 
             this.unmarriedRadioButton.AutoSize = true;
+            this.unmarriedRadioButton.Checked = true;
             this.unmarriedRadioButton.Location = new System.Drawing.Point(558, 19);
             this.unmarriedRadioButton.Name = "unmarriedRadioButton";
             this.unmarriedRadioButton.Size = new System.Drawing.Size(48, 17);
@@ -349,7 +367,6 @@
             this.exemptRadioButton.Name = "exemptRadioButton";
             this.exemptRadioButton.Size = new System.Drawing.Size(90, 17);
             this.exemptRadioButton.TabIndex = 2;
-            this.exemptRadioButton.TabStop = true;
             this.exemptRadioButton.Text = "معفى بسبب:";
             this.exemptRadioButton.UseVisualStyleBackColor = true;
             // 
@@ -360,13 +377,13 @@
             this.delayedRadioButton.Name = "delayedRadioButton";
             this.delayedRadioButton.Size = new System.Drawing.Size(87, 17);
             this.delayedRadioButton.TabIndex = 1;
-            this.delayedRadioButton.TabStop = true;
             this.delayedRadioButton.Text = "مؤجل بسبب:";
             this.delayedRadioButton.UseVisualStyleBackColor = true;
             // 
             // finishedRadioButton
             // 
             this.finishedRadioButton.AutoSize = true;
+            this.finishedRadioButton.Checked = true;
             this.finishedRadioButton.Location = new System.Drawing.Point(369, 19);
             this.finishedRadioButton.Name = "finishedRadioButton";
             this.finishedRadioButton.Size = new System.Drawing.Size(55, 17);
@@ -374,26 +391,6 @@
             this.finishedRadioButton.TabStop = true;
             this.finishedRadioButton.Text = "منتهية";
             this.finishedRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // telephoneMaskedTextBox
-            // 
-            this.telephoneMaskedTextBox.Location = new System.Drawing.Point(150, 27);
-            this.telephoneMaskedTextBox.Mask = "000-0000";
-            this.telephoneMaskedTextBox.Name = "telephoneMaskedTextBox";
-            this.telephoneMaskedTextBox.PromptChar = '0';
-            this.telephoneMaskedTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.telephoneMaskedTextBox.Size = new System.Drawing.Size(58, 20);
-            this.telephoneMaskedTextBox.TabIndex = 35;
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(20, 27);
-            this.maskedTextBox1.Mask = "0900-000-0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.PromptChar = '0';
-            this.maskedTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.maskedTextBox1.Size = new System.Drawing.Size(85, 20);
-            this.maskedTextBox1.TabIndex = 36;
             // 
             // PersonalData
             // 
@@ -435,7 +432,6 @@
         internal System.Windows.Forms.CheckBox hasACarCheckBox;
         internal System.Windows.Forms.NumericUpDown numberOfChildrenNumericUpDown;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.RadioButton widowedRadioButton;
         internal System.Windows.Forms.RadioButton divorcedRadioButton;
         internal System.Windows.Forms.RadioButton marriedRadioButton;
         internal System.Windows.Forms.RadioButton unmarriedRadioButton;
@@ -453,5 +449,6 @@
         internal System.Windows.Forms.GroupBox miltaryServiceGroupBox;
         internal System.Windows.Forms.MaskedTextBox telephoneMaskedTextBox;
         internal System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        internal System.Windows.Forms.RadioButton widowedRadioButton;
     }
 }

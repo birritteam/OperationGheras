@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.idGroupBox = new System.Windows.Forms.GroupBox();
+            this.nationalNumberMaskedTB = new System.Windows.Forms.MaskedTextBox();
+            this.idNumberMaskedTB = new System.Windows.Forms.MaskedTextBox();
             this.motherFirstNameTB = new System.Windows.Forms.TextBox();
             this.genderCB = new System.Windows.Forms.ComboBox();
             this.recivingDateDTP = new System.Windows.Forms.DateTimePicker();
@@ -61,8 +63,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.idNumberMaskedTB = new System.Windows.Forms.MaskedTextBox();
-            this.nationalNumberMaskedTB = new System.Windows.Forms.MaskedTextBox();
             this.idGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,6 +111,28 @@
             this.idGroupBox.TabStop = false;
             this.idGroupBox.Text = "البطاقة الشخصية";
             // 
+            // nationalNumberMaskedTB
+            // 
+            this.nationalNumberMaskedTB.Location = new System.Drawing.Point(398, 113);
+            this.nationalNumberMaskedTB.Mask = "0 0 0 0 0 0 0 0 0 0 0";
+            this.nationalNumberMaskedTB.Name = "nationalNumberMaskedTB";
+            this.nationalNumberMaskedTB.PromptChar = '0';
+            this.nationalNumberMaskedTB.RejectInputOnFirstFailure = true;
+            this.nationalNumberMaskedTB.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.nationalNumberMaskedTB.Size = new System.Drawing.Size(104, 20);
+            this.nationalNumberMaskedTB.TabIndex = 12;
+            // 
+            // idNumberMaskedTB
+            // 
+            this.idNumberMaskedTB.Location = new System.Drawing.Point(240, 113);
+            this.idNumberMaskedTB.Mask = "0 0 0 0 0 0 0 0";
+            this.idNumberMaskedTB.Name = "idNumberMaskedTB";
+            this.idNumberMaskedTB.PromptChar = '0';
+            this.idNumberMaskedTB.RejectInputOnFirstFailure = true;
+            this.idNumberMaskedTB.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.idNumberMaskedTB.Size = new System.Drawing.Size(77, 20);
+            this.idNumberMaskedTB.TabIndex = 13;
+            // 
             // motherFirstNameTB
             // 
             this.motherFirstNameTB.Location = new System.Drawing.Point(276, 49);
@@ -128,6 +150,7 @@
             this.genderCB.Name = "genderCB";
             this.genderCB.Size = new System.Drawing.Size(76, 21);
             this.genderCB.TabIndex = 17;
+            this.genderCB.Text = "ذكر";
             // 
             // recivingDateDTP
             // 
@@ -376,28 +399,6 @@
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "الاسم:";
-            // 
-            // idNumberMaskedTB
-            // 
-            this.idNumberMaskedTB.Location = new System.Drawing.Point(240, 113);
-            this.idNumberMaskedTB.Mask = "0 0 0 0 0 0 0 0";
-            this.idNumberMaskedTB.Name = "idNumberMaskedTB";
-            this.idNumberMaskedTB.PromptChar = '0';
-            this.idNumberMaskedTB.RejectInputOnFirstFailure = true;
-            this.idNumberMaskedTB.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.idNumberMaskedTB.Size = new System.Drawing.Size(77, 20);
-            this.idNumberMaskedTB.TabIndex = 13;
-            // 
-            // nationalNumberMaskedTB
-            // 
-            this.nationalNumberMaskedTB.Location = new System.Drawing.Point(398, 113);
-            this.nationalNumberMaskedTB.Mask = "0 0 0 0 0 0 0 0 0 0 0";
-            this.nationalNumberMaskedTB.Name = "nationalNumberMaskedTB";
-            this.nationalNumberMaskedTB.PromptChar = '0';
-            this.nationalNumberMaskedTB.RejectInputOnFirstFailure = true;
-            this.nationalNumberMaskedTB.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.nationalNumberMaskedTB.Size = new System.Drawing.Size(104, 20);
-            this.nationalNumberMaskedTB.TabIndex = 12;
             // 
             // PersonalID
             // 

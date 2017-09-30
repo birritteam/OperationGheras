@@ -1,0 +1,934 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="employment_officeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Certificate">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Certificate_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="University_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Graduation" Type="date" />
+          <Property Name="Study_year" Type="varchar" MaxLength="50" />
+          <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="company">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Compnay_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Field_Of_Work" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Company_Place" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="phone" Type="varchar" MaxLength="50" />
+          <Property Name="mobile" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="courses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Course_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Course_Date" Type="date" Nullable="false" />
+          <Property Name="Num_Of_Days" Type="int" Nullable="false" />
+          <Property Name="Train_Hours" Type="int" Nullable="false" />
+          <Property Name="type" Type="int" Nullable="false" />
+          <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hired">
+          <Key>
+            <PropertyRef Name="Company_ID" />
+            <PropertyRef Name="User_ID" />
+            <PropertyRef Name="Vacancy_ID" />
+          </Key>
+          <Property Name="Company_ID" Type="int" Nullable="false" />
+          <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Vacancy_ID" Type="int" Nullable="false" />
+          <Property Name="Hire_date" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="notes" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Job_seeker">
+          <Key>
+            <PropertyRef Name="National_ID" />
+          </Key>
+          <Property Name="First_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Second_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Father_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mother_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Place_Of_Birth" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="National_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PersonalCard_number" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender" Type="int" Nullable="false" />
+          <Property Name="Face_Color" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="eyes_Color" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Current_address" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Previous_address" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="special_Mark" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Date_Of_Release" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Military_service" Type="varchar" MaxLength="50" />
+          <Property Name="Social_status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Driving_license" Type="int" Nullable="false" />
+          <Property Name="Has_car" Type="int" Nullable="false" />
+          <Property Name="Smoking" Type="int" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+          <Property Name="mobile" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Handicap" Type="varchar" MaxLength="50" />
+          <Property Name="Extra_Information" Type="varchar" MaxLength="50" />
+          <Property Name="municipality" Type="varchar" MaxLength="50" />
+          <Property Name="registration" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Language" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="language_level" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="References">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Person_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Place_of_Work" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Position" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phones" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="type" Type="int" Nullable="false" />
+          <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Opinion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Skills">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="User_Job">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Last_Salary" Type="int" />
+          <Property Name="Excpected_Salary" Type="int" />
+          <Property Name="Job" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="time" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vacancy">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company_ID" Type="int" Nullable="false" />
+          <Property Name="Job_require" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="num_vacancies" Type="int" Nullable="false" />
+          <Property Name="Job_description" Type="text" Nullable="false" />
+          <Property Name="Experience_required" Type="text" Nullable="false" />
+          <Property Name="gender" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Experience_year" Type="int" Nullable="false" />
+          <Property Name="Nature_work_time" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Work_place" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="salary" Type="money" Nullable="false" />
+          <Property Name="Age_from" Type="int" Nullable="false" />
+          <Property Name="Age_to" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Work_For">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Company_plcae" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Field_Of_Work" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Job_Title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Hire_date" Type="date" Nullable="false" />
+          <Property Name="Quti_date" Type="date" />
+          <Property Name="Reason" Type="varchar" MaxLength="50" />
+          <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Certificate_Job_seeker">
+          <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
+          <End Role="Certificate" Type="Self.Certificate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job_seeker">
+              <PropertyRef Name="National_ID" />
+            </Principal>
+            <Dependent Role="Certificate">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_courses_Job_seeker">
+          <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
+          <End Role="courses" Type="Self.courses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job_seeker">
+              <PropertyRef Name="National_ID" />
+            </Principal>
+            <Dependent Role="courses">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hired_company">
+          <End Role="company" Type="Self.company" Multiplicity="1" />
+          <End Role="Hired" Type="Self.Hired" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Hired">
+              <PropertyRef Name="Company_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hired_Job_seeker">
+          <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
+          <End Role="Hired" Type="Self.Hired" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job_seeker">
+              <PropertyRef Name="National_ID" />
+            </Principal>
+            <Dependent Role="Hired">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hired_Vacancy">
+          <End Role="Vacancy" Type="Self.Vacancy" Multiplicity="1" />
+          <End Role="Hired" Type="Self.Hired" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vacancy">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Hired">
+              <PropertyRef Name="Vacancy_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Language_Userss">
+          <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
+          <End Role="Language" Type="Self.Language" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job_seeker">
+              <PropertyRef Name="National_ID" />
+            </Principal>
+            <Dependent Role="Language">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_References_Userss">
+          <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
+          <End Role="References" Type="Self.References" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job_seeker">
+              <PropertyRef Name="National_ID" />
+            </Principal>
+            <Dependent Role="References">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Skills_Userss">
+          <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
+          <End Role="Skills" Type="Self.Skills" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job_seeker">
+              <PropertyRef Name="National_ID" />
+            </Principal>
+            <Dependent Role="Skills">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Job_Userss">
+          <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
+          <End Role="User_Job" Type="Self.User_Job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job_seeker">
+              <PropertyRef Name="National_ID" />
+            </Principal>
+            <Dependent Role="User_Job">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vacancy_company">
+          <End Role="company" Type="Self.company" Multiplicity="1" />
+          <End Role="Vacancy" Type="Self.Vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Vacancy">
+              <PropertyRef Name="Company_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Work_For_Userss">
+          <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
+          <End Role="Work_For" Type="Self.Work_For" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job_seeker">
+              <PropertyRef Name="National_ID" />
+            </Principal>
+            <Dependent Role="Work_For">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="employment_officeModelStoreContainer">
+          <EntitySet Name="Certificate" EntityType="Self.Certificate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="company" EntityType="Self.company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="courses" EntityType="Self.courses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hired" EntityType="Self.Hired" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Job_seeker" EntityType="Self.Job_seeker" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Language" EntityType="Self.Language" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="References" EntityType="Self.References" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Skills" EntityType="Self.Skills" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Job" EntityType="Self.User_Job" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vacancy" EntityType="Self.Vacancy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Work_For" EntityType="Self.Work_For" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Certificate_Job_seeker" Association="Self.FK_Certificate_Job_seeker">
+            <End Role="Job_seeker" EntitySet="Job_seeker" />
+            <End Role="Certificate" EntitySet="Certificate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_courses_Job_seeker" Association="Self.FK_courses_Job_seeker">
+            <End Role="Job_seeker" EntitySet="Job_seeker" />
+            <End Role="courses" EntitySet="courses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hired_company" Association="Self.FK_Hired_company">
+            <End Role="company" EntitySet="company" />
+            <End Role="Hired" EntitySet="Hired" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hired_Job_seeker" Association="Self.FK_Hired_Job_seeker">
+            <End Role="Job_seeker" EntitySet="Job_seeker" />
+            <End Role="Hired" EntitySet="Hired" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hired_Vacancy" Association="Self.FK_Hired_Vacancy">
+            <End Role="Vacancy" EntitySet="Vacancy" />
+            <End Role="Hired" EntitySet="Hired" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Language_Userss" Association="Self.FK_Language_Userss">
+            <End Role="Job_seeker" EntitySet="Job_seeker" />
+            <End Role="Language" EntitySet="Language" />
+          </AssociationSet>
+          <AssociationSet Name="FK_References_Userss" Association="Self.FK_References_Userss">
+            <End Role="Job_seeker" EntitySet="Job_seeker" />
+            <End Role="References" EntitySet="References" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Skills_Userss" Association="Self.FK_Skills_Userss">
+            <End Role="Job_seeker" EntitySet="Job_seeker" />
+            <End Role="Skills" EntitySet="Skills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Job_Userss" Association="Self.FK_User_Job_Userss">
+            <End Role="Job_seeker" EntitySet="Job_seeker" />
+            <End Role="User_Job" EntitySet="User_Job" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vacancy_company" Association="Self.FK_Vacancy_company">
+            <End Role="company" EntitySet="company" />
+            <End Role="Vacancy" EntitySet="Vacancy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Work_For_Userss" Association="Self.FK_Work_For_Userss">
+            <End Role="Job_seeker" EntitySet="Job_seeker" />
+            <End Role="Work_For" EntitySet="Work_For" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="employment_officeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Certificate">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Certificate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="University_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Graduation" Type="DateTime" Precision="0" />
+          <Property Name="Study_year" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Job_seeker" Relationship="Self.FK_Certificate_Job_seeker" FromRole="Certificate" ToRole="Job_seeker" />
+        </EntityType>
+        <EntityType Name="company">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Compnay_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Field_Of_Work" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Company_Place" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Hired" Relationship="Self.FK_Hired_company" FromRole="company" ToRole="Hired" />
+          <NavigationProperty Name="Vacancy" Relationship="Self.FK_Vacancy_company" FromRole="company" ToRole="Vacancy" />
+        </EntityType>
+        <EntityType Name="courses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Course_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Course_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Num_Of_Days" Type="Int32" Nullable="false" />
+          <Property Name="Train_Hours" Type="Int32" Nullable="false" />
+          <Property Name="type" Type="Int32" Nullable="false" />
+          <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Job_seeker" Relationship="Self.FK_courses_Job_seeker" FromRole="courses" ToRole="Job_seeker" />
+        </EntityType>
+        <EntityType Name="Hired">
+          <Key>
+            <PropertyRef Name="Company_ID" />
+            <PropertyRef Name="User_ID" />
+            <PropertyRef Name="Vacancy_ID" />
+          </Key>
+          <Property Name="Company_ID" Type="Int32" Nullable="false" />
+          <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Vacancy_ID" Type="Int32" Nullable="false" />
+          <Property Name="Hire_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="notes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="company" Relationship="Self.FK_Hired_company" FromRole="Hired" ToRole="company" />
+          <NavigationProperty Name="Job_seeker" Relationship="Self.FK_Hired_Job_seeker" FromRole="Hired" ToRole="Job_seeker" />
+          <NavigationProperty Name="Vacancy" Relationship="Self.FK_Hired_Vacancy" FromRole="Hired" ToRole="Vacancy" />
+        </EntityType>
+        <EntityType Name="Job_seeker">
+          <Key>
+            <PropertyRef Name="National_ID" />
+          </Key>
+          <Property Name="First_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Second_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Father_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Mother_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Place_Of_Birth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="National_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PersonalCard_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Gender" Type="Int32" Nullable="false" />
+          <Property Name="Face_Color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="eyes_Color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Current_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Previous_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="special_Mark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Date_Of_Release" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Military_service" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Social_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Driving_license" Type="Int32" Nullable="false" />
+          <Property Name="Has_car" Type="Int32" Nullable="false" />
+          <Property Name="Smoking" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Handicap" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Extra_Information" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="municipality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="registration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Certificate" Relationship="Self.FK_Certificate_Job_seeker" FromRole="Job_seeker" ToRole="Certificate" />
+          <NavigationProperty Name="courses" Relationship="Self.FK_courses_Job_seeker" FromRole="Job_seeker" ToRole="courses" />
+          <NavigationProperty Name="Hired" Relationship="Self.FK_Hired_Job_seeker" FromRole="Job_seeker" ToRole="Hired" />
+          <NavigationProperty Name="Language" Relationship="Self.FK_Language_Userss" FromRole="Job_seeker" ToRole="Language" />
+          <NavigationProperty Name="References" Relationship="Self.FK_References_Userss" FromRole="Job_seeker" ToRole="References" />
+          <NavigationProperty Name="Skills" Relationship="Self.FK_Skills_Userss" FromRole="Job_seeker" ToRole="Skills" />
+          <NavigationProperty Name="User_Job" Relationship="Self.FK_User_Job_Userss" FromRole="Job_seeker" ToRole="User_Job" />
+          <NavigationProperty Name="Work_For" Relationship="Self.FK_Work_For_Userss" FromRole="Job_seeker" ToRole="Work_For" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Language1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="language_level" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Job_seeker" Relationship="Self.FK_Language_Userss" FromRole="Language" ToRole="Job_seeker" />
+        </EntityType>
+        <EntityType Name="References">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Person_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Place_of_Work" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phones" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="type" Type="Int32" Nullable="false" />
+          <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Opinion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Job_seeker" Relationship="Self.FK_References_Userss" FromRole="References" ToRole="Job_seeker" />
+        </EntityType>
+        <EntityType Name="Skills">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Job_seeker" Relationship="Self.FK_Skills_Userss" FromRole="Skills" ToRole="Job_seeker" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User_Job">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Last_Salary" Type="Int32" />
+          <Property Name="Excpected_Salary" Type="Int32" />
+          <Property Name="Job" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Job_seeker" Relationship="Self.FK_User_Job_Userss" FromRole="User_Job" ToRole="Job_seeker" />
+        </EntityType>
+        <EntityType Name="Vacancy">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company_ID" Type="Int32" Nullable="false" />
+          <Property Name="Job_require" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="num_vacancies" Type="Int32" Nullable="false" />
+          <Property Name="Job_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Experience_required" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Experience_year" Type="Int32" Nullable="false" />
+          <Property Name="Nature_work_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Work_place" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="salary" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Age_from" Type="Int32" Nullable="false" />
+          <Property Name="Age_to" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="company" Relationship="Self.FK_Vacancy_company" FromRole="Vacancy" ToRole="company" />
+          <NavigationProperty Name="Hired" Relationship="Self.FK_Hired_Vacancy" FromRole="Vacancy" ToRole="Hired" />
+        </EntityType>
+        <EntityType Name="Work_For">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Company_plcae" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Field_Of_Work" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Job_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Hire_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Quti_date" Type="DateTime" Precision="0" />
+          <Property Name="Reason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Job_seeker" Relationship="Self.FK_Work_For_Userss" FromRole="Work_For" ToRole="Job_seeker" />
+        </EntityType>
+        <Association Name="FK_Certificate_Job_seeker">
+          <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
+          <End Role="Certificate" Type="Self.Certificate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job_seeker">
+              <PropertyRef Name="National_ID" />
+            </Principal>
+            <Dependent Role="Certificate">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hired_company">
+          <End Role="company" Type="Self.company" Multiplicity="1" />
+          <End Role="Hired" Type="Self.Hired" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Hired">
+              <PropertyRef Name="Company_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vacancy_company">
+          <End Role="company" Type="Self.company" Multiplicity="1" />
+          <End Role="Vacancy" Type="Self.Vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Vacancy">
+              <PropertyRef Name="Company_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_courses_Job_seeker">
+          <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
+          <End Role="courses" Type="Self.courses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job_seeker">
+              <PropertyRef Name="National_ID" />
+            </Principal>
+            <Dependent Role="courses">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hired_Job_seeker">
+          <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
+          <End Role="Hired" Type="Self.Hired" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job_seeker">
+              <PropertyRef Name="National_ID" />
+            </Principal>
+            <Dependent Role="Hired">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hired_Vacancy">
+          <End Role="Vacancy" Type="Self.Vacancy" Multiplicity="1" />
+          <End Role="Hired" Type="Self.Hired" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vacancy">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Hired">
+              <PropertyRef Name="Vacancy_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Language_Userss">
+          <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
+          <End Role="Language" Type="Self.Language" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job_seeker">
+              <PropertyRef Name="National_ID" />
+            </Principal>
+            <Dependent Role="Language">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_References_Userss">
+          <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
+          <End Role="References" Type="Self.References" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job_seeker">
+              <PropertyRef Name="National_ID" />
+            </Principal>
+            <Dependent Role="References">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Skills_Userss">
+          <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
+          <End Role="Skills" Type="Self.Skills" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job_seeker">
+              <PropertyRef Name="National_ID" />
+            </Principal>
+            <Dependent Role="Skills">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Job_Userss">
+          <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
+          <End Role="User_Job" Type="Self.User_Job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job_seeker">
+              <PropertyRef Name="National_ID" />
+            </Principal>
+            <Dependent Role="User_Job">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Work_For_Userss">
+          <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
+          <End Role="Work_For" Type="Self.Work_For" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job_seeker">
+              <PropertyRef Name="National_ID" />
+            </Principal>
+            <Dependent Role="Work_For">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="employment_officeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Certificate" EntityType="Self.Certificate" />
+          <EntitySet Name="company" EntityType="Self.company" />
+          <EntitySet Name="courses" EntityType="Self.courses" />
+          <EntitySet Name="Hired" EntityType="Self.Hired" />
+          <EntitySet Name="Job_seeker" EntityType="Self.Job_seeker" />
+          <EntitySet Name="Language" EntityType="Self.Language" />
+          <EntitySet Name="References" EntityType="Self.References" />
+          <EntitySet Name="Skills" EntityType="Self.Skills" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="User_Job" EntityType="Self.User_Job" />
+          <EntitySet Name="Vacancy" EntityType="Self.Vacancy" />
+          <EntitySet Name="Work_For" EntityType="Self.Work_For" />
+          <AssociationSet Name="FK_Certificate_Job_seeker" Association="Self.FK_Certificate_Job_seeker">
+            <End Role="Job_seeker" EntitySet="Job_seeker" />
+            <End Role="Certificate" EntitySet="Certificate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hired_company" Association="Self.FK_Hired_company">
+            <End Role="company" EntitySet="company" />
+            <End Role="Hired" EntitySet="Hired" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vacancy_company" Association="Self.FK_Vacancy_company">
+            <End Role="company" EntitySet="company" />
+            <End Role="Vacancy" EntitySet="Vacancy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_courses_Job_seeker" Association="Self.FK_courses_Job_seeker">
+            <End Role="Job_seeker" EntitySet="Job_seeker" />
+            <End Role="courses" EntitySet="courses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hired_Job_seeker" Association="Self.FK_Hired_Job_seeker">
+            <End Role="Job_seeker" EntitySet="Job_seeker" />
+            <End Role="Hired" EntitySet="Hired" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hired_Vacancy" Association="Self.FK_Hired_Vacancy">
+            <End Role="Vacancy" EntitySet="Vacancy" />
+            <End Role="Hired" EntitySet="Hired" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Language_Userss" Association="Self.FK_Language_Userss">
+            <End Role="Job_seeker" EntitySet="Job_seeker" />
+            <End Role="Language" EntitySet="Language" />
+          </AssociationSet>
+          <AssociationSet Name="FK_References_Userss" Association="Self.FK_References_Userss">
+            <End Role="Job_seeker" EntitySet="Job_seeker" />
+            <End Role="References" EntitySet="References" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Skills_Userss" Association="Self.FK_Skills_Userss">
+            <End Role="Job_seeker" EntitySet="Job_seeker" />
+            <End Role="Skills" EntitySet="Skills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Job_Userss" Association="Self.FK_User_Job_Userss">
+            <End Role="Job_seeker" EntitySet="Job_seeker" />
+            <End Role="User_Job" EntitySet="User_Job" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Work_For_Userss" Association="Self.FK_Work_For_Userss">
+            <End Role="Job_seeker" EntitySet="Job_seeker" />
+            <End Role="Work_For" EntitySet="Work_For" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="employment_officeModelStoreContainer" CdmEntityContainer="employment_officeEntities">
+          <EntitySetMapping Name="Certificate">
+            <EntityTypeMapping TypeName="employment_officeModel.Certificate">
+              <MappingFragment StoreEntitySet="Certificate">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Certificate_name" ColumnName="Certificate_name" />
+                <ScalarProperty Name="University_name" ColumnName="University_name" />
+                <ScalarProperty Name="Graduation" ColumnName="Graduation" />
+                <ScalarProperty Name="Study_year" ColumnName="Study_year" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="company">
+            <EntityTypeMapping TypeName="employment_officeModel.company">
+              <MappingFragment StoreEntitySet="company">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Compnay_name" ColumnName="Compnay_name" />
+                <ScalarProperty Name="Field_Of_Work" ColumnName="Field_Of_Work" />
+                <ScalarProperty Name="Company_Place" ColumnName="Company_Place" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="courses">
+            <EntityTypeMapping TypeName="employment_officeModel.courses">
+              <MappingFragment StoreEntitySet="courses">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Course_Name" ColumnName="Course_Name" />
+                <ScalarProperty Name="Course_Date" ColumnName="Course_Date" />
+                <ScalarProperty Name="Num_Of_Days" ColumnName="Num_Of_Days" />
+                <ScalarProperty Name="Train_Hours" ColumnName="Train_Hours" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hired">
+            <EntityTypeMapping TypeName="employment_officeModel.Hired">
+              <MappingFragment StoreEntitySet="Hired">
+                <ScalarProperty Name="Company_ID" ColumnName="Company_ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Vacancy_ID" ColumnName="Vacancy_ID" />
+                <ScalarProperty Name="Hire_date" ColumnName="Hire_date" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Job_seeker">
+            <EntityTypeMapping TypeName="employment_officeModel.Job_seeker">
+              <MappingFragment StoreEntitySet="Job_seeker">
+                <ScalarProperty Name="First_name" ColumnName="First_name" />
+                <ScalarProperty Name="Second_name" ColumnName="Second_name" />
+                <ScalarProperty Name="Father_name" ColumnName="Father_name" />
+                <ScalarProperty Name="Mother_name" ColumnName="Mother_name" />
+                <ScalarProperty Name="Place_Of_Birth" ColumnName="Place_Of_Birth" />
+                <ScalarProperty Name="National_ID" ColumnName="National_ID" />
+                <ScalarProperty Name="PersonalCard_number" ColumnName="PersonalCard_number" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Face_Color" ColumnName="Face_Color" />
+                <ScalarProperty Name="eyes_Color" ColumnName="eyes_Color" />
+                <ScalarProperty Name="Current_address" ColumnName="Current_address" />
+                <ScalarProperty Name="Previous_address" ColumnName="Previous_address" />
+                <ScalarProperty Name="special_Mark" ColumnName="special_Mark" />
+                <ScalarProperty Name="Date_Of_Release" ColumnName="Date_Of_Release" />
+                <ScalarProperty Name="Military_service" ColumnName="Military_service" />
+                <ScalarProperty Name="Social_status" ColumnName="Social_status" />
+                <ScalarProperty Name="Driving_license" ColumnName="Driving_license" />
+                <ScalarProperty Name="Has_car" ColumnName="Has_car" />
+                <ScalarProperty Name="Smoking" ColumnName="Smoking" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="Handicap" ColumnName="Handicap" />
+                <ScalarProperty Name="Extra_Information" ColumnName="Extra_Information" />
+                <ScalarProperty Name="municipality" ColumnName="municipality" />
+                <ScalarProperty Name="registration" ColumnName="registration" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Language">
+            <EntityTypeMapping TypeName="employment_officeModel.Language">
+              <MappingFragment StoreEntitySet="Language">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Language1" ColumnName="Language" />
+                <ScalarProperty Name="language_level" ColumnName="language_level" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="References">
+            <EntityTypeMapping TypeName="employment_officeModel.References">
+              <MappingFragment StoreEntitySet="References">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Person_Name" ColumnName="Person_Name" />
+                <ScalarProperty Name="Place_of_Work" ColumnName="Place_of_Work" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Phones" ColumnName="Phones" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Opinion" ColumnName="Opinion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Skills">
+            <EntityTypeMapping TypeName="employment_officeModel.Skills">
+              <MappingFragment StoreEntitySet="Skills">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="employment_officeModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Job">
+            <EntityTypeMapping TypeName="employment_officeModel.User_Job">
+              <MappingFragment StoreEntitySet="User_Job">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Last_Salary" ColumnName="Last_Salary" />
+                <ScalarProperty Name="Excpected_Salary" ColumnName="Excpected_Salary" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vacancy">
+            <EntityTypeMapping TypeName="employment_officeModel.Vacancy">
+              <MappingFragment StoreEntitySet="Vacancy">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Company_ID" ColumnName="Company_ID" />
+                <ScalarProperty Name="Job_require" ColumnName="Job_require" />
+                <ScalarProperty Name="num_vacancies" ColumnName="num_vacancies" />
+                <ScalarProperty Name="Job_description" ColumnName="Job_description" />
+                <ScalarProperty Name="Experience_required" ColumnName="Experience_required" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="Experience_year" ColumnName="Experience_year" />
+                <ScalarProperty Name="Nature_work_time" ColumnName="Nature_work_time" />
+                <ScalarProperty Name="Work_place" ColumnName="Work_place" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="Age_from" ColumnName="Age_from" />
+                <ScalarProperty Name="Age_to" ColumnName="Age_to" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Work_For">
+            <EntityTypeMapping TypeName="employment_officeModel.Work_For">
+              <MappingFragment StoreEntitySet="Work_For">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Company_Name" ColumnName="Company_Name" />
+                <ScalarProperty Name="Company_plcae" ColumnName="Company_plcae" />
+                <ScalarProperty Name="Field_Of_Work" ColumnName="Field_Of_Work" />
+                <ScalarProperty Name="Job_Title" ColumnName="Job_Title" />
+                <ScalarProperty Name="Hire_date" ColumnName="Hire_date" />
+                <ScalarProperty Name="Quti_date" ColumnName="Quti_date" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

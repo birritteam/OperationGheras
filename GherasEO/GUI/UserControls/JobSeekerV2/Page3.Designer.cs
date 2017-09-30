@@ -75,8 +75,8 @@
 
         #endregion
 
-        private Skills skills11;
-        private EmergencyAndReferences emergencyAndReferences11;
-        private DesiredJob desiredJob11;
+        internal Skills skills11;
+        internal EmergencyAndReferences emergencyAndReferences11;
+        internal DesiredJob desiredJob11;
     }
 }

@@ -52,6 +52,6 @@
 
         #endregion
 
-        private EducationAndExpertise educationAndExpertise11;
+        internal EducationAndExpertise educationAndExpertise11;
     }
 }

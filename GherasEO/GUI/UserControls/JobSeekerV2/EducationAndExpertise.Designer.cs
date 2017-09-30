@@ -329,7 +329,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn certificateDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn certifcateIssuer;
         private System.Windows.Forms.DataGridViewTextBoxColumn certificate;
-        internal System.Windows.Forms.DataGridView educationDataGridView;
         private System.Windows.Forms.DataGridViewComboBoxColumn academicYear;
         private System.Windows.Forms.DataGridViewTextBoxColumn reasonsOfLeaving;
         private System.Windows.Forms.DataGridViewTextBoxColumn endDate;
@@ -355,5 +354,6 @@
         internal System.Windows.Forms.GroupBox traineeCoursesGroupBox;
         internal System.Windows.Forms.GroupBox educationGroupBox;
         internal System.Windows.Forms.GroupBox expertiseGroupBox;
+        internal System.Windows.Forms.DataGridView educationDataGridView;
     }
 }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e8aa348e575f43d9ab8344c26a3d8b8a" Name="Diagram1">
+        <EntityTypeShape EntityType="employment_officeModel.Certificate" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="employment_officeModel.company" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="employment_officeModel.courses" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="employment_officeModel.Hired" Width="1.5" PointX="6" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="employment_officeModel.Job_seeker" Width="1.5" PointX="0.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="employment_officeModel.Language" Width="1.5" PointX="3" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="employment_officeModel.References" Width="1.5" PointX="3" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="employment_officeModel.Skills" Width="1.5" PointX="3" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="employment_officeModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="employment_officeModel.User_Job" Width="1.5" PointX="3" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="employment_officeModel.Vacancy" Width="1.5" PointX="3.75" PointY="30" IsExpanded="true" />
+        <EntityTypeShape EntityType="employment_officeModel.Work_For" Width="1.5" PointX="3" PointY="26.375" IsExpanded="true" />
+        <AssociationConnector Association="employment_officeModel.FK_Certificate_Job_seeker" ManuallyRouted="false" />
+        <AssociationConnector Association="employment_officeModel.FK_Hired_company" ManuallyRouted="false" />
+        <AssociationConnector Association="employment_officeModel.FK_Vacancy_company" ManuallyRouted="false" />
+        <AssociationConnector Association="employment_officeModel.FK_courses_Job_seeker" ManuallyRouted="false" />
+        <AssociationConnector Association="employment_officeModel.FK_Hired_Job_seeker" ManuallyRouted="false" />
+        <AssociationConnector Association="employment_officeModel.FK_Hired_Vacancy" ManuallyRouted="false" />
+        <AssociationConnector Association="employment_officeModel.FK_Language_Userss" ManuallyRouted="false" />
+        <AssociationConnector Association="employment_officeModel.FK_References_Userss" ManuallyRouted="false" />
+        <AssociationConnector Association="employment_officeModel.FK_Skills_Userss" ManuallyRouted="false" />
+        <AssociationConnector Association="employment_officeModel.FK_User_Job_Userss" ManuallyRouted="false" />
+        <AssociationConnector Association="employment_officeModel.FK_Work_For_Userss" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

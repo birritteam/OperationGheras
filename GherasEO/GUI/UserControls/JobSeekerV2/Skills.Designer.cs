@@ -30,7 +30,7 @@
         {
             this.skillsGroupBox = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.languagesGridView1 = new System.Windows.Forms.DataGridView();
             this.language = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.level = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.otherSkillsGroupBox = new System.Windows.Forms.GroupBox();
@@ -43,7 +43,7 @@
             this.computerSkillsCheckList = new System.Windows.Forms.CheckedListBox();
             this.skillsGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.languagesGridView1)).BeginInit();
             this.otherSkillsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.otherSkillsDataGridView)).BeginInit();
             this.computerSkillsGroupBox.SuspendLayout();
@@ -66,7 +66,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.languagesGridView1);
             this.groupBox1.Location = new System.Drawing.Point(3, 15);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(335, 95);
@@ -74,19 +74,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "لغات:";
             // 
-            // dataGridView1
+            // languagesGridView1
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.languagesGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.languagesGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.languagesGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.languagesGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.language,
             this.level});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 16);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(329, 76);
-            this.dataGridView1.TabIndex = 5;
+            this.languagesGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.languagesGridView1.Location = new System.Drawing.Point(3, 16);
+            this.languagesGridView1.Name = "languagesGridView1";
+            this.languagesGridView1.Size = new System.Drawing.Size(329, 76);
+            this.languagesGridView1.TabIndex = 5;
             // 
             // language
             // 
@@ -170,6 +170,7 @@
             // computerSkillsCheckList
             // 
             this.computerSkillsCheckList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.computerSkillsCheckList.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.computerSkillsCheckList.FormattingEnabled = true;
             this.computerSkillsCheckList.Items.AddRange(new object[] {
             "Photoshop",
@@ -194,7 +195,7 @@
             this.Size = new System.Drawing.Size(645, 221);
             this.skillsGroupBox.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.languagesGridView1)).EndInit();
             this.otherSkillsGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.otherSkillsDataGridView)).EndInit();
             this.computerSkillsGroupBox.ResumeLayout(false);
@@ -207,7 +208,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox skillsGroupBox;
-        internal System.Windows.Forms.DataGridView dataGridView1;
+        internal System.Windows.Forms.DataGridView languagesGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn language;
         private System.Windows.Forms.DataGridViewTextBoxColumn level;
         internal System.Windows.Forms.DataGridView otherSkillsDataGridView;
