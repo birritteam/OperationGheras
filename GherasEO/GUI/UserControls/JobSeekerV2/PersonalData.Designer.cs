@@ -152,7 +152,7 @@
             // maskedTextBox1
             // 
             this.maskedTextBox1.Location = new System.Drawing.Point(20, 27);
-            this.maskedTextBox1.Mask = "0900-000-0000";
+            this.maskedTextBox1.Mask = "0900-000-000";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.PromptChar = '0';
             this.maskedTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -346,6 +346,7 @@
             // 
             // exemptionReasonTB
             // 
+            this.exemptionReasonTB.Enabled = false;
             this.exemptionReasonTB.Location = new System.Drawing.Point(6, 66);
             this.exemptionReasonTB.Name = "exemptionReasonTB";
             this.exemptionReasonTB.Size = new System.Drawing.Size(325, 20);
@@ -354,6 +355,7 @@
             // 
             // delayReasonTB
             // 
+            this.delayReasonTB.Enabled = false;
             this.delayReasonTB.Location = new System.Drawing.Point(6, 38);
             this.delayReasonTB.Name = "delayReasonTB";
             this.delayReasonTB.Size = new System.Drawing.Size(325, 20);
@@ -369,6 +371,7 @@
             this.exemptRadioButton.TabIndex = 2;
             this.exemptRadioButton.Text = "معفى بسبب:";
             this.exemptRadioButton.UseVisualStyleBackColor = true;
+            this.exemptRadioButton.CheckedChanged += new System.EventHandler(this.exemptRadioButton_CheckedChanged);
             // 
             // delayedRadioButton
             // 
@@ -379,6 +382,7 @@
             this.delayedRadioButton.TabIndex = 1;
             this.delayedRadioButton.Text = "مؤجل بسبب:";
             this.delayedRadioButton.UseVisualStyleBackColor = true;
+            this.delayedRadioButton.CheckedChanged += new System.EventHandler(this.delayedRadioButton_CheckedChanged);
             // 
             // finishedRadioButton
             // 
@@ -391,6 +395,7 @@
             this.finishedRadioButton.TabStop = true;
             this.finishedRadioButton.Text = "منتهية";
             this.finishedRadioButton.UseVisualStyleBackColor = true;
+            this.finishedRadioButton.CheckedChanged += new System.EventHandler(this.finishedRadioButton_CheckedChanged);
             // 
             // PersonalData
             // 

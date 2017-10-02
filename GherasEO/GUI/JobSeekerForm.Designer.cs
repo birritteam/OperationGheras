@@ -35,6 +35,9 @@
             this.nextButton = new System.Windows.Forms.Button();
             this.previousButton = new System.Windows.Forms.Button();
             this.currentPageGroupBox = new System.Windows.Forms.GroupBox();
+            this.page3 = new GherasEO.GUI.UserControls.Page3();
+            this.page2 = new GherasEO.GUI.UserControls.Page2();
+            this.page1 = new GherasEO.GUI.UserControls.Page1();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
@@ -43,9 +46,6 @@
             this.SearchTabPage = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.currentUserLabel = new System.Windows.Forms.Label();
-            this.page3 = new GherasEO.GUI.UserControls.Page3();
-            this.page2 = new GherasEO.GUI.UserControls.Page2();
-            this.page1 = new GherasEO.GUI.UserControls.Page1();
             this.tabControl1.SuspendLayout();
             this.addTabPage.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -135,6 +135,30 @@
             this.currentPageGroupBox.TabStop = false;
             this.currentPageGroupBox.Text = "الصفحة الأولى (1 من 3)";
             // 
+            // page3
+            // 
+            this.page3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.page3.Location = new System.Drawing.Point(3, 19);
+            this.page3.Name = "page3";
+            this.page3.Size = new System.Drawing.Size(650, 530);
+            this.page3.TabIndex = 2;
+            this.page3.Visible = false;
+            // 
+            // page2
+            // 
+            this.page2.Location = new System.Drawing.Point(8, 19);
+            this.page2.Name = "page2";
+            this.page2.Size = new System.Drawing.Size(645, 540);
+            this.page2.TabIndex = 1;
+            this.page2.Visible = false;
+            // 
+            // page1
+            // 
+            this.page1.Location = new System.Drawing.Point(13, 19);
+            this.page1.Name = "page1";
+            this.page1.Size = new System.Drawing.Size(645, 544);
+            this.page1.TabIndex = 0;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
@@ -213,30 +237,6 @@
             this.currentUserLabel.Size = new System.Drawing.Size(192, 23);
             this.currentUserLabel.TabIndex = 2;
             this.currentUserLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // page3
-            // 
-            this.page3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.page3.Location = new System.Drawing.Point(3, 19);
-            this.page3.Name = "page3";
-            this.page3.Size = new System.Drawing.Size(650, 530);
-            this.page3.TabIndex = 2;
-            this.page3.Visible = false;
-            // 
-            // page2
-            // 
-            this.page2.Location = new System.Drawing.Point(8, 19);
-            this.page2.Name = "page2";
-            this.page2.Size = new System.Drawing.Size(645, 540);
-            this.page2.TabIndex = 1;
-            this.page2.Visible = false;
-            // 
-            // page1
-            // 
-            this.page1.Location = new System.Drawing.Point(13, 19);
-            this.page1.Name = "page1";
-            this.page1.Size = new System.Drawing.Size(645, 544);
-            this.page1.TabIndex = 0;
             // 
             // JobSeekerForm
             // 

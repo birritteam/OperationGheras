@@ -28,11 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.certificateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.certifcateIssuer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.certificate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.educationDataGridView = new System.Windows.Forms.DataGridView();
-            this.academicYear = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.reasonsOfLeaving = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.startDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +53,10 @@
             this.traineeCoursesGroupBox = new System.Windows.Forms.GroupBox();
             this.educationGroupBox = new System.Windows.Forms.GroupBox();
             this.expertiseGroupBox = new System.Windows.Forms.GroupBox();
+            this.certificate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.certifcateIssuer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.academicYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.certificateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.educationDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.expertiseDataGridView)).BeginInit();
             this.trainerCoursesGroupBox.SuspendLayout();
@@ -66,21 +66,6 @@
             this.educationGroupBox.SuspendLayout();
             this.expertiseGroupBox.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // certificateDate
-            // 
-            this.certificateDate.HeaderText = "تاريخ المنح";
-            this.certificateDate.Name = "certificateDate";
-            // 
-            // certifcateIssuer
-            // 
-            this.certifcateIssuer.HeaderText = "الجهة المانحة";
-            this.certifcateIssuer.Name = "certifcateIssuer";
-            // 
-            // certificate
-            // 
-            this.certificate.HeaderText = "الشهادة";
-            this.certificate.Name = "certificate";
             // 
             // educationDataGridView
             // 
@@ -95,23 +80,9 @@
             this.educationDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.educationDataGridView.Location = new System.Drawing.Point(3, 16);
             this.educationDataGridView.Name = "educationDataGridView";
+            this.educationDataGridView.RowTemplate.Height = 30;
             this.educationDataGridView.Size = new System.Drawing.Size(639, 106);
             this.educationDataGridView.TabIndex = 1;
-            // 
-            // academicYear
-            // 
-            this.academicYear.HeaderText = "السنة الدراسية";
-            this.academicYear.Items.AddRange(new object[] {
-            "أولى",
-            "ثانية",
-            "ثالثة",
-            "رابعة",
-            "خامسة",
-            "سادسة",
-            "متخرج"});
-            this.academicYear.Name = "academicYear";
-            this.academicYear.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.academicYear.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // reasonsOfLeaving
             // 
@@ -300,6 +271,27 @@
             this.expertiseGroupBox.TabStop = false;
             this.expertiseGroupBox.Text = "الخبرات العملية (ابتداء من آخر عمل): ";
             // 
+            // certificate
+            // 
+            this.certificate.HeaderText = "الشهادة";
+            this.certificate.Name = "certificate";
+            // 
+            // certifcateIssuer
+            // 
+            this.certifcateIssuer.HeaderText = "الجهة المانحة";
+            this.certifcateIssuer.Name = "certifcateIssuer";
+            // 
+            // academicYear
+            // 
+            this.academicYear.HeaderText = "السنة الدراسية";
+            this.academicYear.Name = "academicYear";
+            this.academicYear.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // certificateDate
+            // 
+            this.certificateDate.HeaderText = "تاريخ المنح";
+            this.certificateDate.Name = "certificateDate";
+            // 
             // EducationAndExpertise
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,6 +303,7 @@
             this.Name = "EducationAndExpertise";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Size = new System.Drawing.Size(647, 525);
+            this.Load += new System.EventHandler(this.EducationAndExpertise_Load);
             ((System.ComponentModel.ISupportInitialize)(this.educationDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.expertiseDataGridView)).EndInit();
             this.trainerCoursesGroupBox.ResumeLayout(false);
@@ -325,11 +318,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridViewTextBoxColumn certificateDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn certifcateIssuer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn certificate;
-        private System.Windows.Forms.DataGridViewComboBoxColumn academicYear;
         private System.Windows.Forms.DataGridViewTextBoxColumn reasonsOfLeaving;
         private System.Windows.Forms.DataGridViewTextBoxColumn endDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn startDate;
@@ -355,5 +343,9 @@
         internal System.Windows.Forms.GroupBox educationGroupBox;
         internal System.Windows.Forms.GroupBox expertiseGroupBox;
         internal System.Windows.Forms.DataGridView educationDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn certificate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn certifcateIssuer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn academicYear;
+        private System.Windows.Forms.DataGridViewTextBoxColumn certificateDate;
     }
 }
