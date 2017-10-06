@@ -27,7 +27,9 @@ namespace GherasEO.GUI
             this.currentUser = currentUser;
             this.currentUserLabel.Text = this.currentUser;
 
-            tabControl1.TabPages[2].Enabled = false;
+           // tabControl1.TabPages[0].Enabled = false;
+            
+
 
             //page2.educationAndExpertise11.educationDataGridView.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
@@ -500,49 +502,32 @@ namespace GherasEO.GUI
         private void viewAllDataButton_Click(object sender, EventArgs e)
         {
             // if a result is selected enable edit tab
-            tabControl1.TabPages[2].Enabled = true;
-            tabControl1.SelectedIndex = 2;
+            tabControl1.TabPages[0].Enabled = true;
+            tabControl1.SelectedIndex = 0;
         }
 
-        private void updateNextButton_Click(object sender, EventArgs e)
+
+
+        private void updateExistingButton_Click(object sender, EventArgs e)
         {
-            if (updatePage1.Visible)
-                //&& checkfilled())
-            {
-                updateCurrentPageGroupBox.Text = "الصفحة الثانية (2 من 3)";
-                updatePage1.Hide();
-                updatePage2.Show();
+            //SHOW CONFIRMATION MESSAGE TO SAVE/DISCARD CHANGES 
+            //IF ANY FIELD HAS CHANGED BEFORE SWITCHING TO SEARCH TAB
 
-                updatePreviousButton.Enabled = true;
-            }
-            else if (updatePage2.Visible)
-            {
-                updateCurrentPageGroupBox.Text = "الصفحة الثالثة (3 من 3)";
-                updatePage2.Hide();
-                updatePage3.Show();
+            //Go to Search tab
+            tabControl1.SelectedIndex = 1;
 
-                updateNextButton.Enabled = false;
-            }
         }
 
-        private void updatePreviousButton_Click(object sender, EventArgs e)
+        private void addNewButton_Click(object sender, EventArgs e)
         {
-            if (updatePage3.Visible)
-            {
-                updateCurrentPageGroupBox.Text = "الصفحة الثانية (2 من 3)";
-                updatePage3.Visible = false;
-                updatePage2.Visible = true;
+            //SHOW CONFIRMATION MESSAGE TO SAVE/DISCARD CHANGES 
+            //IF ANY FIELD HAS CHANGED BEFORE CLEARING ALL THE FIELDS
+            //tabControl1.TabPages[0].Enabled = true;
+        }
 
-                updateNextButton.Enabled = true;
-            }
-            else if (updatePage2.Visible)
-            {
-                updateCurrentPageGroupBox.Text = "الصفحة الأولى (1 من 3)";
-                updatePage2.Visible = false;
-                updatePage1.Visible = true;
-                updatePreviousButton.Enabled = false;
-                //addButton.Enabled = false;
-            }
+        private void JobSeekerForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
