@@ -79,10 +79,10 @@
             this.personalDataGroupBox.Controls.Add(this.hasACarCheckBox);
             this.personalDataGroupBox.Controls.Add(this.martialStatusGroupBox);
             this.personalDataGroupBox.Controls.Add(this.miltaryServiceGroupBox);
-            this.personalDataGroupBox.Location = new System.Drawing.Point(4, 3);
+            this.personalDataGroupBox.Location = new System.Drawing.Point(0, 0);
             this.personalDataGroupBox.Name = "personalDataGroupBox";
             this.personalDataGroupBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.personalDataGroupBox.Size = new System.Drawing.Size(633, 322);
+            this.personalDataGroupBox.Size = new System.Drawing.Size(700, 322);
             this.personalDataGroupBox.TabIndex = 36;
             this.personalDataGroupBox.TabStop = false;
             this.personalDataGroupBox.Text = "البيانات الشخصية:";
@@ -144,43 +144,43 @@
             this.contactInfoGroupBox.Controls.Add(this.label18);
             this.contactInfoGroupBox.Location = new System.Drawing.Point(336, 203);
             this.contactInfoGroupBox.Name = "contactInfoGroupBox";
-            this.contactInfoGroupBox.Size = new System.Drawing.Size(290, 111);
+            this.contactInfoGroupBox.Size = new System.Drawing.Size(351, 111);
             this.contactInfoGroupBox.TabIndex = 40;
             this.contactInfoGroupBox.TabStop = false;
             this.contactInfoGroupBox.Text = "معلومات تواصل:";
             // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(20, 27);
+            this.maskedTextBox1.Location = new System.Drawing.Point(36, 26);
             this.maskedTextBox1.Mask = "0900-000-000";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.PromptChar = '0';
             this.maskedTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.maskedTextBox1.Size = new System.Drawing.Size(85, 20);
+            this.maskedTextBox1.Size = new System.Drawing.Size(80, 20);
             this.maskedTextBox1.TabIndex = 36;
             // 
             // telephoneMaskedTextBox
             // 
-            this.telephoneMaskedTextBox.Location = new System.Drawing.Point(150, 27);
+            this.telephoneMaskedTextBox.Location = new System.Drawing.Point(174, 26);
             this.telephoneMaskedTextBox.Mask = "000-0000";
             this.telephoneMaskedTextBox.Name = "telephoneMaskedTextBox";
             this.telephoneMaskedTextBox.PromptChar = '0';
             this.telephoneMaskedTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.telephoneMaskedTextBox.Size = new System.Drawing.Size(58, 20);
+            this.telephoneMaskedTextBox.Size = new System.Drawing.Size(69, 20);
             this.telephoneMaskedTextBox.TabIndex = 35;
             // 
             // emailTextBox
             // 
-            this.emailTextBox.Location = new System.Drawing.Point(20, 69);
+            this.emailTextBox.Location = new System.Drawing.Point(36, 62);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(165, 20);
+            this.emailTextBox.Size = new System.Drawing.Size(207, 20);
             this.emailTextBox.TabIndex = 37;
             this.emailTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(208, 72);
+            this.label20.Location = new System.Drawing.Point(254, 65);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(71, 13);
             this.label20.TabIndex = 38;
@@ -189,7 +189,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(111, 29);
+            this.label19.Location = new System.Drawing.Point(135, 29);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(33, 13);
             this.label19.TabIndex = 36;
@@ -198,7 +198,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(214, 30);
+            this.label18.Location = new System.Drawing.Point(260, 32);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(65, 13);
             this.label18.TabIndex = 34;
@@ -267,7 +267,7 @@
             this.martialStatusGroupBox.Controls.Add(this.unmarriedRadioButton);
             this.martialStatusGroupBox.Location = new System.Drawing.Point(6, 125);
             this.martialStatusGroupBox.Name = "martialStatusGroupBox";
-            this.martialStatusGroupBox.Size = new System.Drawing.Size(620, 72);
+            this.martialStatusGroupBox.Size = new System.Drawing.Size(681, 72);
             this.martialStatusGroupBox.TabIndex = 34;
             this.martialStatusGroupBox.TabStop = false;
             this.martialStatusGroupBox.Text = "الحالة الاجتماعية:";
@@ -291,7 +291,7 @@
             // widowedRadioButton
             // 
             this.widowedRadioButton.AutoSize = true;
-            this.widowedRadioButton.Location = new System.Drawing.Point(400, 42);
+            this.widowedRadioButton.Location = new System.Drawing.Point(446, 42);
             this.widowedRadioButton.Name = "widowedRadioButton";
             this.widowedRadioButton.Size = new System.Drawing.Size(46, 17);
             this.widowedRadioButton.TabIndex = 3;
@@ -301,7 +301,7 @@
             // divorcedRadioButton
             // 
             this.divorcedRadioButton.AutoSize = true;
-            this.divorcedRadioButton.Location = new System.Drawing.Point(474, 42);
+            this.divorcedRadioButton.Location = new System.Drawing.Point(520, 42);
             this.divorcedRadioButton.Name = "divorcedRadioButton";
             this.divorcedRadioButton.Size = new System.Drawing.Size(53, 17);
             this.divorcedRadioButton.TabIndex = 2;
@@ -311,7 +311,7 @@
             // marriedRadioButton
             // 
             this.marriedRadioButton.AutoSize = true;
-            this.marriedRadioButton.Location = new System.Drawing.Point(554, 42);
+            this.marriedRadioButton.Location = new System.Drawing.Point(600, 42);
             this.marriedRadioButton.Name = "marriedRadioButton";
             this.marriedRadioButton.Size = new System.Drawing.Size(52, 17);
             this.marriedRadioButton.TabIndex = 1;
@@ -322,7 +322,7 @@
             // 
             this.unmarriedRadioButton.AutoSize = true;
             this.unmarriedRadioButton.Checked = true;
-            this.unmarriedRadioButton.Location = new System.Drawing.Point(558, 19);
+            this.unmarriedRadioButton.Location = new System.Drawing.Point(604, 19);
             this.unmarriedRadioButton.Name = "unmarriedRadioButton";
             this.unmarriedRadioButton.Size = new System.Drawing.Size(48, 17);
             this.unmarriedRadioButton.TabIndex = 0;
@@ -339,7 +339,7 @@
             this.miltaryServiceGroupBox.Controls.Add(this.finishedRadioButton);
             this.miltaryServiceGroupBox.Location = new System.Drawing.Point(188, 19);
             this.miltaryServiceGroupBox.Name = "miltaryServiceGroupBox";
-            this.miltaryServiceGroupBox.Size = new System.Drawing.Size(438, 100);
+            this.miltaryServiceGroupBox.Size = new System.Drawing.Size(499, 100);
             this.miltaryServiceGroupBox.TabIndex = 1;
             this.miltaryServiceGroupBox.TabStop = false;
             this.miltaryServiceGroupBox.Text = "خدمة العلم:";
@@ -349,7 +349,7 @@
             this.exemptionReasonTB.Enabled = false;
             this.exemptionReasonTB.Location = new System.Drawing.Point(6, 66);
             this.exemptionReasonTB.Name = "exemptionReasonTB";
-            this.exemptionReasonTB.Size = new System.Drawing.Size(325, 20);
+            this.exemptionReasonTB.Size = new System.Drawing.Size(371, 20);
             this.exemptionReasonTB.TabIndex = 4;
             this.exemptionReasonTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -358,14 +358,14 @@
             this.delayReasonTB.Enabled = false;
             this.delayReasonTB.Location = new System.Drawing.Point(6, 38);
             this.delayReasonTB.Name = "delayReasonTB";
-            this.delayReasonTB.Size = new System.Drawing.Size(325, 20);
+            this.delayReasonTB.Size = new System.Drawing.Size(371, 20);
             this.delayReasonTB.TabIndex = 3;
             this.delayReasonTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // exemptRadioButton
             // 
             this.exemptRadioButton.AutoSize = true;
-            this.exemptRadioButton.Location = new System.Drawing.Point(334, 65);
+            this.exemptRadioButton.Location = new System.Drawing.Point(380, 65);
             this.exemptRadioButton.Name = "exemptRadioButton";
             this.exemptRadioButton.Size = new System.Drawing.Size(90, 17);
             this.exemptRadioButton.TabIndex = 2;
@@ -376,7 +376,7 @@
             // delayedRadioButton
             // 
             this.delayedRadioButton.AutoSize = true;
-            this.delayedRadioButton.Location = new System.Drawing.Point(337, 42);
+            this.delayedRadioButton.Location = new System.Drawing.Point(383, 42);
             this.delayedRadioButton.Name = "delayedRadioButton";
             this.delayedRadioButton.Size = new System.Drawing.Size(87, 17);
             this.delayedRadioButton.TabIndex = 1;
@@ -388,7 +388,7 @@
             // 
             this.finishedRadioButton.AutoSize = true;
             this.finishedRadioButton.Checked = true;
-            this.finishedRadioButton.Location = new System.Drawing.Point(369, 19);
+            this.finishedRadioButton.Location = new System.Drawing.Point(415, 19);
             this.finishedRadioButton.Name = "finishedRadioButton";
             this.finishedRadioButton.Size = new System.Drawing.Size(55, 17);
             this.finishedRadioButton.TabIndex = 0;
@@ -403,7 +403,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.personalDataGroupBox);
             this.Name = "PersonalData";
-            this.Size = new System.Drawing.Size(640, 327);
+            this.Size = new System.Drawing.Size(700, 323);
             this.personalDataGroupBox.ResumeLayout(false);
             this.personalDataGroupBox.PerformLayout();
             this.additionalInformationGroupBox.ResumeLayout(false);

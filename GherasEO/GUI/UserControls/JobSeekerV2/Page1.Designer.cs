@@ -36,14 +36,14 @@
             // 
             this.personalData.Location = new System.Drawing.Point(0, 192);
             this.personalData.Name = "personalData";
-            this.personalData.Size = new System.Drawing.Size(645, 324);
+            this.personalData.Size = new System.Drawing.Size(700, 324);
             this.personalData.TabIndex = 9;
             // 
             // personalID
             // 
             this.personalID.Location = new System.Drawing.Point(0, 0);
             this.personalID.Name = "personalID";
-            this.personalID.Size = new System.Drawing.Size(645, 198);
+            this.personalID.Size = new System.Drawing.Size(700, 198);
             this.personalID.TabIndex = 8;
             // 
             // Page1
@@ -53,7 +53,7 @@
             this.Controls.Add(this.personalData);
             this.Controls.Add(this.personalID);
             this.Name = "Page1";
-            this.Size = new System.Drawing.Size(645, 528);
+            this.Size = new System.Drawing.Size(700, 528);
             this.ResumeLayout(false);
 
         }

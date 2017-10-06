@@ -16,7 +16,7 @@ namespace GherasEO.GUI
     {
         public string currentUser { get; set; }
 
-        public JobSeekerForm()
+        private JobSeekerForm()
         {
             InitializeComponent();
         }
@@ -27,21 +27,19 @@ namespace GherasEO.GUI
             this.currentUser = currentUser;
             this.currentUserLabel.Text = this.currentUser;
 
+            tabControl1.TabPages[2].Enabled = false;
+
             //page2.educationAndExpertise11.educationDataGridView.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
 
         private void nextButton_Click(object sender, EventArgs e)
         {
-            Cursor = Cursors.Default;
             if (page1.Visible && checkfilled())
             {
                 currentPageGroupBox.Text = "الصفحة الثانية (2 من 3)";
                 page1.Hide();
                 page2.Show();
-                
-                //page1.Visible = false;
-                //page2.Visible = true;
-               // page2.Dock = DockStyle.Fill;
+
                 previousButton.Enabled = true;
                 addButton.Enabled = false;
             }
@@ -51,9 +49,6 @@ namespace GherasEO.GUI
                 page2.Hide();
                 page3.Show();
 
-                //page2.Visible = false;
-                //page3.Visible = true;
-                //page3.Dock = DockStyle.Fill;
                 nextButton.Enabled = false;
                 addButton.Enabled = true;
             }
@@ -66,7 +61,7 @@ namespace GherasEO.GUI
                 currentPageGroupBox.Text = "الصفحة الثانية (2 من 3)";
                 page3.Visible = false;
                 page2.Visible = true;
-                //page2.Dock = DockStyle.Fill;
+
                 nextButton.Enabled = true;
                 addButton.Enabled = false;
             }
@@ -75,13 +70,11 @@ namespace GherasEO.GUI
                 currentPageGroupBox.Text = "الصفحة الأولى (1 من 3)";
                 page2.Visible = false;
                 page1.Visible = true;
-                //page1.Dock = DockStyle.Fill;
+
                 previousButton.Enabled = false;
                 addButton.Enabled = false;
             }
         }
-
-
 
         private void addButton_Click(object sender, EventArgs e)
         {
@@ -447,32 +440,29 @@ namespace GherasEO.GUI
                     if (page1.personalData.delayReasonTB.Text != "")
                         isright = true;
                     else
-                        MessageBox.Show(null, "لم يتم إدخال سبب التأجيل" ,"تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(null, "لم يتم إدخال سبب التأجيل", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 if (page1.personalData.exemptionReasonTB.Enabled == true)
                     if (page1.personalData.exemptionReasonTB.Text != "")
                         isright = true;
                     else
-                        MessageBox.Show(null, "لم يتم إدخال سبب الإعفاء" , "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(null, "لم يتم إدخال سبب الإعفاء", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
                 isright = true;
-           
-
 
             return isright;
 
         }
-        public bool  checkfilled ()
+
+        public bool checkfilled()
         {
             bool iscomplete = false;
-
-
 
             if (page1.personalID.firstNameTB.Text != "" && page1.personalID.lastNameTB.Text != "" && page1.personalID.fatherNameTB.Text != ""
                    && page1.personalID.motherFirstNameTB.Text != "" && page1.personalID.motherLastNameTB.Text != "" && page1.personalID.birthLocationTB.Text != "" &&
                    page1.personalID.nationalNumberMaskedTB.Text != "                    " && page1.personalID.idNumberMaskedTB.Text != "              " && page1.personalID.municipalityTextBox.Text != "" &&
-                   page1.personalID.registrationTextBox.Text != ""  && page1.personalID.faceColorTB.Text != "" &&
+                   page1.personalID.registrationTextBox.Text != "" && page1.personalID.faceColorTB.Text != "" &&
                   page1.personalID.eyeColorTB.Text != "" && page1.personalID.specialFeaturesTB.Text != "" && page1.personalID.currentAddressTB.Text != "")
 
                 if (page1.personalData.maskedTextBox1.Text != "    -   -" || page1.personalData.telephoneMaskedTextBox.Text != "   -" || page1.personalData.emailTextBox.Text != "")
@@ -483,9 +473,9 @@ namespace GherasEO.GUI
                         iscomplete = true;
 
                 else
-                    MessageBox.Show(null,"لم يتم إدخال أي معلومة تواصل مع الشخص", "تنبيه", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    MessageBox.Show(null, "لم يتم إدخال أي معلومة تواصل مع الشخص", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
-                MessageBox.Show(null,"تأكد أن المعلومات البطاقة الشخصية كاملة", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(null, "تأكد أن معلومات البطاقة الشخصية كاملة", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
 
             // personal data user control checked
@@ -493,6 +483,66 @@ namespace GherasEO.GUI
             return iscomplete;
         }
 
-        
+        private void currentPageGroupBox_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void seacrchByNameButton_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void seacrchByNationalNumberButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void viewAllDataButton_Click(object sender, EventArgs e)
+        {
+            // if a result is selected enable edit tab
+            tabControl1.TabPages[2].Enabled = true;
+            tabControl1.SelectedIndex = 2;
+        }
+
+        private void updateNextButton_Click(object sender, EventArgs e)
+        {
+            if (updatePage1.Visible)
+                //&& checkfilled())
+            {
+                updateCurrentPageGroupBox.Text = "الصفحة الثانية (2 من 3)";
+                updatePage1.Hide();
+                updatePage2.Show();
+
+                updatePreviousButton.Enabled = true;
+            }
+            else if (updatePage2.Visible)
+            {
+                updateCurrentPageGroupBox.Text = "الصفحة الثالثة (3 من 3)";
+                updatePage2.Hide();
+                updatePage3.Show();
+
+                updateNextButton.Enabled = false;
+            }
+        }
+
+        private void updatePreviousButton_Click(object sender, EventArgs e)
+        {
+            if (updatePage3.Visible)
+            {
+                updateCurrentPageGroupBox.Text = "الصفحة الثانية (2 من 3)";
+                updatePage3.Visible = false;
+                updatePage2.Visible = true;
+
+                updateNextButton.Enabled = true;
+            }
+            else if (updatePage2.Visible)
+            {
+                updateCurrentPageGroupBox.Text = "الصفحة الأولى (1 من 3)";
+                updatePage2.Visible = false;
+                updatePage1.Visible = true;
+                updatePreviousButton.Enabled = false;
+                //addButton.Enabled = false;
+            }
+        }
     }
 }

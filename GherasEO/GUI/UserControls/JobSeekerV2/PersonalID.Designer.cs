@@ -103,17 +103,17 @@
             this.idGroupBox.Controls.Add(this.label3);
             this.idGroupBox.Controls.Add(this.label2);
             this.idGroupBox.Controls.Add(this.label1);
-            this.idGroupBox.Location = new System.Drawing.Point(3, 3);
+            this.idGroupBox.Location = new System.Drawing.Point(0, 0);
             this.idGroupBox.Name = "idGroupBox";
             this.idGroupBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.idGroupBox.Size = new System.Drawing.Size(633, 186);
+            this.idGroupBox.Size = new System.Drawing.Size(699, 190);
             this.idGroupBox.TabIndex = 3;
             this.idGroupBox.TabStop = false;
             this.idGroupBox.Text = "البطاقة الشخصية";
             // 
             // nationalNumberMaskedTB
             // 
-            this.nationalNumberMaskedTB.Location = new System.Drawing.Point(398, 113);
+            this.nationalNumberMaskedTB.Location = new System.Drawing.Point(418, 112);
             this.nationalNumberMaskedTB.Mask = "0 0 0 0 0 0 0 0 0 0 0";
             this.nationalNumberMaskedTB.Name = "nationalNumberMaskedTB";
             this.nationalNumberMaskedTB.PromptChar = '0';
@@ -124,7 +124,7 @@
             // 
             // idNumberMaskedTB
             // 
-            this.idNumberMaskedTB.Location = new System.Drawing.Point(240, 113);
+            this.idNumberMaskedTB.Location = new System.Drawing.Point(259, 112);
             this.idNumberMaskedTB.Mask = "0 0 0 0 0 0 0 0";
             this.idNumberMaskedTB.Name = "idNumberMaskedTB";
             this.idNumberMaskedTB.PromptChar = '0';
@@ -262,22 +262,22 @@
             // 
             // registrationTextBox
             // 
-            this.registrationTextBox.Location = new System.Drawing.Point(398, 144);
+            this.registrationTextBox.Location = new System.Drawing.Point(389, 147);
             this.registrationTextBox.Name = "registrationTextBox";
-            this.registrationTextBox.Size = new System.Drawing.Size(65, 20);
+            this.registrationTextBox.Size = new System.Drawing.Size(133, 20);
             this.registrationTextBox.TabIndex = 15;
             // 
             // municipalityTextBox
             // 
-            this.municipalityTextBox.Location = new System.Drawing.Point(508, 144);
+            this.municipalityTextBox.Location = new System.Drawing.Point(567, 147);
             this.municipalityTextBox.Name = "municipalityTextBox";
-            this.municipalityTextBox.Size = new System.Drawing.Size(64, 20);
+            this.municipalityTextBox.Size = new System.Drawing.Size(81, 20);
             this.municipalityTextBox.TabIndex = 14;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(469, 147);
+            this.label9.Location = new System.Drawing.Point(528, 147);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(33, 13);
             this.label9.TabIndex = 16;
@@ -286,7 +286,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(582, 147);
+            this.label8.Location = new System.Drawing.Point(654, 150);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(39, 13);
             this.label8.TabIndex = 15;
@@ -295,7 +295,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(335, 116);
+            this.label7.Location = new System.Drawing.Point(355, 116);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 13);
             this.label7.TabIndex = 14;
@@ -304,7 +304,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(508, 116);
+            this.label6.Location = new System.Drawing.Point(528, 112);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 13);
             this.label6.TabIndex = 11;
@@ -322,9 +322,9 @@
             // 
             // birthLocationTB
             // 
-            this.birthLocationTB.Location = new System.Drawing.Point(454, 80);
+            this.birthLocationTB.Location = new System.Drawing.Point(461, 80);
             this.birthLocationTB.Name = "birthLocationTB";
-            this.birthLocationTB.Size = new System.Drawing.Size(69, 20);
+            this.birthLocationTB.Size = new System.Drawing.Size(135, 20);
             this.birthLocationTB.TabIndex = 10;
             // 
             // motherLastNameTB
@@ -336,9 +336,9 @@
             // 
             // fatherNameTB
             // 
-            this.fatherNameTB.Location = new System.Drawing.Point(454, 49);
+            this.fatherNameTB.Location = new System.Drawing.Point(461, 49);
             this.fatherNameTB.Name = "fatherNameTB";
-            this.fatherNameTB.Size = new System.Drawing.Size(90, 20);
+            this.fatherNameTB.Size = new System.Drawing.Size(135, 20);
             this.fatherNameTB.TabIndex = 7;
             // 
             // lastNameTB
@@ -350,9 +350,9 @@
             // 
             // firstNameTB
             // 
-            this.firstNameTB.Location = new System.Drawing.Point(454, 19);
+            this.firstNameTB.Location = new System.Drawing.Point(461, 20);
             this.firstNameTB.Name = "firstNameTB";
-            this.firstNameTB.Size = new System.Drawing.Size(121, 20);
+            this.firstNameTB.Size = new System.Drawing.Size(135, 20);
             this.firstNameTB.TabIndex = 5;
             // 
             // label5
@@ -367,7 +367,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(566, 54);
+            this.label4.Location = new System.Drawing.Point(602, 52);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 3;
@@ -376,7 +376,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(529, 83);
+            this.label3.Location = new System.Drawing.Point(601, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 13);
             this.label3.TabIndex = 2;
@@ -394,7 +394,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(581, 23);
+            this.label1.Location = new System.Drawing.Point(602, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 0;
@@ -406,7 +406,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.idGroupBox);
             this.Name = "PersonalID";
-            this.Size = new System.Drawing.Size(642, 198);
+            this.Size = new System.Drawing.Size(700, 190);
             this.idGroupBox.ResumeLayout(false);
             this.idGroupBox.PerformLayout();
             this.ResumeLayout(false);

@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.educationDataGridView = new System.Windows.Forms.DataGridView();
+            this.certificate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.certifcateIssuer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.academicYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.certificateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reasonsOfLeaving = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.startDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,10 +57,6 @@
             this.traineeCoursesGroupBox = new System.Windows.Forms.GroupBox();
             this.educationGroupBox = new System.Windows.Forms.GroupBox();
             this.expertiseGroupBox = new System.Windows.Forms.GroupBox();
-            this.certificate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.certifcateIssuer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.academicYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.certificateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.educationDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.expertiseDataGridView)).BeginInit();
             this.trainerCoursesGroupBox.SuspendLayout();
@@ -81,8 +81,29 @@
             this.educationDataGridView.Location = new System.Drawing.Point(3, 16);
             this.educationDataGridView.Name = "educationDataGridView";
             this.educationDataGridView.RowTemplate.Height = 30;
-            this.educationDataGridView.Size = new System.Drawing.Size(639, 106);
+            this.educationDataGridView.Size = new System.Drawing.Size(694, 106);
             this.educationDataGridView.TabIndex = 1;
+            // 
+            // certificate
+            // 
+            this.certificate.HeaderText = "الشهادة";
+            this.certificate.Name = "certificate";
+            // 
+            // certifcateIssuer
+            // 
+            this.certifcateIssuer.HeaderText = "الجهة المانحة";
+            this.certifcateIssuer.Name = "certifcateIssuer";
+            // 
+            // academicYear
+            // 
+            this.academicYear.HeaderText = "السنة الدراسية";
+            this.academicYear.Name = "academicYear";
+            this.academicYear.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // certificateDate
+            // 
+            this.certificateDate.HeaderText = "تاريخ المنح";
+            this.certificateDate.Name = "certificateDate";
             // 
             // reasonsOfLeaving
             // 
@@ -139,7 +160,7 @@
             this.expertiseDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.expertiseDataGridView.Location = new System.Drawing.Point(3, 16);
             this.expertiseDataGridView.Name = "expertiseDataGridView";
-            this.expertiseDataGridView.Size = new System.Drawing.Size(639, 106);
+            this.expertiseDataGridView.Size = new System.Drawing.Size(694, 106);
             this.expertiseDataGridView.TabIndex = 1;
             // 
             // trainerCoursesGroupBox
@@ -148,7 +169,7 @@
             this.trainerCoursesGroupBox.Controls.Add(this.trainerCoursesDataGridView);
             this.trainerCoursesGroupBox.Location = new System.Drawing.Point(0, 400);
             this.trainerCoursesGroupBox.Name = "trainerCoursesGroupBox";
-            this.trainerCoursesGroupBox.Size = new System.Drawing.Size(645, 125);
+            this.trainerCoursesGroupBox.Size = new System.Drawing.Size(700, 125);
             this.trainerCoursesGroupBox.TabIndex = 45;
             this.trainerCoursesGroupBox.TabStop = false;
             this.trainerCoursesGroupBox.Text = "أهم الدورات التدريبية (مدربا):";
@@ -167,7 +188,7 @@
             this.trainerCoursesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.trainerCoursesDataGridView.Location = new System.Drawing.Point(3, 16);
             this.trainerCoursesDataGridView.Name = "trainerCoursesDataGridView";
-            this.trainerCoursesDataGridView.Size = new System.Drawing.Size(639, 106);
+            this.trainerCoursesDataGridView.Size = new System.Drawing.Size(694, 106);
             this.trainerCoursesDataGridView.TabIndex = 1;
             // 
             // courseNameT
@@ -229,7 +250,7 @@
             this.traineeCoursesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.traineeCoursesDataGridView.Location = new System.Drawing.Point(3, 16);
             this.traineeCoursesDataGridView.Name = "traineeCoursesDataGridView";
-            this.traineeCoursesDataGridView.Size = new System.Drawing.Size(639, 106);
+            this.traineeCoursesDataGridView.Size = new System.Drawing.Size(694, 106);
             this.traineeCoursesDataGridView.TabIndex = 1;
             // 
             // trainingHours
@@ -243,7 +264,7 @@
             this.traineeCoursesGroupBox.Controls.Add(this.traineeCoursesDataGridView);
             this.traineeCoursesGroupBox.Location = new System.Drawing.Point(0, 266);
             this.traineeCoursesGroupBox.Name = "traineeCoursesGroupBox";
-            this.traineeCoursesGroupBox.Size = new System.Drawing.Size(645, 125);
+            this.traineeCoursesGroupBox.Size = new System.Drawing.Size(700, 125);
             this.traineeCoursesGroupBox.TabIndex = 44;
             this.traineeCoursesGroupBox.TabStop = false;
             this.traineeCoursesGroupBox.Text = "أهم الدورات التدريبية (متدربا):";
@@ -254,7 +275,7 @@
             this.educationGroupBox.Controls.Add(this.educationDataGridView);
             this.educationGroupBox.Location = new System.Drawing.Point(0, 0);
             this.educationGroupBox.Name = "educationGroupBox";
-            this.educationGroupBox.Size = new System.Drawing.Size(645, 125);
+            this.educationGroupBox.Size = new System.Drawing.Size(700, 125);
             this.educationGroupBox.TabIndex = 42;
             this.educationGroupBox.TabStop = false;
             this.educationGroupBox.Text = "التحصيل العلمي:";
@@ -266,31 +287,10 @@
             this.expertiseGroupBox.Controls.Add(this.expertiseDataGridView);
             this.expertiseGroupBox.Location = new System.Drawing.Point(0, 135);
             this.expertiseGroupBox.Name = "expertiseGroupBox";
-            this.expertiseGroupBox.Size = new System.Drawing.Size(645, 125);
+            this.expertiseGroupBox.Size = new System.Drawing.Size(700, 125);
             this.expertiseGroupBox.TabIndex = 43;
             this.expertiseGroupBox.TabStop = false;
             this.expertiseGroupBox.Text = "الخبرات العملية (ابتداء من آخر عمل): ";
-            // 
-            // certificate
-            // 
-            this.certificate.HeaderText = "الشهادة";
-            this.certificate.Name = "certificate";
-            // 
-            // certifcateIssuer
-            // 
-            this.certifcateIssuer.HeaderText = "الجهة المانحة";
-            this.certifcateIssuer.Name = "certifcateIssuer";
-            // 
-            // academicYear
-            // 
-            this.academicYear.HeaderText = "السنة الدراسية";
-            this.academicYear.Name = "academicYear";
-            this.academicYear.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // certificateDate
-            // 
-            this.certificateDate.HeaderText = "تاريخ المنح";
-            this.certificateDate.Name = "certificateDate";
             // 
             // EducationAndExpertise
             // 
@@ -302,7 +302,7 @@
             this.Controls.Add(this.expertiseGroupBox);
             this.Name = "EducationAndExpertise";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Size = new System.Drawing.Size(647, 525);
+            this.Size = new System.Drawing.Size(700, 525);
             this.Load += new System.EventHandler(this.EducationAndExpertise_Load);
             ((System.ComponentModel.ISupportInitialize)(this.educationDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.expertiseDataGridView)).EndInit();

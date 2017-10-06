@@ -35,27 +35,27 @@
             // 
             // desiredJob11
             // 
-            this.desiredJob11.Location = new System.Drawing.Point(2, 222);
+            this.desiredJob11.Location = new System.Drawing.Point(0, 220);
             this.desiredJob11.Name = "desiredJob11";
-            this.desiredJob11.Size = new System.Drawing.Size(651, 94);
+            this.desiredJob11.Size = new System.Drawing.Size(700, 94);
             this.desiredJob11.TabIndex = 1;
             // 
             // emergencyAndReferences11
             // 
             this.emergencyAndReferences11.Cursor = System.Windows.Forms.Cursors.Default;
-            this.emergencyAndReferences11.Location = new System.Drawing.Point(5, 320);
+            this.emergencyAndReferences11.Location = new System.Drawing.Point(0, 320);
             this.emergencyAndReferences11.Name = "emergencyAndReferences11";
             this.emergencyAndReferences11.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.emergencyAndReferences11.Size = new System.Drawing.Size(659, 206);
+            this.emergencyAndReferences11.Size = new System.Drawing.Size(700, 206);
             this.emergencyAndReferences11.TabIndex = 2;
             // 
             // skills11
             // 
             this.skills11.AutoSize = true;
-            this.skills11.Location = new System.Drawing.Point(5, 0);
+            this.skills11.Location = new System.Drawing.Point(0, 0);
             this.skills11.Name = "skills11";
             this.skills11.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.skills11.Size = new System.Drawing.Size(648, 223);
+            this.skills11.Size = new System.Drawing.Size(703, 223);
             this.skills11.TabIndex = 0;
             // 
             // Page3
@@ -67,7 +67,7 @@
             this.Controls.Add(this.skills11);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "Page3";
-            this.Size = new System.Drawing.Size(658, 529);
+            this.Size = new System.Drawing.Size(700, 529);
             this.ResumeLayout(false);
             this.PerformLayout();
 

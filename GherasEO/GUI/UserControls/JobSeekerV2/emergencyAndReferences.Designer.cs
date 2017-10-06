@@ -52,7 +52,7 @@
             this.referenceGroupBox.Controls.Add(this.referenceDataGridView);
             this.referenceGroupBox.Location = new System.Drawing.Point(2, 103);
             this.referenceGroupBox.Name = "referenceGroupBox";
-            this.referenceGroupBox.Size = new System.Drawing.Size(645, 100);
+            this.referenceGroupBox.Size = new System.Drawing.Size(698, 100);
             this.referenceGroupBox.TabIndex = 45;
             this.referenceGroupBox.TabStop = false;
             this.referenceGroupBox.Text = "أشخاص عملت معهم:";
@@ -71,7 +71,7 @@
             this.referenceDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.referenceDataGridView.Location = new System.Drawing.Point(3, 16);
             this.referenceDataGridView.Name = "referenceDataGridView";
-            this.referenceDataGridView.Size = new System.Drawing.Size(639, 81);
+            this.referenceDataGridView.Size = new System.Drawing.Size(692, 81);
             this.referenceDataGridView.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn5
@@ -102,9 +102,9 @@
             // emergencyGroupBox
             // 
             this.emergencyGroupBox.Controls.Add(this.emergencyDataGridView);
-            this.emergencyGroupBox.Location = new System.Drawing.Point(2, 0);
+            this.emergencyGroupBox.Location = new System.Drawing.Point(0, 0);
             this.emergencyGroupBox.Name = "emergencyGroupBox";
-            this.emergencyGroupBox.Size = new System.Drawing.Size(645, 100);
+            this.emergencyGroupBox.Size = new System.Drawing.Size(700, 100);
             this.emergencyGroupBox.TabIndex = 44;
             this.emergencyGroupBox.TabStop = false;
             this.emergencyGroupBox.Text = "رقم طوارئ:";
@@ -122,7 +122,7 @@
             this.emergencyDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.emergencyDataGridView.Location = new System.Drawing.Point(3, 16);
             this.emergencyDataGridView.Name = "emergencyDataGridView";
-            this.emergencyDataGridView.Size = new System.Drawing.Size(639, 81);
+            this.emergencyDataGridView.Size = new System.Drawing.Size(694, 81);
             this.emergencyDataGridView.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn1
@@ -155,7 +155,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "EmergencyAndReferences";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Size = new System.Drawing.Size(651, 207);
+            this.Size = new System.Drawing.Size(700, 207);
             this.referenceGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.referenceDataGridView)).EndInit();
             this.emergencyGroupBox.ResumeLayout(false);

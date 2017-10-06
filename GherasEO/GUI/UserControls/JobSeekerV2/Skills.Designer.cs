@@ -59,7 +59,7 @@
             this.skillsGroupBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.skillsGroupBox.Location = new System.Drawing.Point(0, 1);
             this.skillsGroupBox.Name = "skillsGroupBox";
-            this.skillsGroupBox.Size = new System.Drawing.Size(645, 217);
+            this.skillsGroupBox.Size = new System.Drawing.Size(700, 217);
             this.skillsGroupBox.TabIndex = 40;
             this.skillsGroupBox.TabStop = false;
             this.skillsGroupBox.Text = "المهارات:";
@@ -69,7 +69,7 @@
             this.groupBox1.Controls.Add(this.languagesGridView1);
             this.groupBox1.Location = new System.Drawing.Point(3, 15);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(335, 95);
+            this.groupBox1.Size = new System.Drawing.Size(387, 95);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "لغات:";
@@ -85,7 +85,7 @@
             this.languagesGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.languagesGridView1.Location = new System.Drawing.Point(3, 16);
             this.languagesGridView1.Name = "languagesGridView1";
-            this.languagesGridView1.Size = new System.Drawing.Size(329, 76);
+            this.languagesGridView1.Size = new System.Drawing.Size(381, 76);
             this.languagesGridView1.TabIndex = 5;
             // 
             // language
@@ -103,7 +103,7 @@
             this.otherSkillsGroupBox.Controls.Add(this.otherSkillsDataGridView);
             this.otherSkillsGroupBox.Location = new System.Drawing.Point(3, 113);
             this.otherSkillsGroupBox.Name = "otherSkillsGroupBox";
-            this.otherSkillsGroupBox.Size = new System.Drawing.Size(335, 95);
+            this.otherSkillsGroupBox.Size = new System.Drawing.Size(384, 95);
             this.otherSkillsGroupBox.TabIndex = 6;
             this.otherSkillsGroupBox.TabStop = false;
             this.otherSkillsGroupBox.Text = "مهارات أخرى";
@@ -118,7 +118,7 @@
             this.otherSkillsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.otherSkillsDataGridView.Location = new System.Drawing.Point(3, 16);
             this.otherSkillsDataGridView.Name = "otherSkillsDataGridView";
-            this.otherSkillsDataGridView.Size = new System.Drawing.Size(329, 76);
+            this.otherSkillsDataGridView.Size = new System.Drawing.Size(378, 76);
             this.otherSkillsDataGridView.TabIndex = 7;
             // 
             // skillName
@@ -131,9 +131,9 @@
             // 
             this.computerSkillsGroupBox.Controls.Add(this.otherComputerSkillsGroupBox);
             this.computerSkillsGroupBox.Controls.Add(this.computerSkillsCheckList);
-            this.computerSkillsGroupBox.Location = new System.Drawing.Point(344, 15);
+            this.computerSkillsGroupBox.Location = new System.Drawing.Point(396, 15);
             this.computerSkillsGroupBox.Name = "computerSkillsGroupBox";
-            this.computerSkillsGroupBox.Size = new System.Drawing.Size(295, 193);
+            this.computerSkillsGroupBox.Size = new System.Drawing.Size(298, 193);
             this.computerSkillsGroupBox.TabIndex = 0;
             this.computerSkillsGroupBox.TabStop = false;
             this.computerSkillsGroupBox.Text = "مهارات حاسوبية:";
@@ -141,7 +141,7 @@
             // otherComputerSkillsGroupBox
             // 
             this.otherComputerSkillsGroupBox.Controls.Add(this.otherComputerSkillsDataGridView);
-            this.otherComputerSkillsGroupBox.Location = new System.Drawing.Point(25, 52);
+            this.otherComputerSkillsGroupBox.Location = new System.Drawing.Point(19, 52);
             this.otherComputerSkillsGroupBox.Name = "otherComputerSkillsGroupBox";
             this.otherComputerSkillsGroupBox.Size = new System.Drawing.Size(160, 90);
             this.otherComputerSkillsGroupBox.TabIndex = 2;
@@ -179,7 +179,7 @@
             "PowerPoint",
             "Word",
             "Excel"});
-            this.computerSkillsCheckList.Location = new System.Drawing.Point(191, 52);
+            this.computerSkillsCheckList.Location = new System.Drawing.Point(185, 52);
             this.computerSkillsCheckList.Name = "computerSkillsCheckList";
             this.computerSkillsCheckList.Size = new System.Drawing.Size(87, 90);
             this.computerSkillsCheckList.TabIndex = 1;
@@ -192,7 +192,7 @@
             this.Controls.Add(this.skillsGroupBox);
             this.Name = "Skills";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Size = new System.Drawing.Size(645, 221);
+            this.Size = new System.Drawing.Size(700, 221);
             this.skillsGroupBox.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.languagesGridView1)).EndInit();

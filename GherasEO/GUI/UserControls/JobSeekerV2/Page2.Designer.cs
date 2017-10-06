@@ -36,7 +36,7 @@
             this.educationAndExpertise11.Location = new System.Drawing.Point(0, 0);
             this.educationAndExpertise11.Name = "educationAndExpertise11";
             this.educationAndExpertise11.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.educationAndExpertise11.Size = new System.Drawing.Size(645, 528);
+            this.educationAndExpertise11.Size = new System.Drawing.Size(700, 528);
             this.educationAndExpertise11.TabIndex = 0;
             // 
             // Page2
@@ -45,7 +45,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.educationAndExpertise11);
             this.Name = "Page2";
-            this.Size = new System.Drawing.Size(645, 528);
+            this.Size = new System.Drawing.Size(700, 528);
             this.ResumeLayout(false);
 
         }
