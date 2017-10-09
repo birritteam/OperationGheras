@@ -16,6 +16,7 @@ namespace GherasEO
     {
         public int ID { get; set; }
         public string Course_Name { get; set; }
+        public string Course_Location { get; set; }
         public System.DateTime Course_Date { get; set; }
         public int Num_Of_Days { get; set; }
         public int Train_Hours { get; set; }

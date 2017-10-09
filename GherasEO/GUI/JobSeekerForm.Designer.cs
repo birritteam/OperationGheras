@@ -35,7 +35,12 @@
             this.nextButton = new System.Windows.Forms.Button();
             this.previousButton = new System.Windows.Forms.Button();
             this.currentPageGroupBox = new System.Windows.Forms.GroupBox();
+            this.page3 = new GherasEO.GUI.UserControls.Page3();
+            this.page2 = new GherasEO.GUI.UserControls.Page2();
+            this.page1 = new GherasEO.GUI.UserControls.Page1();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.updateExistingButton = new System.Windows.Forms.Button();
+            this.addNewButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.SearchTabPage = new System.Windows.Forms.TabPage();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -43,7 +48,7 @@
             this.nationalNumberMaskedTB = new System.Windows.Forms.MaskedTextBox();
             this.seacrchByNationalNumberButton = new System.Windows.Forms.Button();
             this.seacrchByNameButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.FullNametextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -52,11 +57,6 @@
             this.nationalNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.currentUserLabel = new System.Windows.Forms.Label();
-            this.addNewButton = new System.Windows.Forms.Button();
-            this.updateExistingButton = new System.Windows.Forms.Button();
-            this.page3 = new GherasEO.GUI.UserControls.Page3();
-            this.page2 = new GherasEO.GUI.UserControls.Page2();
-            this.page1 = new GherasEO.GUI.UserControls.Page1();
             this.tabControl1.SuspendLayout();
             this.addTabPage.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -136,9 +136,9 @@
             // 
             // currentPageGroupBox
             // 
+            this.currentPageGroupBox.Controls.Add(this.page1);
             this.currentPageGroupBox.Controls.Add(this.page3);
             this.currentPageGroupBox.Controls.Add(this.page2);
-            this.currentPageGroupBox.Controls.Add(this.page1);
             this.currentPageGroupBox.Location = new System.Drawing.Point(118, 3);
             this.currentPageGroupBox.Name = "currentPageGroupBox";
             this.currentPageGroupBox.Size = new System.Drawing.Size(750, 565);
@@ -146,6 +146,33 @@
             this.currentPageGroupBox.TabStop = false;
             this.currentPageGroupBox.Text = "الصفحة الأولى (1 من 3)";
             this.currentPageGroupBox.Enter += new System.EventHandler(this.currentPageGroupBox_Enter);
+            // 
+            // page3
+            // 
+            this.page3.AutoSize = true;
+            this.page3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.page3.Location = new System.Drawing.Point(28, 19);
+            this.page3.Name = "page3";
+            this.page3.Size = new System.Drawing.Size(715, 530);
+            this.page3.TabIndex = 2;
+            this.page3.Visible = false;
+            // 
+            // page2
+            // 
+            this.page2.AutoSize = true;
+            this.page2.Location = new System.Drawing.Point(28, 23);
+            this.page2.Name = "page2";
+            this.page2.Size = new System.Drawing.Size(703, 540);
+            this.page2.TabIndex = 1;
+            this.page2.Visible = false;
+            // 
+            // page1
+            // 
+            this.page1.AutoSize = true;
+            this.page1.Location = new System.Drawing.Point(29, 23);
+            this.page1.Name = "page1";
+            this.page1.Size = new System.Drawing.Size(715, 544);
+            this.page1.TabIndex = 0;
             // 
             // panel3
             // 
@@ -159,6 +186,26 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(870, 58);
             this.panel3.TabIndex = 5;
+            // 
+            // updateExistingButton
+            // 
+            this.updateExistingButton.Location = new System.Drawing.Point(619, 13);
+            this.updateExistingButton.Name = "updateExistingButton";
+            this.updateExistingButton.Size = new System.Drawing.Size(121, 28);
+            this.updateExistingButton.TabIndex = 46;
+            this.updateExistingButton.Text = "تعديل استمارة سابقة";
+            this.updateExistingButton.UseVisualStyleBackColor = true;
+            this.updateExistingButton.Click += new System.EventHandler(this.updateExistingButton_Click);
+            // 
+            // addNewButton
+            // 
+            this.addNewButton.Location = new System.Drawing.Point(746, 13);
+            this.addNewButton.Name = "addNewButton";
+            this.addNewButton.Size = new System.Drawing.Size(102, 28);
+            this.addNewButton.TabIndex = 45;
+            this.addNewButton.Text = "استمارة جديدة";
+            this.addNewButton.UseVisualStyleBackColor = true;
+            this.addNewButton.Click += new System.EventHandler(this.addNewButton_Click);
             // 
             // addButton
             // 
@@ -177,7 +224,7 @@
             this.SearchTabPage.Controls.Add(this.nationalNumberMaskedTB);
             this.SearchTabPage.Controls.Add(this.seacrchByNationalNumberButton);
             this.SearchTabPage.Controls.Add(this.seacrchByNameButton);
-            this.SearchTabPage.Controls.Add(this.textBox1);
+            this.SearchTabPage.Controls.Add(this.FullNametextBox);
             this.SearchTabPage.Controls.Add(this.label3);
             this.SearchTabPage.Controls.Add(this.label2);
             this.SearchTabPage.Controls.Add(this.groupBox1);
@@ -242,13 +289,13 @@
             this.seacrchByNameButton.UseVisualStyleBackColor = true;
             this.seacrchByNameButton.Click += new System.EventHandler(this.seacrchByNameButton_Click);
             // 
-            // textBox1
+            // FullNametextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(404, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 20);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.FullNametextBox.Location = new System.Drawing.Point(404, 34);
+            this.FullNametextBox.Name = "FullNametextBox";
+            this.FullNametextBox.Size = new System.Drawing.Size(160, 20);
+            this.FullNametextBox.TabIndex = 3;
+            this.FullNametextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -280,16 +327,21 @@
             // 
             // searchResultDataGridView
             // 
+            this.searchResultDataGridView.AllowUserToAddRows = false;
+            this.searchResultDataGridView.AllowUserToDeleteRows = false;
             this.searchResultDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.searchResultDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.searchResultDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.searchResultDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.searchResultDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fullName,
             this.nationalNumber});
             this.searchResultDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
             this.searchResultDataGridView.Location = new System.Drawing.Point(3, 16);
+            this.searchResultDataGridView.MultiSelect = false;
             this.searchResultDataGridView.Name = "searchResultDataGridView";
-            this.searchResultDataGridView.Size = new System.Drawing.Size(854, 68);
+            this.searchResultDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.searchResultDataGridView.Size = new System.Drawing.Size(854, 240);
             this.searchResultDataGridView.TabIndex = 0;
             // 
             // fullName
@@ -320,53 +372,6 @@
             this.currentUserLabel.Size = new System.Drawing.Size(192, 23);
             this.currentUserLabel.TabIndex = 2;
             this.currentUserLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // addNewButton
-            // 
-            this.addNewButton.Location = new System.Drawing.Point(746, 13);
-            this.addNewButton.Name = "addNewButton";
-            this.addNewButton.Size = new System.Drawing.Size(102, 28);
-            this.addNewButton.TabIndex = 45;
-            this.addNewButton.Text = "استمارة جديدة";
-            this.addNewButton.UseVisualStyleBackColor = true;
-            this.addNewButton.Click += new System.EventHandler(this.addNewButton_Click);
-            // 
-            // updateExistingButton
-            // 
-            this.updateExistingButton.Location = new System.Drawing.Point(619, 13);
-            this.updateExistingButton.Name = "updateExistingButton";
-            this.updateExistingButton.Size = new System.Drawing.Size(121, 28);
-            this.updateExistingButton.TabIndex = 46;
-            this.updateExistingButton.Text = "تعديل استمارة سابقة";
-            this.updateExistingButton.UseVisualStyleBackColor = true;
-            this.updateExistingButton.Click += new System.EventHandler(this.updateExistingButton_Click);
-            // 
-            // page3
-            // 
-            this.page3.AutoSize = true;
-            this.page3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.page3.Location = new System.Drawing.Point(28, 19);
-            this.page3.Name = "page3";
-            this.page3.Size = new System.Drawing.Size(715, 530);
-            this.page3.TabIndex = 2;
-            this.page3.Visible = false;
-            // 
-            // page2
-            // 
-            this.page2.AutoSize = true;
-            this.page2.Location = new System.Drawing.Point(28, 23);
-            this.page2.Name = "page2";
-            this.page2.Size = new System.Drawing.Size(703, 540);
-            this.page2.TabIndex = 1;
-            this.page2.Visible = false;
-            // 
-            // page1
-            // 
-            this.page1.AutoSize = true;
-            this.page1.Location = new System.Drawing.Point(29, 23);
-            this.page1.Name = "page1";
-            this.page1.Size = new System.Drawing.Size(715, 544);
-            this.page1.TabIndex = 0;
             // 
             // JobSeekerForm
             // 
@@ -420,7 +425,7 @@
         private System.Windows.Forms.Label currentUserLabel;
         private System.Windows.Forms.Button seacrchByNationalNumberButton;
         private System.Windows.Forms.Button seacrchByNameButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox FullNametextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;

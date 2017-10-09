@@ -170,7 +170,7 @@
             // computerSkillsCheckList
             // 
             this.computerSkillsCheckList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.computerSkillsCheckList.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.computerSkillsCheckList.Cursor = System.Windows.Forms.Cursors.Hand;
             this.computerSkillsCheckList.FormattingEnabled = true;
             this.computerSkillsCheckList.Items.AddRange(new object[] {
             "Photoshop",
@@ -183,7 +183,6 @@
             this.computerSkillsCheckList.Name = "computerSkillsCheckList";
             this.computerSkillsCheckList.Size = new System.Drawing.Size(87, 90);
             this.computerSkillsCheckList.TabIndex = 1;
-            this.computerSkillsCheckList.UseWaitCursor = true;
             // 
             // Skills
             // 

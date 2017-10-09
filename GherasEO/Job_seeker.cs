@@ -30,7 +30,8 @@ namespace GherasEO
         public string First_name { get; set; }
         public string Second_name { get; set; }
         public string Father_name { get; set; }
-        public string Mother_name { get; set; }
+        public string Mother_Fname { get; set; }
+        public string Mother_Lname { get; set; }
         public string Place_Of_Birth { get; set; }
         public string National_ID { get; set; }
         public string PersonalCard_number { get; set; }

@@ -142,6 +142,7 @@
             // 
             // genderCB
             // 
+            this.genderCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.genderCB.FormattingEnabled = true;
             this.genderCB.Items.AddRange(new object[] {
             "ذكر",
@@ -150,7 +151,6 @@
             this.genderCB.Name = "genderCB";
             this.genderCB.Size = new System.Drawing.Size(76, 21);
             this.genderCB.TabIndex = 17;
-            this.genderCB.Text = "ذكر";
             // 
             // recivingDateDTP
             // 

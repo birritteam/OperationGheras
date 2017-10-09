@@ -91,6 +91,11 @@
     <Compile Include="courses.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="employment_officeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>employment_officeDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GUI\JobSeekerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +257,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="employment_officeDataSet.xsc">
+      <DependentUpon>employment_officeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="employment_officeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>employment_officeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="employment_officeDataSet.xss">
+      <DependentUpon>employment_officeDataSet.xsd</DependentUpon>
+    </None>
     <EntityDeploy Include="Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>

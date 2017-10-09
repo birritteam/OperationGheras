@@ -10,8 +10,8 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Certificate_name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="University_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Certificate_name" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="University_name" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Graduation" Type="date" />
           <Property Name="Study_year" Type="varchar" MaxLength="50" />
           <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
@@ -21,9 +21,9 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Compnay_name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Field_Of_Work" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Company_Place" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Compnay_name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Field_Of_Work" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Company_Place" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="phone" Type="varchar" MaxLength="50" />
           <Property Name="mobile" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
@@ -32,7 +32,8 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Course_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Course_Name" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Course_Location" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="Course_Date" Type="date" Nullable="false" />
           <Property Name="Num_Of_Days" Type="int" Nullable="false" />
           <Property Name="Train_Hours" Type="int" Nullable="false" />
@@ -48,8 +49,8 @@
           <Property Name="Company_ID" Type="int" Nullable="false" />
           <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Vacancy_ID" Type="int" Nullable="false" />
-          <Property Name="Hire_date" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="notes" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Hire_date" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="notes" Type="varchar" MaxLength="250" Nullable="false" />
         </EntityType>
         <EntityType Name="Job_seeker">
           <Key>
@@ -58,27 +59,28 @@
           <Property Name="First_name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Second_name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Father_name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Mother_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mother_Fname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mother_Lname" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Place_Of_Birth" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="National_ID" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="PersonalCard_number" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Gender" Type="int" Nullable="false" />
           <Property Name="Face_Color" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="eyes_Color" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Current_address" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Previous_address" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="special_Mark" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Current_address" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Previous_address" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="special_Mark" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="Date_Of_Release" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Military_service" Type="varchar" MaxLength="50" />
-          <Property Name="Social_status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Military_service" Type="varchar" MaxLength="250" />
+          <Property Name="Social_status" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="Driving_license" Type="int" Nullable="false" />
           <Property Name="Has_car" Type="int" Nullable="false" />
           <Property Name="Smoking" Type="int" Nullable="false" />
-          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
           <Property Name="Phone" Type="varchar" MaxLength="50" />
           <Property Name="mobile" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Handicap" Type="varchar" MaxLength="50" />
-          <Property Name="Extra_Information" Type="varchar" MaxLength="50" />
+          <Property Name="Handicap" Type="varchar" MaxLength="150" />
+          <Property Name="Extra_Information" Type="varchar" MaxLength="250" />
           <Property Name="municipality" Type="varchar" MaxLength="50" />
           <Property Name="registration" Type="varchar" MaxLength="50" />
         </EntityType>
@@ -96,20 +98,20 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Person_Name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Place_of_Work" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Position" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Person_Name" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Place_of_Work" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Position" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Phones" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="type" Type="int" Nullable="false" />
           <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Opinion" Type="varchar" MaxLength="50" />
+          <Property Name="Opinion" Type="varchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="Skills">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="400" />
           <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -129,8 +131,8 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Last_Salary" Type="int" />
           <Property Name="Excpected_Salary" Type="int" />
-          <Property Name="Job" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="time" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Job" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="time" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Vacancy">
@@ -139,14 +141,14 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Company_ID" Type="int" Nullable="false" />
-          <Property Name="Job_require" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Job_require" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="num_vacancies" Type="int" Nullable="false" />
           <Property Name="Job_description" Type="text" Nullable="false" />
           <Property Name="Experience_required" Type="text" Nullable="false" />
           <Property Name="gender" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Experience_year" Type="int" Nullable="false" />
-          <Property Name="Nature_work_time" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Work_place" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nature_work_time" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Work_place" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="salary" Type="money" Nullable="false" />
           <Property Name="Age_from" Type="int" Nullable="false" />
           <Property Name="Age_to" Type="int" Nullable="false" />
@@ -156,13 +158,13 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Company_Name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Company_plcae" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Field_Of_Work" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Job_Title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Company_Name" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Company_plcae" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Field_Of_Work" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Job_Title" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="Hire_date" Type="date" Nullable="false" />
           <Property Name="Quti_date" Type="date" />
-          <Property Name="Reason" Type="varchar" MaxLength="50" />
+          <Property Name="Reason" Type="varchar" MaxLength="250" />
           <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK_Certificate_Job_seeker">
@@ -365,8 +367,8 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Certificate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="University_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Certificate_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="University_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Graduation" Type="DateTime" Precision="0" />
           <Property Name="Study_year" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -377,9 +379,9 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Compnay_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Field_Of_Work" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Company_Place" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Compnay_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Field_Of_Work" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Company_Place" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Hired" Relationship="Self.FK_Hired_company" FromRole="company" ToRole="Hired" />
@@ -390,7 +392,8 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Course_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Course_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Course_Location" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Course_Date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Num_Of_Days" Type="Int32" Nullable="false" />
           <Property Name="Train_Hours" Type="Int32" Nullable="false" />
@@ -407,8 +410,8 @@
           <Property Name="Company_ID" Type="Int32" Nullable="false" />
           <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Vacancy_ID" Type="Int32" Nullable="false" />
-          <Property Name="Hire_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="notes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Hire_date" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="notes" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="company" Relationship="Self.FK_Hired_company" FromRole="Hired" ToRole="company" />
           <NavigationProperty Name="Job_seeker" Relationship="Self.FK_Hired_Job_seeker" FromRole="Hired" ToRole="Job_seeker" />
           <NavigationProperty Name="Vacancy" Relationship="Self.FK_Hired_Vacancy" FromRole="Hired" ToRole="Vacancy" />
@@ -420,27 +423,28 @@
           <Property Name="First_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Second_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Father_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Mother_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Mother_Fname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Mother_Lname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Place_Of_Birth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="National_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PersonalCard_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Gender" Type="Int32" Nullable="false" />
           <Property Name="Face_Color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="eyes_Color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Current_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Previous_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="special_Mark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Current_address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Previous_address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="special_Mark" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Date_Of_Release" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Military_service" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Social_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Military_service" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Social_status" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Driving_license" Type="Int32" Nullable="false" />
           <Property Name="Has_car" Type="Int32" Nullable="false" />
           <Property Name="Smoking" Type="Int32" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Handicap" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Extra_Information" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Handicap" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Extra_Information" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="municipality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="registration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Certificate" Relationship="Self.FK_Certificate_Job_seeker" FromRole="Job_seeker" ToRole="Certificate" />
@@ -467,13 +471,13 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Person_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Place_of_Work" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Person_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Place_of_Work" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Position" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Phones" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="type" Type="Int32" Nullable="false" />
           <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Opinion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Opinion" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Job_seeker" Relationship="Self.FK_References_Userss" FromRole="References" ToRole="Job_seeker" />
         </EntityType>
         <EntityType Name="Skills">
@@ -481,7 +485,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
           <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Job_seeker" Relationship="Self.FK_Skills_Userss" FromRole="Skills" ToRole="Job_seeker" />
         </EntityType>
@@ -502,8 +506,8 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Last_Salary" Type="Int32" />
           <Property Name="Excpected_Salary" Type="Int32" />
-          <Property Name="Job" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Job" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="time" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Job_seeker" Relationship="Self.FK_User_Job_Userss" FromRole="User_Job" ToRole="Job_seeker" />
         </EntityType>
@@ -513,14 +517,14 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Company_ID" Type="Int32" Nullable="false" />
-          <Property Name="Job_require" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Job_require" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="num_vacancies" Type="Int32" Nullable="false" />
           <Property Name="Job_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Experience_required" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Experience_year" Type="Int32" Nullable="false" />
-          <Property Name="Nature_work_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Work_place" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nature_work_time" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Work_place" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="salary" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="Age_from" Type="Int32" Nullable="false" />
           <Property Name="Age_to" Type="Int32" Nullable="false" />
@@ -532,13 +536,13 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Company_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Company_plcae" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Field_Of_Work" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Job_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Company_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Company_plcae" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Field_Of_Work" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Job_Title" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Hire_date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Quti_date" Type="DateTime" Precision="0" />
-          <Property Name="Reason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Reason" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Job_seeker" Relationship="Self.FK_Work_For_Userss" FromRole="Work_For" ToRole="Job_seeker" />
         </EntityType>
@@ -767,6 +771,7 @@
               <MappingFragment StoreEntitySet="courses">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Course_Name" ColumnName="Course_Name" />
+                <ScalarProperty Name="Course_Location" ColumnName="Course_Location" />
                 <ScalarProperty Name="Course_Date" ColumnName="Course_Date" />
                 <ScalarProperty Name="Num_Of_Days" ColumnName="Num_Of_Days" />
                 <ScalarProperty Name="Train_Hours" ColumnName="Train_Hours" />
@@ -792,7 +797,8 @@
                 <ScalarProperty Name="First_name" ColumnName="First_name" />
                 <ScalarProperty Name="Second_name" ColumnName="Second_name" />
                 <ScalarProperty Name="Father_name" ColumnName="Father_name" />
-                <ScalarProperty Name="Mother_name" ColumnName="Mother_name" />
+                <ScalarProperty Name="Mother_Fname" ColumnName="Mother_Fname" />
+                <ScalarProperty Name="Mother_Lname" ColumnName="Mother_Lname" />
                 <ScalarProperty Name="Place_Of_Birth" ColumnName="Place_Of_Birth" />
                 <ScalarProperty Name="National_ID" ColumnName="National_ID" />
                 <ScalarProperty Name="PersonalCard_number" ColumnName="PersonalCard_number" />
