@@ -35,9 +35,9 @@
             this.nextButton = new System.Windows.Forms.Button();
             this.previousButton = new System.Windows.Forms.Button();
             this.currentPageGroupBox = new System.Windows.Forms.GroupBox();
+            this.page1 = new GherasEO.GUI.UserControls.Page1();
             this.page3 = new GherasEO.GUI.UserControls.Page3();
             this.page2 = new GherasEO.GUI.UserControls.Page2();
-            this.page1 = new GherasEO.GUI.UserControls.Page1();
             this.panel3 = new System.Windows.Forms.Panel();
             this.updateExistingButton = new System.Windows.Forms.Button();
             this.addNewButton = new System.Windows.Forms.Button();
@@ -53,10 +53,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.searchResultDataGridView = new System.Windows.Forms.DataGridView();
-            this.fullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nationalNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.currentUserLabel = new System.Windows.Forms.Label();
+            this.seacrchBydesiredJobButton = new System.Windows.Forms.Button();
+            this.desiredJobTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.fullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nationalNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.addTabPage.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -147,6 +153,14 @@
             this.currentPageGroupBox.Text = "الصفحة الأولى (1 من 3)";
             this.currentPageGroupBox.Enter += new System.EventHandler(this.currentPageGroupBox_Enter);
             // 
+            // page1
+            // 
+            this.page1.AutoSize = true;
+            this.page1.Location = new System.Drawing.Point(29, 23);
+            this.page1.Name = "page1";
+            this.page1.Size = new System.Drawing.Size(715, 544);
+            this.page1.TabIndex = 0;
+            // 
             // page3
             // 
             this.page3.AutoSize = true;
@@ -165,14 +179,6 @@
             this.page2.Size = new System.Drawing.Size(703, 540);
             this.page2.TabIndex = 1;
             this.page2.Visible = false;
-            // 
-            // page1
-            // 
-            this.page1.AutoSize = true;
-            this.page1.Location = new System.Drawing.Point(29, 23);
-            this.page1.Name = "page1";
-            this.page1.Size = new System.Drawing.Size(715, 544);
-            this.page1.TabIndex = 0;
             // 
             // panel3
             // 
@@ -220,6 +226,9 @@
             // 
             // SearchTabPage
             // 
+            this.SearchTabPage.Controls.Add(this.seacrchBydesiredJobButton);
+            this.SearchTabPage.Controls.Add(this.desiredJobTextBox);
+            this.SearchTabPage.Controls.Add(this.label4);
             this.SearchTabPage.Controls.Add(this.panel6);
             this.SearchTabPage.Controls.Add(this.nationalNumberMaskedTB);
             this.SearchTabPage.Controls.Add(this.seacrchByNationalNumberButton);
@@ -318,9 +327,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.searchResultDataGridView);
-            this.groupBox1.Location = new System.Drawing.Point(8, 115);
+            this.groupBox1.Location = new System.Drawing.Point(8, 141);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(860, 454);
+            this.groupBox1.Size = new System.Drawing.Size(860, 428);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "نتائج البحث:";
@@ -335,7 +344,10 @@
             this.searchResultDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.searchResultDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fullName,
-            this.nationalNumber});
+            this.nationalNumber,
+            this.telephone,
+            this.mobile,
+            this.email});
             this.searchResultDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
             this.searchResultDataGridView.Location = new System.Drawing.Point(3, 16);
             this.searchResultDataGridView.MultiSelect = false;
@@ -343,18 +355,6 @@
             this.searchResultDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.searchResultDataGridView.Size = new System.Drawing.Size(854, 240);
             this.searchResultDataGridView.TabIndex = 0;
-            // 
-            // fullName
-            // 
-            this.fullName.HeaderText = "الاسم الكامل";
-            this.fullName.Name = "fullName";
-            this.fullName.ReadOnly = true;
-            // 
-            // nationalNumber
-            // 
-            this.nationalNumber.HeaderText = "الرقم الوطني";
-            this.nationalNumber.Name = "nationalNumber";
-            this.nationalNumber.ReadOnly = true;
             // 
             // label1
             // 
@@ -372,6 +372,60 @@
             this.currentUserLabel.Size = new System.Drawing.Size(192, 23);
             this.currentUserLabel.TabIndex = 2;
             this.currentUserLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // seacrchBydesiredJobButton
+            // 
+            this.seacrchBydesiredJobButton.Location = new System.Drawing.Point(235, 101);
+            this.seacrchBydesiredJobButton.Name = "seacrchBydesiredJobButton";
+            this.seacrchBydesiredJobButton.Size = new System.Drawing.Size(147, 23);
+            this.seacrchBydesiredJobButton.TabIndex = 19;
+            this.seacrchBydesiredJobButton.Text = "بحث حسب العمل المطلوب";
+            this.seacrchBydesiredJobButton.UseVisualStyleBackColor = true;
+            this.seacrchBydesiredJobButton.Click += new System.EventHandler(this.seacrchBydesiredJobButton_Click);
+            // 
+            // desiredJobTextBox
+            // 
+            this.desiredJobTextBox.Location = new System.Drawing.Point(404, 103);
+            this.desiredJobTextBox.Name = "desiredJobTextBox";
+            this.desiredJobTextBox.Size = new System.Drawing.Size(160, 20);
+            this.desiredJobTextBox.TabIndex = 18;
+            this.desiredJobTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(582, 106);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 13);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "العمل المطلوب:";
+            // 
+            // fullName
+            // 
+            this.fullName.HeaderText = "الاسم الكامل";
+            this.fullName.Name = "fullName";
+            this.fullName.ReadOnly = true;
+            // 
+            // nationalNumber
+            // 
+            this.nationalNumber.HeaderText = "الرقم الوطني";
+            this.nationalNumber.Name = "nationalNumber";
+            this.nationalNumber.ReadOnly = true;
+            // 
+            // telephone
+            // 
+            this.telephone.HeaderText = "هاتف أرضي";
+            this.telephone.Name = "telephone";
+            // 
+            // mobile
+            // 
+            this.mobile.HeaderText = "جوال";
+            this.mobile.Name = "mobile";
+            // 
+            // email
+            // 
+            this.email.HeaderText = "بريد الكتروني";
+            this.email.Name = "email";
             // 
             // JobSeekerForm
             // 
@@ -433,9 +487,15 @@
         internal System.Windows.Forms.MaskedTextBox nationalNumberMaskedTB;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button viewAllDataButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fullName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nationalNumber;
         private System.Windows.Forms.Button updateExistingButton;
         private System.Windows.Forms.Button addNewButton;
+        private System.Windows.Forms.Button seacrchBydesiredJobButton;
+        private System.Windows.Forms.TextBox desiredJobTextBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nationalNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telephone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mobile;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
     }
 }

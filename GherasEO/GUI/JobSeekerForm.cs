@@ -517,7 +517,7 @@ namespace GherasEO.GUI
                 var Job_seekers = db.Job_seeker.Where(x => x.First_name.Contains( name) || x.Second_name.Contains(name)).ToList();
                 if (Job_seekers != null && Job_seekers.Count>0)
                     foreach (Job_seeker js in Job_seekers)
-                    searchResultDataGridView.Rows.Add(js.First_name + " " + js.Father_name + " " + js.Second_name, js.National_ID);
+                    searchResultDataGridView.Rows.Add(js.First_name + " " + js.Father_name + " " + js.Second_name, js.National_ID,js.Phone,js.mobile,js.Email);
                 else
                     MessageBox.Show(null, "لا يوجد تطابق", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
@@ -536,7 +536,7 @@ namespace GherasEO.GUI
                 string id = Convert.ToString(nationalNumberMaskedTB.Text);
                 Job_seeker js= db.Job_seeker.SingleOrDefault(x => x.National_ID == id);
                 if(js !=null)
-                searchResultDataGridView.Rows.Add( js.First_name + " " + js.Father_name + " " + js.Second_name, js.National_ID);
+                searchResultDataGridView.Rows.Add( js.First_name + " " + js.Father_name + " " + js.Second_name, js.National_ID,js.Phone, js.mobile, js.Email);
                 else
                     MessageBox.Show(null, "لا يوجد تطابق", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
@@ -931,6 +931,33 @@ namespace GherasEO.GUI
                 nextButton.Enabled = true;
                 previousButton.Enabled = false;
                 addButton.Enabled = false;
+            }
+        }
+
+        private void seacrchBydesiredJobButton_Click(object sender, EventArgs e)
+        {
+            searchResultDataGridView.Rows.Clear();
+            if (desiredJobTextBox.Text != "")
+            {
+                string desiredJob = Convert.ToString(desiredJobTextBox.Text);
+                var Job_seekers = (from t1 in db.Job_seeker
+                        join t2 in db.User_Job on t1.National_ID equals t2.User_ID
+                        where(t2.Job.Contains(desiredJob))
+                        select new { t1 }).ToList();
+
+                // var Job_seekers = db.Job_seeker.Where(x => x.User_Job.Skip(1).Take(1).FirstOrDefault().Job ==desiredJob).ToList();
+                if (Job_seekers != null && Job_seekers.Count > 0)
+                    foreach (var js in Job_seekers)
+                    {
+                        searchResultDataGridView.Rows.Add(js.t1.First_name + " " + js.t1.Father_name + " " + js.t1.Second_name, js.t1.National_ID, js.t1.Phone, js.t1.mobile, js.t1.Email);
+                    }
+                else
+                    MessageBox.Show(null, "لا يوجد تطابق", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            else
+            {
+                MessageBox.Show(null, "لم يتم إدخال العمل المطلوب", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
