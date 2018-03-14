@@ -16,7 +16,7 @@ namespace GherasEO.GUI
 {
     public partial class JobSeekerForm : Form
     {
-      public  employment_officeEntities db = new employment_officeEntities();
+        public employment_officeEntities db = new employment_officeEntities();
         public Job_seeker JS;
         public bool checkeditoradd = false;//fasle => add(not edit)
         public string currentUser { get; set; }
@@ -24,7 +24,7 @@ namespace GherasEO.GUI
         private JobSeekerForm()
         {
             InitializeComponent();
-            
+
         }
 
         public JobSeekerForm(string currentUser)
@@ -33,8 +33,8 @@ namespace GherasEO.GUI
             this.currentUser = currentUser;
             this.currentUserLabel.Text = this.currentUser;
 
-           // tabControl1.TabPages[0].Enabled = false;
-            
+            // tabControl1.TabPages[0].Enabled = false;
+
 
 
             //page2.educationAndExpertise11.educationDataGridView.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
@@ -98,291 +98,344 @@ namespace GherasEO.GUI
                     removeOldData(JS);
                 }
 
-                    //personal ID and Data (Page 1)--Job_seeker
-                    JS.First_name = page1.personalID.firstNameTB.Text;
-                    JS.Second_name = page1.personalID.lastNameTB.Text;
-                    JS.Father_name = page1.personalID.fatherNameTB.Text;
-                    JS.Mother_Fname = page1.personalID.motherFirstNameTB.Text;
-                    JS.Mother_Lname=page1.personalID.motherLastNameTB.Text;
-                    JS.Place_Of_Birth = page1.personalID.birthLocationTB.Text;
-                    JS.National_ID = page1.personalID.nationalNumberMaskedTB.Text;
-                    JS.PersonalCard_number = page1.personalID.idNumberMaskedTB.Text;
+                //personal ID and Data (Page 1)--Job_seeker
+                JS.First_name = page1.personalID.firstNameTB.Text;
+                JS.Second_name = page1.personalID.lastNameTB.Text;
+                JS.Father_name = page1.personalID.fatherNameTB.Text;
+                JS.fullname = JS.First_name + " " + JS.Father_name + " " + JS.Second_name;
+                JS.Mother_Fname = page1.personalID.motherFirstNameTB.Text;
+                JS.Mother_Lname = page1.personalID.motherLastNameTB.Text;
+                JS.Place_Of_Birth = page1.personalID.birthLocationTB.Text;
+                JS.Birth_Date = page1.personalID.birthdayDTP.Text;
+                JS.National_ID = page1.personalID.nationalNumberMaskedTB.Text;
+                JS.PersonalCard_number = page1.personalID.idNumberMaskedTB.Text;
 
-                    if (page1.personalID.genderCB.Text.Equals("ذكر"))
-                        JS.Gender = 1;
-                    else
-                        JS.Gender = 0;
+                if (page1.personalID.genderCB.Text.Equals("ذكر"))
+                    JS.Gender = 1;
+                else
+                    JS.Gender = 0;
 
-                    JS.Face_Color = page1.personalID.faceColorTB.Text;
-                    JS.eyes_Color = page1.personalID.eyeColorTB.Text;
+                JS.Face_Color = page1.personalID.faceColorTB.Text;
+                JS.eyes_Color = page1.personalID.eyeColorTB.Text;
 
-                    JS.Current_address = page1.personalID.currentAddressTB.Text;
-                    JS.Previous_address = page1.personalID.previousAddressTB.Text;
-                    JS.special_Mark = page1.personalID.specialFeaturesTB.Text;
-                    JS.Date_Of_Release = page1.personalID.recivingDateDTP.Text;
-                    JS.municipality = page1.personalID.municipalityTextBox.Text;
-                    JS.registration = page1.personalID.registrationTextBox.Text;
+                JS.Current_address = page1.personalID.currentAddressTB.Text;
+                JS.Previous_address = page1.personalID.previousAddressTB.Text;
+                JS.special_Mark = page1.personalID.specialFeaturesTB.Text;
+                JS.Date_Of_Release = page1.personalID.recivingDateDTP.Text;
+                JS.municipality = page1.personalID.municipalityTextBox.Text;
+                JS.registration = page1.personalID.registrationTextBox.Text;
 
-                    string Military_service = "";
-                    if (page1.personalData.finishedRadioButton.Checked)
-                    {
-                        Military_service = "منتهية";
-                    }
-                    else if (page1.personalData.delayedRadioButton.Checked)
-                    {
-                        Military_service = "مؤجل بسبب: " + page1.personalData.delayReasonTB.Text;
-                    }
-                    else if (page1.personalData.exemptRadioButton.Checked)
-                    {
-                        Military_service = "معفى بسبب: " + page1.personalData.exemptionReasonTB.Text;
-                    }
-                     JS.Military_service = Military_service;
+                string Military_service = "";
+                if (page1.personalData.finishedRadioButton.Checked)
+                {
+                    Military_service = "منتهية";
+                }
+                else if (page1.personalData.delayedRadioButton.Checked)
+                {
+                    Military_service = "مؤجل بسبب: " + page1.personalData.delayReasonTB.Text;
+                }
+                else if (page1.personalData.exemptRadioButton.Checked)
+                {
+                    Military_service = "معفى بسبب: " + page1.personalData.exemptionReasonTB.Text;
+                }
+                JS.Military_service = Military_service;
 
-                    string Social_status = "عازب";
-                    if (page1.personalData.unmarriedRadioButton.Checked)
-                    {
-                        Social_status = "عازب";
-                    }
-                    else if (page1.personalData.marriedRadioButton.Checked)
-                    {
-                        Social_status = "متزوج" + "وله" + page1.personalData.numberOfChildrenNumericUpDown.Value.ToString() + " اولاد ";
-                    }
-                    else if (page1.personalData.divorcedRadioButton.Checked)
-                    {
+                string Social_status = "عازب";
+                if (page1.personalData.unmarriedRadioButton.Checked)
+                {
+                    Social_status = "عازب";
+                }
+                else if (page1.personalData.marriedRadioButton.Checked)
+                {
+                    Social_status = "متزوج" + "وله" + page1.personalData.numberOfChildrenNumericUpDown.Value.ToString() + " اولاد ";
+                }
+                else if (page1.personalData.divorcedRadioButton.Checked)
+                {
 
-                        Social_status = "مطلق" + "وله" + page1.personalData.numberOfChildrenNumericUpDown.Value.ToString() + " اولاد ";
+                    Social_status = "مطلق" + "وله" + page1.personalData.numberOfChildrenNumericUpDown.Value.ToString() + " اولاد ";
 
-                    }
-                    else if (page1.personalData.widowedRadioButton.Checked)
-                    {
-                        Social_status = "أرمل" + "وله" + page1.personalData.numberOfChildrenNumericUpDown.Value.ToString() + " اولاد ";
-                    }
-                    JS.Social_status = Social_status;
+                }
+                else if (page1.personalData.widowedRadioButton.Checked)
+                {
+                    Social_status = "أرمل" + "وله" + page1.personalData.numberOfChildrenNumericUpDown.Value.ToString() + " اولاد ";
+                }
+                JS.Social_status = Social_status;
 
+                JS.Driving_license = 0;
+
+                if (page1.personalData.drivingLicenceCheckBox.Checked)
+                {
+                    JS.Driving_license = 1;
+                }
+                else
+                {
                     JS.Driving_license = 0;
+                }
 
-                    if (page1.personalData.drivingLicenceCheckBox.Checked)
-                    {
-                        JS.Driving_license = 1;
-                    }
-                    else
-                    {
-                        JS.Driving_license = 0;
-                    }
-
+                JS.Has_car = 0;
+                if (page1.personalData.hasACarCheckBox.Checked)
+                {
+                    JS.Has_car = 1;
+                }
+                else
+                {
                     JS.Has_car = 0;
-                    if (page1.personalData.hasACarCheckBox.Checked)
-                    {
-                        JS.Has_car = 1;
-                    }
-                    else
-                    {
-                        JS.Has_car = 0;
-                    }
+                }
 
 
+                JS.Smoking = 0;
+                if (page1.personalData.smokerRadioButton.Checked)
+                {
+                    JS.Smoking = 1;
+                }
+                else
+                {
                     JS.Smoking = 0;
-                    if (page1.personalData.smokerRadioButton.Checked)
+                }
+
+                JS.Email = page1.personalData.emailTextBox.Text;
+                JS.Phone = page1.personalData.telephoneMaskedTextBox.Text;
+                JS.mobile = page1.personalData.maskedTextBox1.Text;
+                JS.Handicap = page1.personalData.disabilityTypeTextBox.Text;
+                JS.Extra_Information = page1.personalData.additionalInformationTextBox.Text;
+
+
+                // (Page 2)
+                ArrayList cer_list = new ArrayList();
+                Certificate cer = null;
+
+                foreach (DataGridViewRow row in page2.educationAndExpertise11.educationDataGridView.Rows)
+                {
+                    if (row.IsNewRow) continue;
+                    cer = new Certificate();
+                    cer.Certificate_name = Convert.ToString(row.Cells[0].Value);
+                    cer.University_name = Convert.ToString(row.Cells[1].Value);
+                    cer.Study_year = Convert.ToString(row.Cells[2].Value);
+                    try
                     {
-                        JS.Smoking = 1;
+                        cer.Graduation = DateTime.ParseExact(row.Cells[3].Value.ToString(), "dd-MM-yyyy", null);
                     }
-                    else
+                    catch (FormatException)
                     {
-                        JS.Smoking = 0;
-                    }
-
-                    JS.Email = page1.personalData.emailTextBox.Text;
-                    JS.Phone = page1.personalData.telephoneMaskedTextBox.Text;
-                    JS.mobile = page1.personalData.maskedTextBox1.Text;
-                    JS.Handicap = page1.personalData.disabilityTypeTextBox.Text;
-                    JS.Extra_Information = page1.personalData.additionalInformationTextBox.Text;
-
-
-                    // (Page 2)
-                    ArrayList cer_list = new ArrayList();
-                    Certificate cer = null;
-
-                    foreach (DataGridViewRow row in page2.educationAndExpertise11.educationDataGridView.Rows)
-                    {
-                        if (row.IsNewRow) continue;
-                        cer = new Certificate();
-                        cer.Certificate_name = Convert.ToString(row.Cells[0].Value);
-                        cer.University_name = Convert.ToString(row.Cells[1].Value);
-                        cer.Study_year = Convert.ToString(row.Cells[2].Value);
-                        cer.Graduation = Convert.ToDateTime(row.Cells[3].Value);
-
-
-                        cer_list.Add(cer);
+                        cer.Graduation = DateTime.ParseExact(row.Cells[3].Value.ToString(), "M/dd/yyyy", null);
                     }
 
-                    ArrayList WF_list = new ArrayList();
-                    Work_For WF = null;
+                    cer_list.Add(cer);
+                }
 
-                    foreach (DataGridViewRow row in page2.educationAndExpertise11.expertiseDataGridView.Rows)
+                ArrayList WF_list = new ArrayList();
+                Work_For WF = null;
+
+                foreach (DataGridViewRow row in page2.educationAndExpertise11.expertiseDataGridView.Rows)
+                {
+                    if (row.IsNewRow) continue;
+
+                    WF = new Work_For();
+                    WF.Company_Name = Convert.ToString(row.Cells[0].Value);
+                    WF.Company_plcae = Convert.ToString(row.Cells[1].Value);
+                    WF.Field_Of_Work = Convert.ToString(row.Cells[2].Value);
+                    WF.Job_Title = Convert.ToString(row.Cells[3].Value);
+
+                    try
                     {
-                        if (row.IsNewRow) continue;
+                        WF.Hire_date = DateTime.ParseExact(row.Cells[4].Value.ToString(), "dd-MM-yyyy", null);
 
-                        WF = new Work_For();
-                        WF.Company_Name = Convert.ToString(row.Cells[0].Value);
-                        WF.Company_plcae = Convert.ToString(row.Cells[1].Value);
-                        WF.Field_Of_Work = Convert.ToString(row.Cells[2].Value);
-                        WF.Job_Title = Convert.ToString(row.Cells[3].Value);
-                        WF.Hire_date = Convert.ToDateTime(row.Cells[4].Value);
-                        WF.Quti_date = Convert.ToDateTime(row.Cells[5].Value);
-                        WF.Reason = Convert.ToString(row.Cells[6].Value);
-                        WF_list.Add(WF);
+                    }
+                    catch (FormatException)
+                    {
+                        WF.Hire_date = DateTime.ParseExact(row.Cells[4].Value.ToString(), "M/dd/yyyy", null);
+
+                    }
+                    try
+                    {
+                        WF.Quti_date = DateTime.ParseExact(row.Cells[5].Value.ToString(), "dd-MM-yyyy", null);
+
+                    }
+                    catch (FormatException)
+                    {
+                        WF.Quti_date = DateTime.ParseExact(row.Cells[5].Value.ToString(), "M/dd/yyyy", null);
+
                     }
 
 
-                    ArrayList TC_list = new ArrayList();
-                    courses TC = null;
-                    // (Page 2)
-                    foreach (DataGridViewRow row in page2.educationAndExpertise11.traineeCoursesDataGridView.Rows)
+                    //  WF.Quti_date = Convert.ToDateTime(row.Cells[5].Value);
+                    WF.Reason = Convert.ToString(row.Cells[6].Value);
+                    WF_list.Add(WF);
+                }
+
+
+                ArrayList TC_list = new ArrayList();
+                cours TC = null;
+                // (Page 2)
+                foreach (DataGridViewRow row in page2.educationAndExpertise11.traineeCoursesDataGridView.Rows)
+                {
+                    if (row.IsNewRow) continue;
+                    TC = new cours();
+                    TC.Course_Name = Convert.ToString(row.Cells[0].Value);
+                    TC.Course_Location = Convert.ToString(row.Cells[1].Value);
+                    //  TC.Course_Date = Convert.ToDateTime(row.Cells[2].Value);
+
+                    try
                     {
-                        if (row.IsNewRow) continue;
-                        TC = new courses();
-                        TC.Course_Name = Convert.ToString(row.Cells[0].Value);
-                        TC.Course_Location = Convert.ToString(row.Cells[1].Value);
-                        TC.Course_Date = Convert.ToDateTime(row.Cells[2].Value);
-                        TC.Num_Of_Days = Convert.ToInt32(row.Cells[3].Value);
-                        TC.Train_Hours = Convert.ToInt32(row.Cells[4].Value);
-                        TC.type = Convert.ToInt32(0);//  trainee <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<attention
+                        TC.Course_Date = DateTime.ParseExact(row.Cells[2].Value.ToString(), "dd-MM-yyyy", null);
+
+                    }
+                    catch (FormatException)
+                    {
+                        TC.Course_Date = DateTime.ParseExact(row.Cells[2].Value.ToString(), "M/dd/yyyy", null);
+
+                    }
+
+                    TC.Num_Of_Days = Convert.ToInt32(row.Cells[3].Value);
+                    TC.Train_Hours = Convert.ToInt32(row.Cells[4].Value);
+                    TC.type = Convert.ToInt32(0);//  trainee <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<attention
 
                     TC_list.Add(TC);
+                }
+
+                ArrayList TeC_list = new ArrayList();
+                cours TeC = null;
+
+                foreach (DataGridViewRow row in page2.educationAndExpertise11.trainerCoursesDataGridView.Rows)
+                {
+                    if (row.IsNewRow) continue;
+                    TeC = new cours();
+                    TeC.Course_Name = Convert.ToString(row.Cells[0].Value);
+                    TeC.Course_Location = Convert.ToString(row.Cells[1].Value);
+                    //   TeC.Course_Date = Convert.ToDateTime(row.Cells[2].Value);
+                    try
+                    {
+                        TeC.Course_Date = DateTime.ParseExact(row.Cells[2].Value.ToString(), "dd-MM-yyyy", null);
+
+                    }
+                    catch (FormatException)
+                    {
+                        TeC.Course_Date = DateTime.ParseExact(row.Cells[2].Value.ToString(), "M/dd/yyyy", null);
+
                     }
 
-                    ArrayList TeC_list = new ArrayList();
-                    courses TeC = null;
+                    TeC.Num_Of_Days = Convert.ToInt32(row.Cells[3].Value);
+                    TeC.Train_Hours = Convert.ToInt32(row.Cells[4].Value);
+                    TeC.type = Convert.ToInt32(1);//1  trainer <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<attention
 
-                    foreach (DataGridViewRow row in page2.educationAndExpertise11.trainerCoursesDataGridView.Rows)
+                    TeC_list.Add(TeC);
+                }
+
+                //page3
+
+
+                //skills
+                // ArrayList Computer_skill_list = new ArrayList();
+                Skill newskill = new Skill();
+                ArrayList skill_list = new ArrayList();
+
+                // Determine if there are any items checked.  
+                if (page3.skills11.computerSkillsCheckList.CheckedItems.Count != 0)
+                {
+                    // If so, loop through all checked items  
+                    for (int x = 0; x < page3.skills11.computerSkillsCheckList.CheckedItems.Count; x++)
                     {
-                        if (row.IsNewRow) continue;
-                        TeC = new courses();
-                        TeC.Course_Name = Convert.ToString(row.Cells[0].Value);
-                        TeC.Course_Location = Convert.ToString(row.Cells[1].Value);
-                        TeC.Course_Date = Convert.ToDateTime(row.Cells[2].Value);
-                        TeC.Num_Of_Days = Convert.ToInt32(row.Cells[3].Value);
-                        TeC.Train_Hours = Convert.ToInt32(row.Cells[4].Value);
-                        TeC.type = Convert.ToInt32(1);//1  trainer <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<attention
-
-                        TeC_list.Add(TeC);
-                    }
-
-                    //page3
-
-
-                    //skills
-                   // ArrayList Computer_skill_list = new ArrayList();
-                    Skills newskill = new Skills();
-                    ArrayList skill_list = new ArrayList();
-
-                    // Determine if there are any items checked.  
-                    if (page3.skills11.computerSkillsCheckList.CheckedItems.Count != 0)
-                    {
-                        // If so, loop through all checked items  
-                        for (int x = 0; x < page3.skills11.computerSkillsCheckList.CheckedItems.Count; x++)
-                        {
-                        newskill = new Skills();
+                        newskill = new Skill();
                         newskill.Name = page3.skills11.computerSkillsCheckList.CheckedItems[x].ToString();
                         skill_list.Add(newskill);
-                        }
                     }
+                }
 
-                    foreach (DataGridViewRow row in page3.skills11.otherComputerSkillsDataGridView.Rows)
-                    {
-                        if (row.IsNewRow) continue;
+                foreach (DataGridViewRow row in page3.skills11.otherComputerSkillsDataGridView.Rows)
+                {
+                    if (row.IsNewRow) continue;
 
-                    newskill = new Skills();
-                    newskill.Name = Convert.ToString("برامج اخرى:"+row.Cells[0].Value);
+                    newskill = new Skill();
+                    newskill.Name = Convert.ToString("برامج اخرى:" + row.Cells[0].Value);
                     skill_list.Add(newskill);
 
-                    }
+                }
 
-                    //string AllcomputerSkill = "مهارات حاسوبية:";
-                    //foreach (string s in Computer_skill_list)
-                    //{
-                    //    AllcomputerSkill += " " + s;
-                    //}
+                //string AllcomputerSkill = "مهارات حاسوبية:";
+                //foreach (string s in Computer_skill_list)
+                //{
+                //    AllcomputerSkill += " " + s;
+                //}
 
-                    //if (Computer_skill_list.Count > 0)
-                    //{
-                    //    Computer_skill.Name = AllcomputerSkill;
-                    //    skill_list.Add(Computer_skill);
-                    //}
+                //if (Computer_skill_list.Count > 0)
+                //{
+                //    Computer_skill.Name = AllcomputerSkill;
+                //    skill_list.Add(Computer_skill);
+                //}
 
-                    Skills Oskill = null;
-                    foreach (DataGridViewRow row in page3.skills11.otherSkillsDataGridView.Rows)
-                    {
-                        if (row.IsNewRow) continue;
+                Skill Oskill = null;
+                foreach (DataGridViewRow row in page3.skills11.otherSkillsDataGridView.Rows)
+                {
+                    if (row.IsNewRow) continue;
 
-                        Oskill = new Skills();
-                        Oskill.Name = Convert.ToString("مهارات اخرى:" + row.Cells[0].Value);
+                    Oskill = new Skill();
+                    Oskill.Name = Convert.ToString("مهارات اخرى:" + row.Cells[0].Value);
 
-                        skill_list.Add(Oskill);
-                    }
+                    skill_list.Add(Oskill);
+                }
 
-                    //Languages
-                    ArrayList Languages_list = new ArrayList();
-                    Language lang = null;
+                //Languages
+                ArrayList Languages_list = new ArrayList();
+                Language lang = null;
 
-                    foreach (DataGridViewRow row in page3.skills11.languagesGridView1.Rows)
-                    {
-                        if (row.IsNewRow) continue;
+                foreach (DataGridViewRow row in page3.skills11.languagesGridView1.Rows)
+                {
+                    if (row.IsNewRow) continue;
 
-                        lang = new Language();
+                    lang = new Language();
 
-                        lang.Language1 = Convert.ToString(row.Cells[0].Value);
-                        lang.language_level = Convert.ToString(row.Cells[1].Value);
+                    lang.Language1 = Convert.ToString(row.Cells[0].Value);
+                    lang.language_level = Convert.ToString(row.Cells[1].Value);
 
-                        Languages_list.Add(lang);
-                    }
+                    Languages_list.Add(lang);
+                }
 
 
-                    //Desired Job
-                    User_Job DJ = new User_Job();
+                //Desired Job
+                User_Job DJ = new User_Job();
 
-                    DJ.Last_Salary = Convert.ToInt32(page3.desiredJob11.latestSalaryNumericUpDown.Value);
-                    DJ.Excpected_Salary = Convert.ToInt32(page3.desiredJob11.ExpectedSalaryNumericUpDown.Value);
-                    DJ.Job = Convert.ToString(page3.desiredJob11.desiredJobTextBox.Text);
-                    DJ.time = Convert.ToString(page3.desiredJob11.workTimeTextBox.Text);
+                DJ.Last_Salary = Convert.ToInt32(page3.desiredJob11.latestSalaryNumericUpDown.Value);
+                DJ.Excpected_Salary = Convert.ToInt32(page3.desiredJob11.ExpectedSalaryNumericUpDown.Value);
+                DJ.Job = Convert.ToString(page3.desiredJob11.desiredJobTextBox.Text);
+                DJ.time = Convert.ToString(page3.desiredJob11.workTimeTextBox.Text);
 
-                    //Emergency
+                //Emergency
 
-                    ArrayList Emer_list = new ArrayList();
-                    References Emer = null;
+                ArrayList Emer_list = new ArrayList();
+                Reference Emer = null;
 
-                    foreach (DataGridViewRow row in page3.emergencyAndReferences11.emergencyDataGridView.Rows)
-                    {
-                        if (row.IsNewRow) continue;
+                foreach (DataGridViewRow row in page3.emergencyAndReferences11.emergencyDataGridView.Rows)
+                {
+                    if (row.IsNewRow) continue;
 
-                        Emer = new References();
+                    Emer = new Reference();
 
-                        Emer.Person_Name = Convert.ToString(row.Cells[0].Value);
-                        Emer.Place_of_Work = Convert.ToString(row.Cells[1].Value);
-                        Emer.Position = Convert.ToString(row.Cells[2].Value);
-                        Emer.Phones = Convert.ToString(row.Cells[3].Value);
-                        Emer.type = Convert.ToInt32(0);// 0 emergency <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< attention
+                    Emer.Person_Name = Convert.ToString(row.Cells[0].Value);
+                    Emer.Place_of_Work = Convert.ToString(row.Cells[1].Value);
+                    Emer.Position = Convert.ToString(row.Cells[2].Value);
+                    Emer.Phones = Convert.ToString(row.Cells[3].Value);
+                    Emer.type = Convert.ToInt32(0);// 0 emergency <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< attention
                     Emer_list.Add(Emer);
-                    }
-                    //Refrence Opinion 
+                }
+                //Refrence Opinion 
 
-                    ArrayList RO_list = new ArrayList();
-                    References RO = null;
+                ArrayList RO_list = new ArrayList();
+                Reference RO = null;
 
-                    foreach (DataGridViewRow row in page3.emergencyAndReferences11.referenceDataGridView.Rows)
-                    {
-                        if (row.IsNewRow) continue;
+                foreach (DataGridViewRow row in page3.emergencyAndReferences11.referenceDataGridView.Rows)
+                {
+                    if (row.IsNewRow) continue;
 
-                        RO = new References();
+                    RO = new Reference();
 
-                        RO.Person_Name = Convert.ToString(row.Cells[0].Value);
-                        RO.Place_of_Work = Convert.ToString(row.Cells[1].Value);
-                        RO.Position = Convert.ToString(row.Cells[2].Value);
-                        RO.Phones = Convert.ToString(row.Cells[3].Value);
+                    RO.Person_Name = Convert.ToString(row.Cells[0].Value);
+                    RO.Place_of_Work = Convert.ToString(row.Cells[1].Value);
+                    RO.Position = Convert.ToString(row.Cells[2].Value);
+                    RO.Phones = Convert.ToString(row.Cells[3].Value);
                     RO.Opinion = Convert.ToString(row.Cells[4].Value);
                     RO.type = Convert.ToInt32(1);//1 References <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< attention
                     RO_list.Add(RO);
-                    }
+                }
 
                 //save Database
                 //cer_list
@@ -394,32 +447,32 @@ namespace GherasEO.GUI
                 //DJ
                 //Emer_list
                 // RO_list
-                            
-                    foreach (Certificate c in cer_list)
-                       JS.Certificate.Add(c);
 
-                    foreach (Work_For w in WF_list)
-                        JS.Work_For.Add(w);
+                foreach (Certificate c in cer_list)
+                    JS.Certificates.Add(c);
 
-                    foreach (courses c in TC_list)
-                       JS.courses.Add(c);
+                foreach (Work_For w in WF_list)
+                    JS.Work_For.Add(w);
 
-                    foreach (courses c in TeC_list)
-                        JS.courses.Add(c);
+                foreach (cours c in TC_list)
+                    JS.courses.Add(c);
 
-                    foreach (Skills s in skill_list)
-                        JS.Skills.Add(s);
+                foreach (cours c in TeC_list)
+                    JS.courses.Add(c);
 
-                    foreach (Language l in Languages_list)
-                        JS.Language.Add(l);
+                foreach (Skill s in skill_list)
+                    JS.Skills.Add(s);
 
-                    JS.User_Job.Add(DJ);
+                foreach (Language l in Languages_list)
+                    JS.Languages.Add(l);
 
-                    foreach (References r in Emer_list)
-                        JS.References.Add(r);
+                JS.User_Job.Add(DJ);
 
-                    foreach (References ro in RO_list)
-                        JS.References.Add(ro);
+                foreach (Reference r in Emer_list)
+                    JS.References.Add(r);
+
+                foreach (Reference ro in RO_list)
+                    JS.References.Add(ro);
 
                 if (!checkeditoradd)
                 {
@@ -514,10 +567,10 @@ namespace GherasEO.GUI
             if (FullNametextBox.Text != "")
             {
                 string name = Convert.ToString(FullNametextBox.Text);
-                var Job_seekers = db.Job_seeker.Where(x => x.First_name.Contains( name) || x.Second_name.Contains(name)).ToList();
-                if (Job_seekers != null && Job_seekers.Count>0)
+                var Job_seekers = db.Job_seeker.Where(x => x.fullname.Contains(name)).ToList();
+                if (Job_seekers != null && Job_seekers.Count > 0)
                     foreach (Job_seeker js in Job_seekers)
-                    searchResultDataGridView.Rows.Add(js.First_name + " " + js.Father_name + " " + js.Second_name, js.National_ID,js.Phone,js.mobile,js.Email);
+                        searchResultDataGridView.Rows.Add(js.fullname, js.National_ID, js.Phone, js.mobile, js.Email);
                 else
                     MessageBox.Show(null, "لا يوجد تطابق", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
@@ -534,9 +587,9 @@ namespace GherasEO.GUI
             if (nationalNumberMaskedTB.Text != "                    ")
             {
                 string id = Convert.ToString(nationalNumberMaskedTB.Text);
-                Job_seeker js= db.Job_seeker.SingleOrDefault(x => x.National_ID == id);
-                if(js !=null)
-                searchResultDataGridView.Rows.Add( js.First_name + " " + js.Father_name + " " + js.Second_name, js.National_ID,js.Phone, js.mobile, js.Email);
+                Job_seeker js = db.Job_seeker.SingleOrDefault(x => x.National_ID == id);
+                if (js != null)
+                    searchResultDataGridView.Rows.Add(js.fullname, js.National_ID, js.Phone, js.mobile, js.Email);
                 else
                     MessageBox.Show(null, "لا يوجد تطابق", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
@@ -553,7 +606,7 @@ namespace GherasEO.GUI
             if (searchResultDataGridView.SelectedRows.Count > 0)
             {
                 string fullname = searchResultDataGridView.SelectedRows[0].Cells[0].Value.ToString();
-                string National_id= searchResultDataGridView.SelectedRows[0].Cells[1].Value.ToString();
+                string National_id = searchResultDataGridView.SelectedRows[0].Cells[1].Value.ToString();
 
                 resetViewData();
 
@@ -567,15 +620,15 @@ namespace GherasEO.GUI
                 MessageBox.Show(null, "يجب اختيار سطر  من الجدول", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-               
+
         }
         public void removeOldData(Job_seeker Js)
         {
             int i = 0;
-            ICollection<Certificate> cer_list = JS.Certificate;
+            ICollection<Certificate> cer_list = JS.Certificates;
             foreach (Certificate cer in cer_list.ToList())
             {
-                db.Certificate.Remove(cer);
+                db.Certificates.Remove(cer);
             }
 
             ICollection<Work_For> WF_list = JS.Work_For;
@@ -584,9 +637,9 @@ namespace GherasEO.GUI
                 db.Work_For.Remove(WF);
             }
 
-            ICollection<courses> TC_list = JS.courses;
+            ICollection<cours> TC_list = JS.courses;
             // (Page 2)
-            foreach (courses TC in TC_list.ToList())
+            foreach (cours TC in TC_list.ToList())
             {
                 db.courses.Remove(TC);
             }
@@ -594,18 +647,18 @@ namespace GherasEO.GUI
             //page3
             //Skills
             //computer Skills
-            ICollection<Skills> skill_list = JS.Skills;
-            foreach (Skills s in skill_list.ToList())
+            ICollection<Skill> skill_list = JS.Skills;
+            foreach (Skill s in skill_list.ToList())
             {
 
                 db.Skills.Remove(s);
 
             }
             // Languages
-            ICollection<Language> Languages_list = JS.Language;
+            ICollection<Language> Languages_list = JS.Languages;
             foreach (Language lang in Languages_list.ToList())
             {
-                db.Language.Remove(lang);
+                db.Languages.Remove(lang);
             }
 
 
@@ -615,8 +668,8 @@ namespace GherasEO.GUI
             db.User_Job.Remove(DJ.ElementAt(0));
 
             //Emergency
-            ICollection<References> Emer_list = JS.References;
-            foreach (References refe in Emer_list.ToList())
+            ICollection<Reference> Emer_list = JS.References;
+            foreach (Reference refe in Emer_list.ToList())
             {
                 db.References.Remove(refe);
 
@@ -625,78 +678,86 @@ namespace GherasEO.GUI
             db.SaveChanges();
 
         }
-      public void  FillData(string National_id)
+        public void FillData(string National_id)
         {
             JS = db.Job_seeker.SingleOrDefault(x => x.National_ID == National_id);
 
             //personal ID and Data (Page 1)--Job_seeker
-            
-            page1.personalID.firstNameTB.Text= JS.First_name ;
+
+            page1.personalID.firstNameTB.Text = JS.First_name;
             page1.personalID.lastNameTB.Text = JS.Second_name;
-            page1.personalID.fatherNameTB.Text= JS.Father_name;
+            page1.personalID.fatherNameTB.Text = JS.Father_name;
             page1.personalID.motherFirstNameTB.Text = JS.Mother_Fname;
-            page1.personalID.motherLastNameTB.Text= JS.Mother_Lname;
-            page1.personalID.birthLocationTB.Text=JS.Place_Of_Birth ;
-            page1.personalID.nationalNumberMaskedTB.Text=JS.National_ID  ;
-            page1.personalID.idNumberMaskedTB.Text= JS.PersonalCard_number;
+            page1.personalID.motherLastNameTB.Text = JS.Mother_Lname;
+            page1.personalID.birthLocationTB.Text = JS.Place_Of_Birth;
+            page1.personalID.birthdayDTP.Text = JS.Birth_Date + "";
+            page1.personalID.nationalNumberMaskedTB.Text = JS.National_ID;
+            page1.personalID.idNumberMaskedTB.Text = JS.PersonalCard_number;
 
             if (JS.Gender == 1)
                 page1.personalID.genderCB.Text = "ذكر";
             else
                 page1.personalID.genderCB.Text = "أنثى";
 
-            page1.personalID.faceColorTB.Text= JS.Face_Color ;
-            page1.personalID.eyeColorTB.Text= JS.eyes_Color ;
+            page1.personalID.faceColorTB.Text = JS.Face_Color;
+            page1.personalID.eyeColorTB.Text = JS.eyes_Color;
 
-            page1.personalID.currentAddressTB.Text=JS.Current_address  ;
-              page1.personalID.previousAddressTB.Text= JS.Previous_address;
-              page1.personalID.specialFeaturesTB.Text= JS.special_Mark;
-              page1.personalID.recivingDateDTP.Text= JS.Date_Of_Release;
-              page1.personalID.municipalityTextBox.Text= JS.municipality;
-              page1.personalID.registrationTextBox.Text= JS.registration;
+            page1.personalID.currentAddressTB.Text = JS.Current_address;
+            page1.personalID.previousAddressTB.Text = JS.Previous_address;
+            page1.personalID.specialFeaturesTB.Text = JS.special_Mark;
+            page1.personalID.recivingDateDTP.Text = JS.Date_Of_Release;
+            page1.personalID.municipalityTextBox.Text = JS.municipality;
+            page1.personalID.registrationTextBox.Text = JS.registration;
 
-            if (JS.Military_service.Contains("منتهية")  )
+            if (JS.Gender == 1)
             {
-                page1.personalData.finishedRadioButton.Checked=true;
+                page1.personalData.miltaryServiceGroupBox.Enabled = true;
+                if (JS.Military_service.Contains("منتهية"))
+                {
+                    page1.personalData.finishedRadioButton.Checked = true;
+                }
+                else if (JS.Military_service.Contains("مؤجل بسبب"))
+                {
+                    page1.personalData.delayedRadioButton.Checked = true;
+                    page1.personalData.delayReasonTB.Text = JS.Military_service.Substring(10);
+                }
+                else if (JS.Military_service.Contains("معفى بسبب"))
+                {
+                    page1.personalData.exemptRadioButton.Checked = true;
+                    page1.personalData.exemptionReasonTB.Text = JS.Military_service.Substring(10);
+                }
+
             }
-            else if (JS.Military_service.Contains("مؤجل بسبب"))
-            {
-                page1.personalData.delayedRadioButton.Checked = true;
-                page1.personalData.delayReasonTB.Text= JS.Military_service.Substring(10);
-            }
-            else if (JS.Military_service.Contains("معفى بسبب"))
-            {
-                page1.personalData.exemptRadioButton.Checked = true;
-                page1.personalData.exemptionReasonTB.Text = JS.Military_service.Substring(10);
-            }
+            else
+                page1.personalData.miltaryServiceGroupBox.Enabled = false;
 
 
 
-            if (JS.Social_status.Contains("عازب") )
+            if (JS.Social_status.Contains("عازب"))
             {
                 page1.personalData.unmarriedRadioButton.Checked = true;
             }
             else if (JS.Social_status.Contains("متزوج"))
             {
                 page1.personalData.marriedRadioButton.Checked = true;
-                page1.personalData.numberOfChildrenNumericUpDown.Value= Int32.Parse(Regex.Match(JS.Social_status, @"\d+").Value); 
+                page1.personalData.numberOfChildrenNumericUpDown.Value = Int32.Parse(Regex.Match(JS.Social_status, @"\d+").Value);
             }
             else if (JS.Social_status.Contains("مطلق"))
             {
                 page1.personalData.divorcedRadioButton.Checked = true;
-               page1.personalData.numberOfChildrenNumericUpDown.Value = Int32.Parse(Regex.Match(JS.Social_status, @"\d+").Value); 
+                page1.personalData.numberOfChildrenNumericUpDown.Value = Int32.Parse(Regex.Match(JS.Social_status, @"\d+").Value);
 
             }
             else if (JS.Social_status.Contains("أرمل"))
             {
                 page1.personalData.widowedRadioButton.Checked = true;
-                 page1.personalData.numberOfChildrenNumericUpDown.Value = Int32.Parse(Regex.Match(JS.Social_status, @"\d+").Value); 
+                page1.personalData.numberOfChildrenNumericUpDown.Value = Int32.Parse(Regex.Match(JS.Social_status, @"\d+").Value);
             }
 
             if (JS.Driving_license == 1)
             {
                 page1.personalData.drivingLicenceCheckBox.Checked = true;
-             
+
             }
             else
             {
@@ -707,7 +768,7 @@ namespace GherasEO.GUI
             if (JS.Has_car == 1)
             {
                 page1.personalData.hasACarCheckBox.Checked = true;
-                
+
             }
             else
             {
@@ -734,37 +795,38 @@ namespace GherasEO.GUI
 
             // (Page 2)
             int i = 0;
-             ICollection<Certificate>  cer_list = JS.Certificate;
+            ICollection<Certificate> cer_list = JS.Certificates;
             foreach (Certificate cer in cer_list)
             {
-                
-                page2.educationAndExpertise11.educationDataGridView.Rows.Add( cer.Certificate_name, cer.University_name, cer.Study_year, cer.Graduation);
+
+                page2.educationAndExpertise11.educationDataGridView.Rows.Add(cer.Certificate_name, cer.University_name, cer.Study_year, DateTime.Parse(cer.Graduation.ToString()).ToShortDateString());
             }
 
             i = 0;
-            ICollection < Work_For> WF_list = JS.Work_For;
-            foreach ( Work_For WF in WF_list)
+            ICollection<Work_For> WF_list = JS.Work_For;
+            foreach (Work_For WF in WF_list)
             {
 
-                page2.educationAndExpertise11.expertiseDataGridView.Rows.Add(WF.Company_Name, WF.Company_plcae, WF.Field_Of_Work, WF.Job_Title, WF.Hire_date, WF.Quti_date, WF.Reason);
+
+                page2.educationAndExpertise11.expertiseDataGridView.Rows.Add(WF.Company_Name, WF.Company_plcae, WF.Field_Of_Work, WF.Job_Title, DateTime.Parse(WF.Hire_date.ToString()).ToShortDateString(), DateTime.Parse(WF.Quti_date.ToString()).ToShortDateString(), WF.Reason);
 
             }
 
-            ICollection < courses> TC_list = JS.courses.Where(x=>x.type == 0).ToList();//0 .trainee <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< attention
+            ICollection<cours> TC_list = JS.courses.Where(x => x.type == 0).ToList();//0 .trainee <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< attention
             // (Page 2)
-            foreach (courses TC in TC_list)
+            foreach (cours TC in TC_list)
             {
-                
-                page2.educationAndExpertise11.traineeCoursesDataGridView.Rows.Add(TC.Course_Name, TC.Course_Location, TC.Course_Date , TC.Num_Of_Days, TC.Train_Hours);
+
+                page2.educationAndExpertise11.traineeCoursesDataGridView.Rows.Add(TC.Course_Name, TC.Course_Location, DateTime.Parse(TC.Course_Date.ToString()).ToShortDateString(), TC.Num_Of_Days, TC.Train_Hours);
 
             }
 
-            ICollection<courses> TeC_list = JS.courses.Where(x => x.type == 1).ToList();//1 .trainer <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< attention
+            ICollection<cours> TeC_list = JS.courses.Where(x => x.type == 1).ToList();//1 .trainer <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< attention
             // (Page 2)
-            foreach (courses TeC in TeC_list)
+            foreach (cours TeC in TeC_list)
             {
-              
-                page2.educationAndExpertise11.trainerCoursesDataGridView.Rows.Add(TeC.Course_Name, TeC.Course_Location, TeC.Course_Date, TeC.Num_Of_Days, TeC.Train_Hours);
+
+                page2.educationAndExpertise11.trainerCoursesDataGridView.Rows.Add(TeC.Course_Name, TeC.Course_Location, DateTime.Parse(TeC.Course_Date.ToString()).ToShortDateString(), TeC.Num_Of_Days, TeC.Train_Hours);
 
             }
 
@@ -772,21 +834,21 @@ namespace GherasEO.GUI
 
             //Skills
             //computer Skills
-            ICollection< Skills> skill_list =JS.Skills;
+            ICollection<Skill> skill_list = JS.Skills;
             for (int j = 0; j < page3.skills11.computerSkillsCheckList.Items.Count; j++)
             {
-                           
-                foreach (Skills s in skill_list)
-                if (page3.skills11.computerSkillsCheckList.Items[j].ToString() == s.Name)
-                {
-                  page3.skills11.computerSkillsCheckList.SetItemChecked(j, true);
-                // skill_list.Remove(s);
-                  break;
-                }
-               
+
+                foreach (Skill s in skill_list)
+                    if (page3.skills11.computerSkillsCheckList.Items[j].ToString() == s.Name)
+                    {
+                        page3.skills11.computerSkillsCheckList.SetItemChecked(j, true);
+                        // skill_list.Remove(s);
+                        break;
+                    }
+
             }
             //other Computer Skills
-            foreach (Skills s in skill_list)
+            foreach (Skill s in skill_list)
             {
 
                 if (s.Name.Contains("برامج اخرى"))
@@ -795,7 +857,7 @@ namespace GherasEO.GUI
                 }
             }
             //other skill
-            foreach (Skills s in skill_list )
+            foreach (Skill s in skill_list)
             {
 
                 if (s.Name.Contains("مهارات اخرى"))
@@ -805,39 +867,39 @@ namespace GherasEO.GUI
 
             }
             // Languages
-            ICollection < Language> Languages_list = JS.Language;    
+            ICollection<Language> Languages_list = JS.Languages;
             foreach (Language lang in Languages_list)
             {
-               
+
                 page3.skills11.languagesGridView1.Rows.Add(lang.Language1, lang.language_level);
             }
 
 
             //Desired Job
 
-             ICollection <User_Job> DJ = JS.User_Job;
-            page3.desiredJob11.latestSalaryNumericUpDown.Value= Convert.ToInt32(DJ.ElementAt(0).Last_Salary)  ;
-            page3.desiredJob11.ExpectedSalaryNumericUpDown.Value=Convert.ToInt32(DJ.ElementAt(0).Excpected_Salary);
-            page3.desiredJob11.desiredJobTextBox.Text=DJ.ElementAt(0).Job ;
-            page3.desiredJob11.workTimeTextBox.Text= DJ.ElementAt(0).time;
+            ICollection<User_Job> DJ = JS.User_Job;
+            page3.desiredJob11.latestSalaryNumericUpDown.Value = Convert.ToInt32(DJ.ElementAt(0).Last_Salary);
+            page3.desiredJob11.ExpectedSalaryNumericUpDown.Value = Convert.ToInt32(DJ.ElementAt(0).Excpected_Salary);
+            page3.desiredJob11.desiredJobTextBox.Text = DJ.ElementAt(0).Job;
+            page3.desiredJob11.workTimeTextBox.Text = DJ.ElementAt(0).time;
 
             //Emergency
-            ICollection < References> Emer_list = JS.References.Where(x => x.type == 0).ToList();//0 emergency <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< attention
-            foreach (References Emer in Emer_list )
+            ICollection<Reference> Emer_list = JS.References.Where(x => x.type == 0).ToList();//0 emergency <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< attention
+            foreach (Reference Emer in Emer_list)
             {
-               
+
                 page3.emergencyAndReferences11.emergencyDataGridView.Rows.Add(Emer.Person_Name, Emer.Place_of_Work, Emer.Position, Emer.Phones);
-             //   page3.emergencyAndReferences11.emergencyDataGridView.Rows[i].Cells[4].Value = Emer.type;
+                //   page3.emergencyAndReferences11.emergencyDataGridView.Rows[i].Cells[4].Value = Emer.type;
                 i++;
             }
 
             //Refrence Opinion 
             i = 0;
-            ICollection<References>  RO_list =JS.References.Where(x => x.type == 1).ToList();//1 References <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< attention
-            foreach (References RO in RO_list )
+            ICollection<Reference> RO_list = JS.References.Where(x => x.type == 1).ToList();//1 References <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< attention
+            foreach (Reference RO in RO_list)
             {
-               
-                page3.emergencyAndReferences11.referenceDataGridView.Rows.Add(RO.Person_Name, RO.Place_of_Work, RO.Position , RO.Phones, RO.Opinion);
+
+                page3.emergencyAndReferences11.referenceDataGridView.Rows.Add(RO.Person_Name, RO.Place_of_Work, RO.Position, RO.Phones, RO.Opinion);
 
             }
 
@@ -856,15 +918,15 @@ namespace GherasEO.GUI
                     ((DataGridView)c).Rows.Clear();
                 else if (c is CheckedListBox)
                     for (int i = 0; i < ((CheckedListBox)c).Items.Count; i++)
-                        ((CheckedListBox)c).SetItemChecked(i,false);
+                        ((CheckedListBox)c).SetItemChecked(i, false);
                 else if (c is DateTimePicker)//yyyy/MM/dd
-                    ((DateTimePicker)c).Value = new DateTime(2000,01,01);
+                    ((DateTimePicker)c).Value = new DateTime(2000, 01, 01);
                 else if (c is MaskedTextBox)
                     ((MaskedTextBox)c).Clear();
                 else if (c is NumericUpDown)
-                    ((NumericUpDown)c).Value=0;
+                    ((NumericUpDown)c).Value = 0;
                 else if (c is CheckBox)
-                    ((CheckBox)c).Checked=false;
+                    ((CheckBox)c).Checked = false;
                 else if (c is GroupBox)
                     clearContorlsData(c.Controls);
                 else if (c is UserControl)
@@ -891,7 +953,7 @@ namespace GherasEO.GUI
             //SHOW CONFIRMATION MESSAGE TO SAVE/DISCARD CHANGES 
             //IF ANY FIELD HAS CHANGED BEFORE CLEARING ALL THE FIELDS
             //tabControl1.TabPages[0].Enabled = true;
-           DialogResult result =MessageBox.Show(null, "هل تريد استمارة جديدة", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show(null, "هل تريد استمارة جديدة", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
                 resetViewData();
@@ -903,11 +965,12 @@ namespace GherasEO.GUI
         private void JobSeekerForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'employment_officeDataSet.Job_seeker' table. You can move, or remove it, as needed.
-         
+
 
         }
 
-        public void resetViewData() {
+        public void resetViewData()
+        {
             clearContorlsData(page1.Controls);
             clearContorlsData(page2.Controls);
             clearContorlsData(page3.Controls);
@@ -941,9 +1004,9 @@ namespace GherasEO.GUI
             {
                 string desiredJob = Convert.ToString(desiredJobTextBox.Text);
                 var Job_seekers = (from t1 in db.Job_seeker
-                        join t2 in db.User_Job on t1.National_ID equals t2.User_ID
-                        where(t2.Job.Contains(desiredJob))
-                        select new { t1 }).ToList();
+                                   join t2 in db.User_Job on t1.ID equals t2.User_ID
+                                   where (t2.Job.Contains(desiredJob))
+                                   select new { t1 }).ToList();
 
                 // var Job_seekers = db.Job_seeker.Where(x => x.User_Job.Skip(1).Take(1).FirstOrDefault().Job ==desiredJob).ToList();
                 if (Job_seekers != null && Job_seekers.Count > 0)

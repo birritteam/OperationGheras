@@ -12,12 +12,12 @@ namespace GherasEO
     using System;
     using System.Collections.Generic;
     
-    public partial class Skills
+    public partial class sysdiagram
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public string User_ID { get; set; }
-    
-        public virtual Job_seeker Job_seeker { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

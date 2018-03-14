@@ -15,7 +15,7 @@ namespace GherasEO
     public partial class Hired
     {
         public int Company_ID { get; set; }
-        public string User_ID { get; set; }
+        public int User_ID { get; set; }
         public int Vacancy_ID { get; set; }
         public string Hire_date { get; set; }
         public string notes { get; set; }

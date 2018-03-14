@@ -30,13 +30,13 @@ namespace GherasEO
         {
             userName = userNameTextBox.Text;
             password = passwordTextBox.Text;
-            //Nawzat
-            if (userName.Equals("") && password.Equals("")) { isVerfiedUser = true; }
-            
+            if (userName.Equals("gheras") && password.Equals("123")) { isVerfiedUser = true; }
+
             if (isVerfiedUser)
             {
                 this.Hide();
             }
+
         }
     }
 }

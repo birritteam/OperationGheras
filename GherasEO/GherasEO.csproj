@@ -65,6 +65,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xaml" />
@@ -83,13 +84,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Certificate.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>employment_office.tt</DependentUpon>
     </Compile>
     <Compile Include="company.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>employment_office.tt</DependentUpon>
     </Compile>
-    <Compile Include="courses.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+    <Compile Include="cours.cs">
+      <DependentUpon>employment_office.tt</DependentUpon>
+    </Compile>
+    <Compile Include="employment_office.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>employment_office.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="employment_office.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>employment_office.tt</DependentUpon>
+    </Compile>
+    <Compile Include="employment_office.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>employment_office.edmx</DependentUpon>
     </Compile>
     <Compile Include="employment_officeDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -169,48 +185,33 @@
       <DependentUpon>Skills.cs</DependentUpon>
     </Compile>
     <Compile Include="Hired.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>employment_office.tt</DependentUpon>
     </Compile>
     <Compile Include="Job_seeker.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>employment_office.tt</DependentUpon>
     </Compile>
     <Compile Include="Language.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.edmx</DependentUpon>
+      <DependentUpon>employment_office.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="References.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+    <Compile Include="Reference.cs">
+      <DependentUpon>employment_office.tt</DependentUpon>
     </Compile>
-    <Compile Include="Skills.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+    <Compile Include="Skill.cs">
+      <DependentUpon>employment_office.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>employment_office.tt</DependentUpon>
     </Compile>
     <Compile Include="User_Job.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>employment_office.tt</DependentUpon>
     </Compile>
     <Compile Include="Vacancy.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>employment_office.tt</DependentUpon>
     </Compile>
     <Compile Include="Work_For.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>employment_office.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="GUI\JobSeekerForm.resx">
       <DependentUpon>JobSeekerForm.cs</DependentUpon>
@@ -257,6 +258,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="employment_office.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>employment_office.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="employment_office.edmx.diagram">
+      <DependentUpon>employment_office.edmx</DependentUpon>
+    </None>
     <None Include="employment_officeDataSet.xsc">
       <DependentUpon>employment_officeDataSet.xsd</DependentUpon>
     </None>
@@ -267,13 +275,6 @@
     </None>
     <None Include="employment_officeDataSet.xss">
       <DependentUpon>employment_officeDataSet.xsd</DependentUpon>
-    </None>
-    <EntityDeploy Include="Model.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Model.edmx.diagram">
-      <DependentUpon>Model.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -305,15 +306,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model.Context.tt">
+    <Content Include="employment_office.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.Context.cs</LastGenOutput>
+      <DependentUpon>employment_office.edmx</DependentUpon>
+      <LastGenOutput>employment_office.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model.tt">
+    <Content Include="employment_office.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.cs</LastGenOutput>
+      <DependentUpon>employment_office.edmx</DependentUpon>
+      <LastGenOutput>employment_office.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

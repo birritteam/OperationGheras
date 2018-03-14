@@ -17,16 +17,17 @@ namespace GherasEO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Job_seeker()
         {
-            this.Certificate = new HashSet<Certificate>();
-            this.courses = new HashSet<courses>();
-            this.Hired = new HashSet<Hired>();
-            this.Language = new HashSet<Language>();
-            this.References = new HashSet<References>();
-            this.Skills = new HashSet<Skills>();
+            this.Certificates = new HashSet<Certificate>();
+            this.courses = new HashSet<cours>();
+            this.Hireds = new HashSet<Hired>();
+            this.Languages = new HashSet<Language>();
+            this.References = new HashSet<Reference>();
+            this.Skills = new HashSet<Skill>();
             this.User_Job = new HashSet<User_Job>();
             this.Work_For = new HashSet<Work_For>();
         }
     
+        public int ID { get; set; }
         public string First_name { get; set; }
         public string Second_name { get; set; }
         public string Father_name { get; set; }
@@ -41,6 +42,7 @@ namespace GherasEO
         public string Current_address { get; set; }
         public string Previous_address { get; set; }
         public string special_Mark { get; set; }
+        public string Birth_Date { get; set; }
         public string Date_Of_Release { get; set; }
         public string Military_service { get; set; }
         public string Social_status { get; set; }
@@ -54,19 +56,20 @@ namespace GherasEO
         public string Extra_Information { get; set; }
         public string municipality { get; set; }
         public string registration { get; set; }
+        public string fullname { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Certificate> Certificate { get; set; }
+        public virtual ICollection<Certificate> Certificates { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<courses> courses { get; set; }
+        public virtual ICollection<cours> courses { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Hired> Hired { get; set; }
+        public virtual ICollection<Hired> Hireds { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Language> Language { get; set; }
+        public virtual ICollection<Language> Languages { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<References> References { get; set; }
+        public virtual ICollection<Reference> References { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Skills> Skills { get; set; }
+        public virtual ICollection<Skill> Skills { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<User_Job> User_Job { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

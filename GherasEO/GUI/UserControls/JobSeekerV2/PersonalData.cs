@@ -28,9 +28,9 @@ namespace GherasEO.GUI
             }
             else
                 delayReasonTB.Enabled = false;
-               
-            
-               
+
+
+
         }
 
         private void exemptRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -53,8 +53,8 @@ namespace GherasEO.GUI
                 exemptionReasonTB.Text = "";
                 delayReasonTB.Text = "";
             }
-                
-                
+
+
         }
     }
 }

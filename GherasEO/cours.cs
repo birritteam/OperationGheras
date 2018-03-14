@@ -12,7 +12,7 @@ namespace GherasEO
     using System;
     using System.Collections.Generic;
     
-    public partial class courses
+    public partial class cours
     {
         public int ID { get; set; }
         public string Course_Name { get; set; }
@@ -21,7 +21,7 @@ namespace GherasEO
         public int Num_Of_Days { get; set; }
         public int Train_Hours { get; set; }
         public int type { get; set; }
-        public string User_ID { get; set; }
+        public int User_ID { get; set; }
     
         public virtual Job_seeker Job_seeker { get; set; }
     }

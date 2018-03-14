@@ -22,7 +22,7 @@ namespace GherasEO
         public System.DateTime Hire_date { get; set; }
         public Nullable<System.DateTime> Quti_date { get; set; }
         public string Reason { get; set; }
-        public string User_ID { get; set; }
+        public int User_ID { get; set; }
     
         public virtual Job_seeker Job_seeker { get; set; }
     }

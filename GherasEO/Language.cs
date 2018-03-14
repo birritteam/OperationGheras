@@ -17,7 +17,7 @@ namespace GherasEO
         public int ID { get; set; }
         public string Language1 { get; set; }
         public string language_level { get; set; }
-        public string User_ID { get; set; }
+        public int User_ID { get; set; }
     
         public virtual Job_seeker Job_seeker { get; set; }
     }

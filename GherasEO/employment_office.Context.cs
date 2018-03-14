@@ -25,17 +25,17 @@ namespace GherasEO
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Certificate> Certificate { get; set; }
-        public virtual DbSet<company> company { get; set; }
-        public virtual DbSet<courses> courses { get; set; }
-        public virtual DbSet<Hired> Hired { get; set; }
+        public virtual DbSet<Certificate> Certificates { get; set; }
+        public virtual DbSet<company> companies { get; set; }
+        public virtual DbSet<cours> courses { get; set; }
+        public virtual DbSet<Hired> Hireds { get; set; }
         public virtual DbSet<Job_seeker> Job_seeker { get; set; }
-        public virtual DbSet<Language> Language { get; set; }
-        public virtual DbSet<References> References { get; set; }
-        public virtual DbSet<Skills> Skills { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Language> Languages { get; set; }
+        public virtual DbSet<Reference> References { get; set; }
+        public virtual DbSet<Skill> Skills { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User_Job> User_Job { get; set; }
-        public virtual DbSet<Vacancy> Vacancy { get; set; }
+        public virtual DbSet<Vacancy> Vacancies { get; set; }
         public virtual DbSet<Work_For> Work_For { get; set; }
     }
 }

@@ -14,7 +14,7 @@
           <Property Name="University_name" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Graduation" Type="date" />
           <Property Name="Study_year" Type="varchar" MaxLength="50" />
-          <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="User_ID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="company">
           <Key>
@@ -38,7 +38,7 @@
           <Property Name="Num_Of_Days" Type="int" Nullable="false" />
           <Property Name="Train_Hours" Type="int" Nullable="false" />
           <Property Name="type" Type="int" Nullable="false" />
-          <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="User_ID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Hired">
           <Key>
@@ -47,15 +47,16 @@
             <PropertyRef Name="Vacancy_ID" />
           </Key>
           <Property Name="Company_ID" Type="int" Nullable="false" />
-          <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="User_ID" Type="int" Nullable="false" />
           <Property Name="Vacancy_ID" Type="int" Nullable="false" />
           <Property Name="Hire_date" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="notes" Type="varchar" MaxLength="250" Nullable="false" />
         </EntityType>
         <EntityType Name="Job_seeker">
           <Key>
-            <PropertyRef Name="National_ID" />
+            <PropertyRef Name="ID" />
           </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="First_name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Second_name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Father_name" Type="varchar" MaxLength="50" Nullable="false" />
@@ -70,6 +71,7 @@
           <Property Name="Current_address" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="Previous_address" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="special_Mark" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Birth_Date" Type="varchar" MaxLength="50" />
           <Property Name="Date_Of_Release" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Military_service" Type="varchar" MaxLength="250" />
           <Property Name="Social_status" Type="varchar" MaxLength="150" Nullable="false" />
@@ -83,6 +85,7 @@
           <Property Name="Extra_Information" Type="varchar" MaxLength="250" />
           <Property Name="municipality" Type="varchar" MaxLength="50" />
           <Property Name="registration" Type="varchar" MaxLength="50" />
+          <Property Name="fullname" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Language">
           <Key>
@@ -91,7 +94,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Language" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="language_level" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="User_ID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="References">
           <Key>
@@ -103,7 +106,7 @@
           <Property Name="Position" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Phones" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="type" Type="int" Nullable="false" />
-          <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="User_ID" Type="int" Nullable="false" />
           <Property Name="Opinion" Type="varchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="Skills">
@@ -112,7 +115,7 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="400" />
-          <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="User_ID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -133,7 +136,7 @@
           <Property Name="Excpected_Salary" Type="int" />
           <Property Name="Job" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="time" Type="varchar" MaxLength="150" Nullable="false" />
-          <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="User_ID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Vacancy">
           <Key>
@@ -165,14 +168,14 @@
           <Property Name="Hire_date" Type="date" Nullable="false" />
           <Property Name="Quti_date" Type="date" />
           <Property Name="Reason" Type="varchar" MaxLength="250" />
-          <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="User_ID" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Certificate_Job_seeker">
           <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
           <End Role="Certificate" Type="Self.Certificate" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Job_seeker">
-              <PropertyRef Name="National_ID" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Certificate">
               <PropertyRef Name="User_ID" />
@@ -184,7 +187,7 @@
           <End Role="courses" Type="Self.courses" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Job_seeker">
-              <PropertyRef Name="National_ID" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="courses">
               <PropertyRef Name="User_ID" />
@@ -208,7 +211,7 @@
           <End Role="Hired" Type="Self.Hired" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Job_seeker">
-              <PropertyRef Name="National_ID" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Hired">
               <PropertyRef Name="User_ID" />
@@ -227,48 +230,48 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Language_Userss">
+        <Association Name="FK_Language_Job_seeker">
           <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
           <End Role="Language" Type="Self.Language" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Job_seeker">
-              <PropertyRef Name="National_ID" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Language">
               <PropertyRef Name="User_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_References_Userss">
+        <Association Name="FK_References_Job_seeker">
           <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
           <End Role="References" Type="Self.References" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Job_seeker">
-              <PropertyRef Name="National_ID" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="References">
               <PropertyRef Name="User_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Skills_Userss">
+        <Association Name="FK_Skills_Job_seeker">
           <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
           <End Role="Skills" Type="Self.Skills" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Job_seeker">
-              <PropertyRef Name="National_ID" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Skills">
               <PropertyRef Name="User_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_User_Job_Userss">
+        <Association Name="FK_User_Job_Job_seeker">
           <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
           <End Role="User_Job" Type="Self.User_Job" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Job_seeker">
-              <PropertyRef Name="National_ID" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="User_Job">
               <PropertyRef Name="User_ID" />
@@ -287,12 +290,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Work_For_Userss">
+        <Association Name="FK_Work_For_Job_seeker">
           <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
           <End Role="Work_For" Type="Self.Work_For" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Job_seeker">
-              <PropertyRef Name="National_ID" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Work_For">
               <PropertyRef Name="User_ID" />
@@ -332,19 +335,19 @@
             <End Role="Vacancy" EntitySet="Vacancy" />
             <End Role="Hired" EntitySet="Hired" />
           </AssociationSet>
-          <AssociationSet Name="FK_Language_Userss" Association="Self.FK_Language_Userss">
+          <AssociationSet Name="FK_Language_Job_seeker" Association="Self.FK_Language_Job_seeker">
             <End Role="Job_seeker" EntitySet="Job_seeker" />
             <End Role="Language" EntitySet="Language" />
           </AssociationSet>
-          <AssociationSet Name="FK_References_Userss" Association="Self.FK_References_Userss">
+          <AssociationSet Name="FK_References_Job_seeker" Association="Self.FK_References_Job_seeker">
             <End Role="Job_seeker" EntitySet="Job_seeker" />
             <End Role="References" EntitySet="References" />
           </AssociationSet>
-          <AssociationSet Name="FK_Skills_Userss" Association="Self.FK_Skills_Userss">
+          <AssociationSet Name="FK_Skills_Job_seeker" Association="Self.FK_Skills_Job_seeker">
             <End Role="Job_seeker" EntitySet="Job_seeker" />
             <End Role="Skills" EntitySet="Skills" />
           </AssociationSet>
-          <AssociationSet Name="FK_User_Job_Userss" Association="Self.FK_User_Job_Userss">
+          <AssociationSet Name="FK_User_Job_Job_seeker" Association="Self.FK_User_Job_Job_seeker">
             <End Role="Job_seeker" EntitySet="Job_seeker" />
             <End Role="User_Job" EntitySet="User_Job" />
           </AssociationSet>
@@ -352,7 +355,7 @@
             <End Role="company" EntitySet="company" />
             <End Role="Vacancy" EntitySet="Vacancy" />
           </AssociationSet>
-          <AssociationSet Name="FK_Work_For_Userss" Association="Self.FK_Work_For_Userss">
+          <AssociationSet Name="FK_Work_For_Job_seeker" Association="Self.FK_Work_For_Job_seeker">
             <End Role="Job_seeker" EntitySet="Job_seeker" />
             <End Role="Work_For" EntitySet="Work_For" />
           </AssociationSet>
@@ -371,7 +374,7 @@
           <Property Name="University_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Graduation" Type="DateTime" Precision="0" />
           <Property Name="Study_year" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_ID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Job_seeker" Relationship="Self.FK_Certificate_Job_seeker" FromRole="Certificate" ToRole="Job_seeker" />
         </EntityType>
         <EntityType Name="company">
@@ -384,10 +387,10 @@
           <Property Name="Company_Place" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Hired" Relationship="Self.FK_Hired_company" FromRole="company" ToRole="Hired" />
-          <NavigationProperty Name="Vacancy" Relationship="Self.FK_Vacancy_company" FromRole="company" ToRole="Vacancy" />
+          <NavigationProperty Name="Hireds" Relationship="Self.FK_Hired_company" FromRole="company" ToRole="Hired" />
+          <NavigationProperty Name="Vacancies" Relationship="Self.FK_Vacancy_company" FromRole="company" ToRole="Vacancy" />
         </EntityType>
-        <EntityType Name="courses">
+        <EntityType Name="cours">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -398,7 +401,7 @@
           <Property Name="Num_Of_Days" Type="Int32" Nullable="false" />
           <Property Name="Train_Hours" Type="Int32" Nullable="false" />
           <Property Name="type" Type="Int32" Nullable="false" />
-          <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_ID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Job_seeker" Relationship="Self.FK_courses_Job_seeker" FromRole="courses" ToRole="Job_seeker" />
         </EntityType>
         <EntityType Name="Hired">
@@ -408,7 +411,7 @@
             <PropertyRef Name="Vacancy_ID" />
           </Key>
           <Property Name="Company_ID" Type="Int32" Nullable="false" />
-          <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_ID" Type="Int32" Nullable="false" />
           <Property Name="Vacancy_ID" Type="Int32" Nullable="false" />
           <Property Name="Hire_date" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="notes" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
@@ -418,8 +421,9 @@
         </EntityType>
         <EntityType Name="Job_seeker">
           <Key>
-            <PropertyRef Name="National_ID" />
+            <PropertyRef Name="ID" />
           </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="First_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Second_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Father_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -434,6 +438,7 @@
           <Property Name="Current_address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Previous_address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="special_Mark" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Birth_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Date_Of_Release" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Military_service" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="Social_status" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
@@ -447,14 +452,15 @@
           <Property Name="Extra_Information" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="municipality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="registration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Certificate" Relationship="Self.FK_Certificate_Job_seeker" FromRole="Job_seeker" ToRole="Certificate" />
+          <Property Name="fullname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Certificates" Relationship="Self.FK_Certificate_Job_seeker" FromRole="Job_seeker" ToRole="Certificate" />
           <NavigationProperty Name="courses" Relationship="Self.FK_courses_Job_seeker" FromRole="Job_seeker" ToRole="courses" />
-          <NavigationProperty Name="Hired" Relationship="Self.FK_Hired_Job_seeker" FromRole="Job_seeker" ToRole="Hired" />
-          <NavigationProperty Name="Language" Relationship="Self.FK_Language_Userss" FromRole="Job_seeker" ToRole="Language" />
-          <NavigationProperty Name="References" Relationship="Self.FK_References_Userss" FromRole="Job_seeker" ToRole="References" />
-          <NavigationProperty Name="Skills" Relationship="Self.FK_Skills_Userss" FromRole="Job_seeker" ToRole="Skills" />
-          <NavigationProperty Name="User_Job" Relationship="Self.FK_User_Job_Userss" FromRole="Job_seeker" ToRole="User_Job" />
-          <NavigationProperty Name="Work_For" Relationship="Self.FK_Work_For_Userss" FromRole="Job_seeker" ToRole="Work_For" />
+          <NavigationProperty Name="Hireds" Relationship="Self.FK_Hired_Job_seeker" FromRole="Job_seeker" ToRole="Hired" />
+          <NavigationProperty Name="Languages" Relationship="Self.FK_Language_Job_seeker" FromRole="Job_seeker" ToRole="Language" />
+          <NavigationProperty Name="References" Relationship="Self.FK_References_Job_seeker" FromRole="Job_seeker" ToRole="References" />
+          <NavigationProperty Name="Skills" Relationship="Self.FK_Skills_Job_seeker" FromRole="Job_seeker" ToRole="Skills" />
+          <NavigationProperty Name="User_Job" Relationship="Self.FK_User_Job_Job_seeker" FromRole="Job_seeker" ToRole="User_Job" />
+          <NavigationProperty Name="Work_For" Relationship="Self.FK_Work_For_Job_seeker" FromRole="Job_seeker" ToRole="Work_For" />
         </EntityType>
         <EntityType Name="Language">
           <Key>
@@ -463,10 +469,10 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Language1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="language_level" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Job_seeker" Relationship="Self.FK_Language_Userss" FromRole="Language" ToRole="Job_seeker" />
+          <Property Name="User_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Job_seeker" Relationship="Self.FK_Language_Job_seeker" FromRole="Language" ToRole="Job_seeker" />
         </EntityType>
-        <EntityType Name="References">
+        <EntityType Name="Reference">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -476,20 +482,20 @@
           <Property Name="Position" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Phones" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="type" Type="Int32" Nullable="false" />
-          <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_ID" Type="Int32" Nullable="false" />
           <Property Name="Opinion" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Job_seeker" Relationship="Self.FK_References_Userss" FromRole="References" ToRole="Job_seeker" />
+          <NavigationProperty Name="Job_seeker" Relationship="Self.FK_References_Job_seeker" FromRole="References" ToRole="Job_seeker" />
         </EntityType>
-        <EntityType Name="Skills">
+        <EntityType Name="Skill">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
-          <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Job_seeker" Relationship="Self.FK_Skills_Userss" FromRole="Skills" ToRole="Job_seeker" />
+          <Property Name="User_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Job_seeker" Relationship="Self.FK_Skills_Job_seeker" FromRole="Skills" ToRole="Job_seeker" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
+        <EntityType Name="sysdiagram">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
@@ -508,8 +514,8 @@
           <Property Name="Excpected_Salary" Type="Int32" />
           <Property Name="Job" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="time" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Job_seeker" Relationship="Self.FK_User_Job_Userss" FromRole="User_Job" ToRole="Job_seeker" />
+          <Property Name="User_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Job_seeker" Relationship="Self.FK_User_Job_Job_seeker" FromRole="User_Job" ToRole="Job_seeker" />
         </EntityType>
         <EntityType Name="Vacancy">
           <Key>
@@ -529,7 +535,7 @@
           <Property Name="Age_from" Type="Int32" Nullable="false" />
           <Property Name="Age_to" Type="Int32" Nullable="false" />
           <NavigationProperty Name="company" Relationship="Self.FK_Vacancy_company" FromRole="Vacancy" ToRole="company" />
-          <NavigationProperty Name="Hired" Relationship="Self.FK_Hired_Vacancy" FromRole="Vacancy" ToRole="Hired" />
+          <NavigationProperty Name="Hireds" Relationship="Self.FK_Hired_Vacancy" FromRole="Vacancy" ToRole="Hired" />
         </EntityType>
         <EntityType Name="Work_For">
           <Key>
@@ -543,15 +549,15 @@
           <Property Name="Hire_date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Quti_date" Type="DateTime" Precision="0" />
           <Property Name="Reason" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Job_seeker" Relationship="Self.FK_Work_For_Userss" FromRole="Work_For" ToRole="Job_seeker" />
+          <Property Name="User_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Job_seeker" Relationship="Self.FK_Work_For_Job_seeker" FromRole="Work_For" ToRole="Job_seeker" />
         </EntityType>
         <Association Name="FK_Certificate_Job_seeker">
           <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
           <End Role="Certificate" Type="Self.Certificate" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Job_seeker">
-              <PropertyRef Name="National_ID" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Certificate">
               <PropertyRef Name="User_ID" />
@@ -584,10 +590,10 @@
         </Association>
         <Association Name="FK_courses_Job_seeker">
           <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
-          <End Role="courses" Type="Self.courses" Multiplicity="*" />
+          <End Role="courses" Type="Self.cours" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Job_seeker">
-              <PropertyRef Name="National_ID" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="courses">
               <PropertyRef Name="User_ID" />
@@ -599,7 +605,7 @@
           <End Role="Hired" Type="Self.Hired" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Job_seeker">
-              <PropertyRef Name="National_ID" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Hired">
               <PropertyRef Name="User_ID" />
@@ -618,60 +624,60 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Language_Userss">
+        <Association Name="FK_Language_Job_seeker">
           <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
           <End Role="Language" Type="Self.Language" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Job_seeker">
-              <PropertyRef Name="National_ID" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Language">
               <PropertyRef Name="User_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_References_Userss">
+        <Association Name="FK_References_Job_seeker">
           <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
-          <End Role="References" Type="Self.References" Multiplicity="*" />
+          <End Role="References" Type="Self.Reference" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Job_seeker">
-              <PropertyRef Name="National_ID" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="References">
               <PropertyRef Name="User_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Skills_Userss">
+        <Association Name="FK_Skills_Job_seeker">
           <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
-          <End Role="Skills" Type="Self.Skills" Multiplicity="*" />
+          <End Role="Skills" Type="Self.Skill" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Job_seeker">
-              <PropertyRef Name="National_ID" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Skills">
               <PropertyRef Name="User_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_User_Job_Userss">
+        <Association Name="FK_User_Job_Job_seeker">
           <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
           <End Role="User_Job" Type="Self.User_Job" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Job_seeker">
-              <PropertyRef Name="National_ID" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="User_Job">
               <PropertyRef Name="User_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Work_For_Userss">
+        <Association Name="FK_Work_For_Job_seeker">
           <End Role="Job_seeker" Type="Self.Job_seeker" Multiplicity="1" />
           <End Role="Work_For" Type="Self.Work_For" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Job_seeker">
-              <PropertyRef Name="National_ID" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Work_For">
               <PropertyRef Name="User_ID" />
@@ -679,29 +685,29 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="employment_officeEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Certificate" EntityType="Self.Certificate" />
-          <EntitySet Name="company" EntityType="Self.company" />
-          <EntitySet Name="courses" EntityType="Self.courses" />
-          <EntitySet Name="Hired" EntityType="Self.Hired" />
+          <EntitySet Name="Certificates" EntityType="Self.Certificate" />
+          <EntitySet Name="companies" EntityType="Self.company" />
+          <EntitySet Name="courses" EntityType="Self.cours" />
+          <EntitySet Name="Hireds" EntityType="Self.Hired" />
           <EntitySet Name="Job_seeker" EntityType="Self.Job_seeker" />
-          <EntitySet Name="Language" EntityType="Self.Language" />
-          <EntitySet Name="References" EntityType="Self.References" />
-          <EntitySet Name="Skills" EntityType="Self.Skills" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Languages" EntityType="Self.Language" />
+          <EntitySet Name="References" EntityType="Self.Reference" />
+          <EntitySet Name="Skills" EntityType="Self.Skill" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="User_Job" EntityType="Self.User_Job" />
-          <EntitySet Name="Vacancy" EntityType="Self.Vacancy" />
+          <EntitySet Name="Vacancies" EntityType="Self.Vacancy" />
           <EntitySet Name="Work_For" EntityType="Self.Work_For" />
           <AssociationSet Name="FK_Certificate_Job_seeker" Association="Self.FK_Certificate_Job_seeker">
             <End Role="Job_seeker" EntitySet="Job_seeker" />
-            <End Role="Certificate" EntitySet="Certificate" />
+            <End Role="Certificate" EntitySet="Certificates" />
           </AssociationSet>
           <AssociationSet Name="FK_Hired_company" Association="Self.FK_Hired_company">
-            <End Role="company" EntitySet="company" />
-            <End Role="Hired" EntitySet="Hired" />
+            <End Role="company" EntitySet="companies" />
+            <End Role="Hired" EntitySet="Hireds" />
           </AssociationSet>
           <AssociationSet Name="FK_Vacancy_company" Association="Self.FK_Vacancy_company">
-            <End Role="company" EntitySet="company" />
-            <End Role="Vacancy" EntitySet="Vacancy" />
+            <End Role="company" EntitySet="companies" />
+            <End Role="Vacancy" EntitySet="Vacancies" />
           </AssociationSet>
           <AssociationSet Name="FK_courses_Job_seeker" Association="Self.FK_courses_Job_seeker">
             <End Role="Job_seeker" EntitySet="Job_seeker" />
@@ -709,29 +715,29 @@
           </AssociationSet>
           <AssociationSet Name="FK_Hired_Job_seeker" Association="Self.FK_Hired_Job_seeker">
             <End Role="Job_seeker" EntitySet="Job_seeker" />
-            <End Role="Hired" EntitySet="Hired" />
+            <End Role="Hired" EntitySet="Hireds" />
           </AssociationSet>
           <AssociationSet Name="FK_Hired_Vacancy" Association="Self.FK_Hired_Vacancy">
-            <End Role="Vacancy" EntitySet="Vacancy" />
-            <End Role="Hired" EntitySet="Hired" />
+            <End Role="Vacancy" EntitySet="Vacancies" />
+            <End Role="Hired" EntitySet="Hireds" />
           </AssociationSet>
-          <AssociationSet Name="FK_Language_Userss" Association="Self.FK_Language_Userss">
+          <AssociationSet Name="FK_Language_Job_seeker" Association="Self.FK_Language_Job_seeker">
             <End Role="Job_seeker" EntitySet="Job_seeker" />
-            <End Role="Language" EntitySet="Language" />
+            <End Role="Language" EntitySet="Languages" />
           </AssociationSet>
-          <AssociationSet Name="FK_References_Userss" Association="Self.FK_References_Userss">
+          <AssociationSet Name="FK_References_Job_seeker" Association="Self.FK_References_Job_seeker">
             <End Role="Job_seeker" EntitySet="Job_seeker" />
             <End Role="References" EntitySet="References" />
           </AssociationSet>
-          <AssociationSet Name="FK_Skills_Userss" Association="Self.FK_Skills_Userss">
+          <AssociationSet Name="FK_Skills_Job_seeker" Association="Self.FK_Skills_Job_seeker">
             <End Role="Job_seeker" EntitySet="Job_seeker" />
             <End Role="Skills" EntitySet="Skills" />
           </AssociationSet>
-          <AssociationSet Name="FK_User_Job_Userss" Association="Self.FK_User_Job_Userss">
+          <AssociationSet Name="FK_User_Job_Job_seeker" Association="Self.FK_User_Job_Job_seeker">
             <End Role="Job_seeker" EntitySet="Job_seeker" />
             <End Role="User_Job" EntitySet="User_Job" />
           </AssociationSet>
-          <AssociationSet Name="FK_Work_For_Userss" Association="Self.FK_Work_For_Userss">
+          <AssociationSet Name="FK_Work_For_Job_seeker" Association="Self.FK_Work_For_Job_seeker">
             <End Role="Job_seeker" EntitySet="Job_seeker" />
             <End Role="Work_For" EntitySet="Work_For" />
           </AssociationSet>
@@ -742,7 +748,7 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="employment_officeModelStoreContainer" CdmEntityContainer="employment_officeEntities">
-          <EntitySetMapping Name="Certificate">
+          <EntitySetMapping Name="Certificates">
             <EntityTypeMapping TypeName="employment_officeModel.Certificate">
               <MappingFragment StoreEntitySet="Certificate">
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -754,7 +760,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="company">
+          <EntitySetMapping Name="companies">
             <EntityTypeMapping TypeName="employment_officeModel.company">
               <MappingFragment StoreEntitySet="company">
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -767,7 +773,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="courses">
-            <EntityTypeMapping TypeName="employment_officeModel.courses">
+            <EntityTypeMapping TypeName="employment_officeModel.cours">
               <MappingFragment StoreEntitySet="courses">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Course_Name" ColumnName="Course_Name" />
@@ -780,7 +786,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Hired">
+          <EntitySetMapping Name="Hireds">
             <EntityTypeMapping TypeName="employment_officeModel.Hired">
               <MappingFragment StoreEntitySet="Hired">
                 <ScalarProperty Name="Company_ID" ColumnName="Company_ID" />
@@ -794,6 +800,7 @@
           <EntitySetMapping Name="Job_seeker">
             <EntityTypeMapping TypeName="employment_officeModel.Job_seeker">
               <MappingFragment StoreEntitySet="Job_seeker">
+                <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="First_name" ColumnName="First_name" />
                 <ScalarProperty Name="Second_name" ColumnName="Second_name" />
                 <ScalarProperty Name="Father_name" ColumnName="Father_name" />
@@ -808,6 +815,7 @@
                 <ScalarProperty Name="Current_address" ColumnName="Current_address" />
                 <ScalarProperty Name="Previous_address" ColumnName="Previous_address" />
                 <ScalarProperty Name="special_Mark" ColumnName="special_Mark" />
+                <ScalarProperty Name="Birth_Date" ColumnName="Birth_Date" />
                 <ScalarProperty Name="Date_Of_Release" ColumnName="Date_Of_Release" />
                 <ScalarProperty Name="Military_service" ColumnName="Military_service" />
                 <ScalarProperty Name="Social_status" ColumnName="Social_status" />
@@ -821,10 +829,11 @@
                 <ScalarProperty Name="Extra_Information" ColumnName="Extra_Information" />
                 <ScalarProperty Name="municipality" ColumnName="municipality" />
                 <ScalarProperty Name="registration" ColumnName="registration" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Language">
+          <EntitySetMapping Name="Languages">
             <EntityTypeMapping TypeName="employment_officeModel.Language">
               <MappingFragment StoreEntitySet="Language">
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -835,7 +844,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="References">
-            <EntityTypeMapping TypeName="employment_officeModel.References">
+            <EntityTypeMapping TypeName="employment_officeModel.Reference">
               <MappingFragment StoreEntitySet="References">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Person_Name" ColumnName="Person_Name" />
@@ -849,7 +858,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Skills">
-            <EntityTypeMapping TypeName="employment_officeModel.Skills">
+            <EntityTypeMapping TypeName="employment_officeModel.Skill">
               <MappingFragment StoreEntitySet="Skills">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -858,7 +867,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="employment_officeModel.sysdiagrams">
+            <EntityTypeMapping TypeName="employment_officeModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -880,7 +889,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Vacancy">
+          <EntitySetMapping Name="Vacancies">
             <EntityTypeMapping TypeName="employment_officeModel.Vacancy">
               <MappingFragment StoreEntitySet="Vacancy">
                 <ScalarProperty Name="id" ColumnName="id" />
@@ -928,7 +937,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

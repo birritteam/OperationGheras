@@ -318,7 +318,7 @@
             this.birthdayDTP.Name = "birthdayDTP";
             this.birthdayDTP.Size = new System.Drawing.Size(245, 20);
             this.birthdayDTP.TabIndex = 11;
-            this.birthdayDTP.Value = new System.DateTime(2000, 1, 1, 12, 47, 0, 0);
+            this.birthdayDTP.Value = new System.DateTime(2018, 3, 14, 22, 37, 0, 0);
             // 
             // birthLocationTB
             // 

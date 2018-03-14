@@ -17,8 +17,8 @@ namespace GherasEO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public company()
         {
-            this.Hired = new HashSet<Hired>();
-            this.Vacancy = new HashSet<Vacancy>();
+            this.Hireds = new HashSet<Hired>();
+            this.Vacancies = new HashSet<Vacancy>();
         }
     
         public int ID { get; set; }
@@ -29,8 +29,8 @@ namespace GherasEO
         public string mobile { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Hired> Hired { get; set; }
+        public virtual ICollection<Hired> Hireds { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Vacancy> Vacancy { get; set; }
+        public virtual ICollection<Vacancy> Vacancies { get; set; }
     }
 }

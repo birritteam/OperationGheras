@@ -65,7 +65,7 @@ namespace GherasEO.GUI.UserControls
             traineeCoursesDataGridView.Controls.Add(dtptrainee);
             expertiseDataGridView.Controls.Add(dtpenter);
             //expertiseDataGridView.Controls.Add(dtpouter);
-            
+
 
             dtpeducation.ValueChanged += this.dtpeducation_ValueChanged;
             dtptrainer.ValueChanged += this.dtptrainer_ValueChanged;

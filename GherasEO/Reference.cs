@@ -12,7 +12,7 @@ namespace GherasEO
     using System;
     using System.Collections.Generic;
     
-    public partial class References
+    public partial class Reference
     {
         public int ID { get; set; }
         public string Person_Name { get; set; }
@@ -20,7 +20,7 @@ namespace GherasEO
         public string Position { get; set; }
         public string Phones { get; set; }
         public int type { get; set; }
-        public string User_ID { get; set; }
+        public int User_ID { get; set; }
         public string Opinion { get; set; }
     
         public virtual Job_seeker Job_seeker { get; set; }

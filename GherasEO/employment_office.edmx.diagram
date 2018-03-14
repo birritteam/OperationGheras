@@ -4,16 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2ef40145f3d04391afe8004f8b13169d" Name="Diagram1">
+      <Diagram DiagramId="4189414c42d2490d97a10c19f25e600a" Name="Diagram1">
         <EntityTypeShape EntityType="employment_officeModel.Certificate" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="employment_officeModel.company" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="employment_officeModel.courses" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="employment_officeModel.cours" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="employment_officeModel.Hired" Width="1.5" PointX="6" PointY="14.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="employment_officeModel.Job_seeker" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="employment_officeModel.Job_seeker" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
         <EntityTypeShape EntityType="employment_officeModel.Language" Width="1.5" PointX="3" PointY="14.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="employment_officeModel.References" Width="1.5" PointX="3" PointY="17.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="employment_officeModel.Skills" Width="1.5" PointX="3" PointY="20.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="employment_officeModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="employment_officeModel.Reference" Width="1.5" PointX="3" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="employment_officeModel.Skill" Width="1.5" PointX="3" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="employment_officeModel.sysdiagram" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="employment_officeModel.User_Job" Width="1.5" PointX="3" PointY="23.375" IsExpanded="true" />
         <EntityTypeShape EntityType="employment_officeModel.Vacancy" Width="1.5" PointX="3.75" PointY="31" IsExpanded="true" />
         <EntityTypeShape EntityType="employment_officeModel.Work_For" Width="1.5" PointX="3" PointY="26.5" IsExpanded="true" />
@@ -23,11 +23,11 @@
         <AssociationConnector Association="employment_officeModel.FK_courses_Job_seeker" ManuallyRouted="false" />
         <AssociationConnector Association="employment_officeModel.FK_Hired_Job_seeker" ManuallyRouted="false" />
         <AssociationConnector Association="employment_officeModel.FK_Hired_Vacancy" ManuallyRouted="false" />
-        <AssociationConnector Association="employment_officeModel.FK_Language_Userss" ManuallyRouted="false" />
-        <AssociationConnector Association="employment_officeModel.FK_References_Userss" ManuallyRouted="false" />
-        <AssociationConnector Association="employment_officeModel.FK_Skills_Userss" ManuallyRouted="false" />
-        <AssociationConnector Association="employment_officeModel.FK_User_Job_Userss" ManuallyRouted="false" />
-        <AssociationConnector Association="employment_officeModel.FK_Work_For_Userss" ManuallyRouted="false" />
+        <AssociationConnector Association="employment_officeModel.FK_Language_Job_seeker" ManuallyRouted="false" />
+        <AssociationConnector Association="employment_officeModel.FK_References_Job_seeker" ManuallyRouted="false" />
+        <AssociationConnector Association="employment_officeModel.FK_Skills_Job_seeker" ManuallyRouted="false" />
+        <AssociationConnector Association="employment_officeModel.FK_User_Job_Job_seeker" ManuallyRouted="false" />
+        <AssociationConnector Association="employment_officeModel.FK_Work_For_Job_seeker" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -19,7 +19,7 @@ namespace GherasEO
         public Nullable<int> Excpected_Salary { get; set; }
         public string Job { get; set; }
         public string time { get; set; }
-        public string User_ID { get; set; }
+        public int User_ID { get; set; }
     
         public virtual Job_seeker Job_seeker { get; set; }
     }

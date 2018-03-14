@@ -19,7 +19,7 @@ namespace GherasEO
         public string University_name { get; set; }
         public Nullable<System.DateTime> Graduation { get; set; }
         public string Study_year { get; set; }
-        public string User_ID { get; set; }
+        public int User_ID { get; set; }
     
         public virtual Job_seeker Job_seeker { get; set; }
     }
